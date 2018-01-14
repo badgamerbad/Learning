@@ -1,0 +1,5 @@
+<form #puForm="ngForm" (ngSubmit)="puFromSubmit(puForm.value)">
+    <input type="text" name="userName" [(ngModel)]="name" #userName>
+    <input type="text" name="userId" [(ngModel)]="id" #userId>
+    <button type="submit">Submit</button>
+</form>
