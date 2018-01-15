@@ -1,0 +1,58 @@
+HW 1 query
+db.companies.aggregate([{$match: {"relationships.person.permalink": "eric-di-benedetto" }}, {$group: {_id: {company_relation: "$name" }, company_num:{$sum: 1}}}, {$project: {_id:1, company_relation: 1, "relationships.person.permalink":1, company_num: 1}}, {$sort: {company_num: -1}}])
+
+HW 2 query
+db.grades.aggregate([{$unwind: "$scores"}, {$match: {"scores.type": {$ne: "quiz"}}}, { $group: { _id: {class_id: "$class_id"}, no_of_scores:{$sum: 1}, avg_performance_of_students: {$avg: "$scores.score"}  } }, {$project: {_id:1, no_of_scores:1, avg_performance_of_students:1}}, {$sort: {avg_performance_of_students: -1}}])
+
+HW 3 query
+to get founding rounds greater then 5
+db.companies.aggregate
+	([
+		{
+			$match: 
+			{
+				"founded_year": 2004
+			}
+		}, 
+		{	$unwind: "$funding_rounds"	}, 
+		{
+			$group: 
+			{
+				_id:
+				{
+					founded_year: "$founded_year", 
+					company: "$name"
+				}, 
+				no_of_rounds:
+				{
+					$sum: 1
+				},
+				avg_funding_rounds:
+				{
+					$avg: "$funding_rounds.raised_amount"
+				}
+			}
+		}, 
+		{	$match: 
+			{ 
+				no_of_rounds: 
+				{
+					$gte: 5
+				}
+			}
+		}, 
+		{
+			$project: 
+			{
+				_id: 1, 
+				no_of_rounds: 1,
+				avg_funding_rounds: 1
+			}
+		}, 
+		{
+			$sort:
+			{
+				avg_funding_rounds:-1
+			}
+		}
+	])

@@ -1,0 +1,3 @@
+Cscript.exe create_replica_set__m101p_52b35df6e2d423678d3b9d48.js
+
+mongod --replSet m101 --logpath "2.log" --dbpath /data/rs2 --port 27018 --oplogSize 64 --smallfiles
