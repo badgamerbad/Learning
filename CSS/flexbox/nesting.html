@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width">
+        <title>Nesting</title>
+        <style>
+            .content-div{
+                border: 1px solid #333;
+                width: 98%;
+                margin: 0px auto;
+            }
+            .content-div-header {
+                display: flex;
+            }
+            .content-div-header > div {
+                border: 1px solid #aad;
+            }
+            .div-left {
+                /* justify-content: space-around; */
+                flex: 1;
+            }
+            .div-center {
+                /* justify-content: space-around; */
+                flex: 2;
+            }
+            .div-right {
+                /* justify-content: space-around; */
+                flex: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content-div">
+            <div class="content-div-header">
+                <div class="div-left">
+                    Lorem.
+                </div>
+                <div class="div-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque reprehenderit quisquam ab suscipit, perferendis corporis repellat ad aut asperiores cupiditate delectus quaerat eum est officia, voluptates atque deserunt dolore accusamus, iusto numquam earum! Numquam dolor doloremque voluptatum. Quasi, quidem voluptatem.
+                </div>
+                <div class="div-right">
+                    Lorem, ipsum.
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
