@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex with input type text</title>
+    <style>
+        .wrapper {
+            display: flex;
+            border: 1px solid green;
+        }
+        .wrapper > div {
+            border: 1px solid pink;
+        }
+        input {
+            flex-grow: 1;
+        }
+        
+        .div-input {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="div-input"><input type="text"></div>
+        <div>Lorem, ipsum.</div>
+        <div>Lorem, ipsum.</div>
+    </div>
+</body>
+</html>
