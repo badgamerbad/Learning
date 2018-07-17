@@ -8,14 +8,14 @@ $colors: (
     display: grid;
     grid-template-columns: 0px 0px 0px;
     // grid-row-gap: 0px;
-    // -webkit-animation-name: collapse;
-    // -webkit-animation-duration: 2000ms;
-    // -webkit-animation-delay: 0s;        
-    // -webkit-animation-fill-mode: forwards;
-    // animation-name: collapse;
-    // animation-duration: 2000ms;
-    // animation-delay: 0s;
-    // animation-fill-mode: forwards;
+    -webkit-animation-name: collapse;
+    -webkit-animation-duration: 2000ms;
+    -webkit-animation-delay: 0s;        
+    -webkit-animation-fill-mode: forwards;
+    animation-name: collapse;
+    animation-duration: 2000ms;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
     // grid-auto-rows: 25px;
     grid-gap: 0px;
     grid-auto-rows: 0px;
@@ -61,10 +61,10 @@ $colors: (
     100% {grid-gap: 100px;}
 }
 @-webkit-keyframes collapse {
-    0% {grid-gap: 50px;}
+    0% {grid-gap: 100px;}
     100% {grid-gap: 0px;}
 }
 @keyframes collapse {
-    0% {grid-gap: 50px;}
+    0% {grid-gap: 100px;}
     100% {grid-gap: 0px;}
 }
