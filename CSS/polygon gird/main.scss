@@ -8,20 +8,19 @@ $colors: (
     display: grid;
     grid-template-columns: 0px 0px 0px;
     
-    -webkit-animation-name: collapse;
-    -webkit-animation-duration: 2000ms;
-    -webkit-animation-delay: 0s;        
-    -webkit-animation-fill-mode: forwards;
-    animation-name: collapse;
-    animation-duration: 2000ms;
-    animation-delay: 0s;
-    animation-fill-mode: forwards;
+    // -webkit-animation-name: collapse;
+    // -webkit-animation-duration: 2000ms;
+    // -webkit-animation-delay: 0s;        
+    // -webkit-animation-fill-mode: forwards;
+    // animation-name: collapse;
+    // animation-duration: 2000ms;
+    // animation-delay: 0s;
+    // animation-fill-mode: forwards;
 
-    grid-gap: 0px;
+    grid-gap: 50px;
     grid-auto-rows: 0px;
     justify-content: center;
-    position: relative;
-    left: -50px;
+    justify-items: center;
     &:hover > .polygon:nth-child(odd){
         // -webkit-animation-name: justify-center;
         // -webkit-animation-duration: 2000ms;
@@ -32,7 +31,7 @@ $colors: (
         // animation-delay: 0s;
         // animation-fill-mode: forwards;
     }
-    &:hover {
+    &:hover > .row-1 {
         -webkit-animation-name: expand;
         -webkit-animation-duration: 2000ms;
         -webkit-animation-delay: 0s;
@@ -44,24 +43,49 @@ $colors: (
     }
 }
 .polygon {
-    // border: 1px solid map-get($map: $colors, $key: primary);
+    border: 1px solid map-get($map: $colors, $key: primary);
+    position: relative;
 }
 .polygon img {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
 }
 .polygon:nth-child(odd) {
     // grid-column: 1/3;
     // justify-self: center;
 }
 
+.row-1{
+    top:50px;
+}
+.row-2{
+    
+}
+.row-3{
+    bottom:50px;
+}
+.col-1{
+    left: 50px;
+}
+.col-2{
+    
+}
+.col-3{
+    right: 50px;
+}
+
+
 @-webkit-keyframes expand {
-    0% {grid-gap: 0px;}
-    100% {grid-gap: 100px;}
+    // 0% {grid-gap: 0px;}
+    // 100% {grid-gap: 100px;}
+    0% {top: 50px;}
+    100% {top: 0px;}
 }
 @keyframes expand {
-    0% {grid-gap: 0px;}
-    100% {grid-gap: 100px;}
+    // 0% {grid-gap: 0px;}
+    // 100% {grid-gap: 100px;}
+    0% {top: 50px;}
+    100% {top: 0px;}
 }
 @-webkit-keyframes collapse {
     0% {grid-gap: 100px;}
