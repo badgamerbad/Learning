@@ -7,7 +7,7 @@ $colors: (
 .grid-container {
     display: grid;
     grid-template-columns: 0px 0px 0px;
-    // grid-row-gap: 0px;
+    
     -webkit-animation-name: collapse;
     -webkit-animation-duration: 2000ms;
     -webkit-animation-delay: 0s;        
@@ -16,9 +16,12 @@ $colors: (
     animation-duration: 2000ms;
     animation-delay: 0s;
     animation-fill-mode: forwards;
-    // grid-auto-rows: 25px;
+
     grid-gap: 0px;
     grid-auto-rows: 0px;
+    justify-content: center;
+    position: relative;
+    left: -50px;
     &:hover > .polygon:nth-child(odd){
         // -webkit-animation-name: justify-center;
         // -webkit-animation-duration: 2000ms;
