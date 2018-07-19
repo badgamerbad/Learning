@@ -1,91 +1,164 @@
 /* varables */
 $colors: (
-    primary: #9E0000,
-    secondery: #7998C9
+    primary: #F04A58,
+    secondery: #00658C,
+    greenn:  #57AC66,
+    whitee: #ffffff
 );
 /* varables */
+body{
+    margin: 0px;
+}
+p{
+    font-family: "Source Sans Pro", sans-serif;
+    color: map-get($map: $colors, $key: whitee);
+}
+.main-grid {
+    display: grid;
+    grid-gap: 50px;
+}
+.header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: map-get($map: $colors, $key: greenn);
+}
+.header .logo{
+    align-self: center;
+    justify-self: end;
+}
+.header p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+}
+.start-tap {
+    margin: 5px;
+    background-color: map-get($map: $colors, $key: secondery);
+    border: 1px solid map-get($map: $colors, $key: secondery);
+    &:hover + .grid-container {
+        animation: clockwise 2s 2s infinite forwards;
+    }
+    &:hover + .grid-container > .centered {
+        animation: counter-clockwise 2s 2s infinite forwards;
+    }
+    &:hover + .grid-container > .top-50{
+        animation: counter-clockwise 2s 2s infinite forwards, 
+        decrement-top 2s 0s forwards;
+    }
+    &:hover + .grid-container > .bottom-50{
+        animation: counter-clockwise 2s 2s infinite forwards, 
+        decrement-bottom 2s 0s forwards;
+    }
+    &:hover + .grid-container > .left-50{
+        animation: counter-clockwise 2s 2s infinite forwards, 
+        decrement-left 2s 0s forwards;
+    }
+    &:hover + .grid-container > .right-50{
+        animation: counter-clockwise 2s 2s infinite forwards, 
+        decrement-right 2s 0s forwards;
+    }
+}
 .grid-container {
     display: grid;
-    grid-template-columns: 0px 0px 0px;
-    
-    // -webkit-animation-name: collapse;
+    grid-template-columns: 50px 50px 50px;
+    grid-gap: 0px;
+    grid-auto-rows: 50px;
+    justify-content: center;
+    justify-items: center;
+
+    // -webkit-animation-name: increment-corners;
     // -webkit-animation-duration: 2000ms;
     // -webkit-animation-delay: 0s;        
     // -webkit-animation-fill-mode: forwards;
-    // animation-name: collapse;
+    // animation-name: increment-corners;
     // animation-duration: 2000ms;
     // animation-delay: 0s;
     // animation-fill-mode: forwards;
 
-    grid-gap: 50px;
-    grid-auto-rows: 0px;
-    justify-content: center;
-    justify-items: center;
-    &:hover > .polygon:nth-child(odd){
-        // -webkit-animation-name: justify-center;
-        // -webkit-animation-duration: 2000ms;
-        // -webkit-animation-delay: 0s;
-        // -webkit-animation-fill-mode: forwards;
-        // animation-name: justify-center;
-        // animation-duration: 2000ms;
-        // animation-delay: 0s;
-        // animation-fill-mode: forwards;
-    }
-    &:hover > .row-1 {
-        -webkit-animation-name: expand;
-        -webkit-animation-duration: 2000ms;
-        -webkit-animation-delay: 0s;
-        -webkit-animation-fill-mode: forwards;
-        animation-name: expand;
-        animation-duration: 2000ms;
-        animation-delay: 0s;
-        animation-fill-mode: forwards;
-    }
+    // &:hover {
+    //     animation: clockwise 2s 2s infinite forwards;
+    // }
+    // &:hover > .centered {
+    //     animation: counter-clockwise 2s 2s infinite forwards;
+    // }
+    // &:hover > .top-50{
+    //     animation: counter-clockwise 2s 2s infinite forwards, 
+    //     decrement-top 2s 0s forwards;
+    // }
+    // &:hover > .bottom-50{
+    //     animation: counter-clockwise 2s 2s infinite forwards, 
+    //     decrement-bottom 2s 0s forwards;
+    // }
+    // &:hover > .left-50{
+    //     animation: counter-clockwise 2s 2s infinite forwards, 
+    //     decrement-left 2s 0s forwards;
+    // }
+    // &:hover > .right-50{
+    //     animation: counter-clockwise 2s 2s infinite forwards, 
+    //     decrement-right 2s 0s forwards;
+    // }
 }
 .polygon {
-    border: 1px solid map-get($map: $colors, $key: primary);
+    // border: 1px solid map-get($map: $colors, $key: primary);
     position: relative;
 }
 .polygon img {
     width: 50px;
     height: 50px;
 }
-.polygon:nth-child(odd) {
-    // grid-column: 1/3;
-    // justify-self: center;
+.top-50{
+    top: 50px;
+    animation: increment-top 2s 0s forwards;
 }
-
-.row-1{
-    top:50px;
-}
-.row-2{
-    
-}
-.row-3{
-    bottom:50px;
-}
-.col-1{
+.left-50{
     left: 50px;
+    animation: increment-left 2s 0s forwards;
 }
-.col-2{
-    
-}
-.col-3{
+.right-50{
     right: 50px;
+    animation: increment-right 2s 0s forwards;
+}
+.bottom-50{
+    bottom: 50px;
+    animation: increment-bottom 2s 0s forwards;
 }
 
-
-@-webkit-keyframes expand {
-    // 0% {grid-gap: 0px;}
-    // 100% {grid-gap: 100px;}
-    0% {top: 50px;}
-    100% {top: 0px;}
+.stop-tap {
+    margin: 5px;
+    background-color: map-get($map: $colors, $key: primary);
+    border: 1px solid map-get($map: $colors, $key: primary);
 }
-@keyframes expand {
-    // 0% {grid-gap: 0px;}
-    // 100% {grid-gap: 100px;}
-    0% {top: 50px;}
-    100% {top: 0px;}
+
+@-webkit-keyframes decrement-top {
+    0% {top: 50px}
+    100% {top: 0px}
+}
+@keyframes decrement-top {
+    0% {top: 50px}
+    100% {top: 0px}
+}
+@-webkit-keyframes decrement-bottom {
+    0% {bottom: 50px}
+    100% {bottom: 0px}
+}
+@keyframes decrement-bottom {
+    0% {bottom: 50px}
+    100% {bottom: 0px}
+}
+@-webkit-keyframes decrement-left {
+    0% {left: 50px}
+    100% {left: 0px}
+}
+@keyframes decrement-left {
+    0% {left: 50px}
+    100% {left: 0px}
+}
+@-webkit-keyframes decrement-right {
+    0% {right: 50px}
+    100% {right: 0px}
+}
+@keyframes decrement-right {
+    0% {right: 50px}
+    100% {right: 0px}
 }
 @-webkit-keyframes collapse {
     0% {grid-gap: 100px;}
@@ -94,4 +167,53 @@ $colors: (
 @keyframes collapse {
     0% {grid-gap: 100px;}
     100% {grid-gap: 0px;}
+}
+@-webkit-keyframes clockwise{
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
+@keyframes clockwise{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg)}
+}
+@-webkit-keyframes counter-clockwise{
+    from {transform: rotate(360deg);}
+    to {transform: rotate(0deg);}
+}
+@keyframes counter-clockwise{
+    from {transform: rotate(360deg);}
+    to {transform: rotate(0deg);}
+}
+
+@-webkit-keyframes increment-top{
+    from {top: 0px}
+    to {top: 50px}
+}
+@keyframes increment-top{
+    from {top: 0px}
+    to {top: 50px}
+}
+@-webkit-keyframes increment-left{
+    from {left: 0px}
+    to {left: 50px}
+}
+@keyframes increment-left{
+    from {left: 0px}
+    to {left: 50px}
+}
+@-webkit-keyframes increment-right{
+    from {right: 0px}
+    to {right: 50px}
+}
+@keyframes increment-right{
+    from {right: 0px}
+    to {right: 50px}
+}
+@-webkit-keyframes increment-bottom{
+    from {bottom: 0px}
+    to {bottom: 50px}
+}
+@keyframes increment-bottom{
+    from {bottom: 0px}
+    to {bottom: 50px}
 }
