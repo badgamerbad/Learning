@@ -3,11 +3,13 @@ $colors: (
     primary: #F04A58,
     secondery: #00658C,
     greenn:  #57AC66,
-    whitee: #ffffff
+    whitee: #ffffff,
+    yellowe: #F47942
 );
 /* varables */
 body{
     margin: 0px;
+    background-color: map-get($map: $colors, $key: yellowe);
 }
 p{
     font-family: "Source Sans Pro", sans-serif;
@@ -19,12 +21,11 @@ p{
 }
 .header {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 30px 150px;
     background-color: map-get($map: $colors, $key: greenn);
-}
-.header .logo{
-    align-self: center;
-    justify-self: end;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
 }
 .header p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

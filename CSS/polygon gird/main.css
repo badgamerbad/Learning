@@ -2,6 +2,7 @@
 /* varables */
 body {
   margin: 0px;
+  background-color: #F47942;
 }
 
 p {
@@ -16,13 +17,11 @@ p {
 
 .header {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 30px 150px;
   background-color: #57AC66;
-}
-
-.header .logo {
-  align-self: center;
-  justify-self: end;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
 }
 
 .header p {
