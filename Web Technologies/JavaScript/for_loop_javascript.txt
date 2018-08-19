@@ -1,0 +1,14 @@
+var tagElementList = parentElement.children('span');
+tagElementList.each(function(index){
+	console.log(tagElementList[index]);
+	console.log($(this).text());	//$() <- some element .text <- its property
+});
+
+searchTagList.forEach(function(tagName){
+	console.log(tagName);	<- No index approach
+});
+
+$.each(myArray,function()
+{
+	content += myAccessObj.customFormatHtmlforRoles(this,response.showRevokeAction); //this.var1 can be used to get item in the array
+});
