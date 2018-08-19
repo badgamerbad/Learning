@@ -6,7 +6,7 @@ const http = require('http');
 const mongoose = require('mongoose');
 const config = require('./config/config');
 
-mongoose.connect('mongodb://root:root@ds131698.mlab.com:31698/test-db');
+mongoose.connect('mongodb://root:root@ds121309.mlab.com:21309/mongo-test-server-v1');
 
 require('./models/folder');
 
