@@ -1,58 +1,169 @@
 /* varables */
 /* varables */
+body {
+  margin: 0px;
+  background-color: #F47942;
+}
+
+p {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #ffffff;
+}
+
+.main-grid {
+  display: grid;
+  grid-gap: 50px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 30px 150px;
+  background-color: #57AC66;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.header p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 25px;
+}
+
+.start-tap {
+  margin: 5px;
+  background-color: #00658C;
+  border: 1px solid #00658C;
+}
+.start-tap:hover + .grid-container {
+  animation: clockwise 2s 2s infinite forwards;
+}
+.start-tap:hover + .grid-container > .centered {
+  animation: counter-clockwise 2s 2s infinite forwards;
+}
+.start-tap:hover + .grid-container > .top-50 {
+  animation: counter-clockwise 2s 2s infinite forwards, decrement-top 2s 0s forwards;
+}
+.start-tap:hover + .grid-container > .bottom-50 {
+  animation: counter-clockwise 2s 2s infinite forwards, decrement-bottom 2s 0s forwards;
+}
+.start-tap:hover + .grid-container > .left-50 {
+  animation: counter-clockwise 2s 2s infinite forwards, decrement-left 2s 0s forwards;
+}
+.start-tap:hover + .grid-container > .right-50 {
+  animation: counter-clockwise 2s 2s infinite forwards, decrement-right 2s 0s forwards;
+}
+
 .grid-container {
   display: grid;
-  grid-template-columns: 100px 100px;
-  grid-auto-rows: 0px;
-  -webkit-animation-name: collapse;
-  -webkit-animation-duration: 2000ms;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-fill-mode: forwards;
-  animation-name: collapse;
-  animation-duration: 2000ms;
-  animation-delay: 0s;
-  animation-fill-mode: forwards;
+  grid-template-columns: 50px 50px 50px;
+  grid-gap: 0px;
+  grid-auto-rows: 50px;
+  justify-content: center;
+  justify-items: center;
 }
-.grid-container:hover {
-  -webkit-animation-name: expand;
-  -webkit-animation-duration: 2000ms;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-fill-mode: forwards;
-  animation-name: expand;
-  animation-duration: 2000ms;
-  animation-delay: 0s;
-  animation-fill-mode: forwards;
+
+.polygon {
+  position: relative;
 }
 
 .polygon img {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
 }
 
-.polygon:nth-child(odd) {
-  grid-column: 1/3;
-  justify-self: center;
+.top-50 {
+  top: 50px;
+  animation: increment-top 2s 0s forwards;
 }
 
-@-webkit-keyframes expand {
+.left-50 {
+  left: 50px;
+  animation: increment-left 2s 0s forwards;
+}
+
+.right-50 {
+  right: 50px;
+  animation: increment-right 2s 0s forwards;
+}
+
+.bottom-50 {
+  bottom: 50px;
+  animation: increment-bottom 2s 0s forwards;
+}
+
+.stop-tap {
+  margin: 5px;
+  background-color: #F04A58;
+  border: 1px solid #F04A58;
+}
+
+@-webkit-keyframes decrement-top {
   0% {
-    grid-gap: 0px;
+    top: 50px;
   }
   100% {
-    grid-gap: 50px;
+    top: 0px;
   }
 }
-@keyframes expand {
+@keyframes decrement-top {
   0% {
-    grid-gap: 0px;
+    top: 50px;
   }
   100% {
-    grid-gap: 50px;
+    top: 0px;
+  }
+}
+@-webkit-keyframes decrement-bottom {
+  0% {
+    bottom: 50px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+@keyframes decrement-bottom {
+  0% {
+    bottom: 50px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+@-webkit-keyframes decrement-left {
+  0% {
+    left: 50px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+@keyframes decrement-left {
+  0% {
+    left: 50px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+@-webkit-keyframes decrement-right {
+  0% {
+    right: 50px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+@keyframes decrement-right {
+  0% {
+    right: 50px;
+  }
+  100% {
+    right: 0px;
   }
 }
 @-webkit-keyframes collapse {
   0% {
-    grid-gap: 50px;
+    grid-gap: 100px;
   }
   100% {
     grid-gap: 0px;
@@ -60,10 +171,106 @@
 }
 @keyframes collapse {
   0% {
-    grid-gap: 50px;
+    grid-gap: 100px;
   }
   100% {
     grid-gap: 0px;
+  }
+}
+@-webkit-keyframes clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes counter-clockwise {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes counter-clockwise {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes increment-top {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 50px;
+  }
+}
+@keyframes increment-top {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 50px;
+  }
+}
+@-webkit-keyframes increment-left {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 50px;
+  }
+}
+@keyframes increment-left {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 50px;
+  }
+}
+@-webkit-keyframes increment-right {
+  from {
+    right: 0px;
+  }
+  to {
+    right: 50px;
+  }
+}
+@keyframes increment-right {
+  from {
+    right: 0px;
+  }
+  to {
+    right: 50px;
+  }
+}
+@-webkit-keyframes increment-bottom {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: 50px;
+  }
+}
+@keyframes increment-bottom {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: 50px;
   }
 }
 
