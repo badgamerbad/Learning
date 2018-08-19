@@ -1,0 +1,214 @@
+.width-100-percent {
+    width: 100%;
+}
+.display-none{
+    display: none;
+}
+.display-table {
+    display: table;
+}
+.display-inline-table {
+    display: inline-table;
+}
+.display-inline-flex {
+    display: inline-flex;
+}
+.display-flex {
+    display: flex;
+}
+.flex-grow-1 {
+    flex-grow: 1;
+}
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+.padding-1vw {
+    padding: 1vw;
+}
+.no-border {
+    border: none;
+}
+.no-background {
+    background: none;
+}
+.background-color-transparent {
+    background-color: transparent;
+}
+.delete-button {
+    background: #F9253E;
+}
+.edit-button {
+    background: #1DC0AF;
+}
+.span-icon{
+    margin: 2.2vmax 3vmax;
+}
+.span-text {
+    margin: 1vmax 1vmax;
+    padding: 0.5vmax 0.5vmax;
+    margin-left: -0.5vmax;
+}
+.span-input-type-text {
+    margin: 1.5vmax 1vmax;
+    padding-left: 2vmax;
+}
+.span-text > span {
+    background-color: #3a6a85;
+    box-shadow: 0 0 10px 0px black;
+    padding: 0 1.5vmax;
+}
+.span-control .span-control-button-left{
+    margin: 1.2vmax 1vmax;
+    padding: 1vmax 2.3vmax;
+    text-shadow: 1vmax 0.3vmax 1vmax black;
+    box-shadow: -0.5vmax 0px 0px -0.25vmax #DDE9F6;
+}
+.span-control .span-control-button-right{
+    margin: 1.2vmax 0vmax;
+    padding: 1vmax 2.3vmax;
+    text-shadow: 1vmax 0.3vmax 1vmax black;
+}
+.horizontal-scroll {
+    overflow: auto;
+    white-space: nowrap;
+}
+.position-relative {
+    position: relative;
+}
+.dropdown{
+    position: relative;
+}
+.dropdown-content {
+    width: 100%;
+    display: block;
+    position: fixed;
+    background-color: #339886;
+    z-index: 1;
+    left: 0;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    padding: 3vmax;
+    -webkit-animation-name: dropdown-content-exit;
+    -webkit-animation-duration: 1000ms;
+    animation-name: dropdown-content-exit;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+    /* bottom: -40vmax; */
+}
+.dropdown-content > button{
+    display: block;
+    position: relative;
+    background-color: #42BDA8;
+    color: #DDE9F6;
+    padding: 1vmax 5vmax;
+    margin: 1vmax auto;
+    /* margin-right: 5vmax;
+    margin-left: 1vmax; */
+    -webkit-animation-name: dropdown-content--button-exit;
+    -webkit-animation-duration: 1000ms;
+    animation-name: dropdown-content-button-exit;
+    animation-duration: 1000ms;
+
+    animation-fill-mode: forwards;
+}
+.dropdown-content > button:nth-child(1) {
+    -webkit-animation-delay: 300ms;
+    animation-delay: 300ms;
+}
+.dropdown-content > button:nth-child(2) {
+    -webkit-animation-delay: 200ms;
+    animation-delay: 200ms;
+}
+.dropdown-content > button:nth-child(3) {
+    -webkit-animation-delay: 100ms;
+    animation-delay: 100ms;
+}
+.dropdown-content > button:nth-child(4) {
+    -webkit-animation-delay: 0ms;
+    animation-delay: 0ms;
+}
+.dropdown:hover .dropdown-content {
+    -webkit-animation-name: dropdown-content-enter;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-delay: 0s;
+    animation-name: dropdown-content-enter;
+    animation-duration: 1000ms;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+.dropdown:hover .dropdown-content > button {
+    /* bottom: -40vmax; */
+    -webkit-animation-name: dropdown-content-button-enter;
+    -webkit-animation-duration: 1000ms;
+    animation-name: dropdown-content-button-enter;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+}
+.dropdown:hover .dropdown-content button:nth-child(1) {
+    -webkit-animation-delay: 0ms;
+    animation-delay: 0ms;
+}
+.dropdown:hover .dropdown-content button:nth-child(2) {
+    -webkit-animation-delay: 100ms;
+    animation-delay: 100ms;
+}
+.dropdown:hover .dropdown-content button:nth-child(3) {
+    -webkit-animation-delay: 200ms;
+    animation-delay: 200ms;
+}
+.dropdown:hover .dropdown-content button:nth-child(4) {
+    -webkit-animation-delay: 300ms;
+    animation-delay: 300ms;
+}
+.icon-text-large {
+    width: 2vw;         /*refer image-css-icon-1*/
+    height: 2vw;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 0.1vw 1vw;
+    padding: 1vw;
+    box-shadow: 0px 0px 0px 0px black;
+}
+.icon-text-large .icon-letter {
+    font-size: 1.7vw;
+    padding: 0vw 0.5vw;
+}
+@-webkit-keyframes dropdown-content-enter {
+    0% {bottom: -40vmax;}
+    100% {bottom: 0vmax;}
+}
+@keyframes dropdown-content-enter {
+    0% {bottom: -40vmax;}
+    100% {bottom: 0vmax;}
+}
+@-webkit-keyframes dropdown-content-exit {
+    0% {bottom: 0vmax;}
+    100% {bottom: -40vmax;}
+}
+@keyframes dropdown-content-exit {
+    0% {bottom: 0vmax;}
+    100% {bottom: -40vmax;}
+}
+@-webkit-keyframes dropdown-content-button-enter {
+    0% {bottom: -40vmax;}
+    50% {bottom: 20vmax;}
+    100% {bottom: 0vmax;}
+}
+@keyframes dropdown-content-button-enter {
+    0% {bottom: -40vmax;}
+    50% {bottom: 20vmax;}
+    100% {bottom: 0vmax;}
+}
+@-webkit-keyframes dropdown-content-button-exit {
+    0% {bottom: 0vmax;}
+    50% {bottom: 40vmax;}
+    100% {bottom: 0vmax;}
+}
+@keyframes dropdown-content-button-exit {
+    0% {bottom: 0vmax;}
+    50% {bottom: 40vmax;}
+    100% {bottom: 0vmax;}
+}

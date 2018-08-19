@@ -1,0 +1,5 @@
+for(var index = 0; index<content.getElementsByTagName('div').length; index++){
+	content.getElementsByTagName('div')[index].style.display = "block";
+        content.getElementsByTagName('div')[index].style.width = width - 15 + "px";
+        content.getElementsByTagName('div')[index].style.height = ((height-50)/2) - 15 + "px";
+}

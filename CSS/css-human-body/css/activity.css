@@ -1,0 +1,116 @@
+body{
+    background-color: #77BAD7;
+    margin: 0px;
+}
+button{
+    color: #DDE9F6;
+    font-family: Verdana;
+}
+/* <START> Temporery CSS for Top Menu, Menu with Title <START> */
+#top-menu {
+    height: 50px;
+    background-color: #282828;
+    padding: 0.1px;
+    color: #DDE9F6;
+}
+#top-menu p {
+    padding-right: 10px;
+    text-align: right;
+}
+#menu-title {
+    color: #DDE9F6;
+}
+#side-left-menu {
+    width: 50px;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: -50px;
+}
+/* <END> Temporery CSS for Top Menu, Menu with Title <END> */
+.content-div{
+    background: #4680C6;
+    margin: 0 auto;
+    color: #DDE9F6;
+    box-shadow: 2px 3px 20px -4px black;
+    border-radius: 0px;
+    width: 98%;
+    padding: 0.1px;
+}
+.content-div-header {
+    border-bottom: 0.2vmax solid #DDE9F6;
+}
+.content-div-mid {
+    height: 40%;
+}
+.content-div-mid .content-div-mid-overflowing-container{
+    height: 100%;
+    overflow: auto;
+}
+.content-div-mid-row {
+    width: 90%;
+    box-shadow: 0px 0px 20px -5px black;
+    margin: 1vmax auto;
+    padding: 0.5vmax;
+}
+.content-div-mid-row .content-div-mid-row-main-icon {
+    font-size: 3.4vmax;
+    padding: 0vmax 1vmax;
+    padding-top: 1.4vmax;
+}
+.content-div-mid-row button{
+    padding: 0.5vmax 0.5vmax;
+    box-shadow: 0 0 5px 0px black;
+    margin: 0.5vmax 2vmax;
+}
+.content-div-footer{
+    border-top: 0.2vmax solid #DDE9F6;
+}
+.content-div-footer button{
+    margin: 1.1vmax 1.5vmax;
+    box-shadow: 0px 0px 2px 0px black;
+}
+.content-div-footer .content-div-footer-pagination-button-group {
+    margin: 0 auto;
+}
+.content-div-footer .content-div-footer-pagination-button-group .no-next-prev {
+    padding: 0.75vmax 1.95vmax;
+}
+.content-div-footer .content-div-footer-pagination-button-group .next-prev {
+    padding: 0.8vmax 1.5vmax;
+}   
+.content-div-footer .content-div-footer-pagination-button-group .no-next-prev div{
+    margin: -0.3vmax -0.3vmax;
+}
+#bottom-menu #bottom-menu-button {
+    border: 1px solid #FEB63E;
+    padding: 2.5vmax;
+    position: fixed;
+    bottom: 3vmax;
+    right: 3vmax;
+    /* top: 86vmax;
+    left: 43vmax; */
+    background: #FEB63E;
+    border-radius: 50%;
+    color: #DDE9F6;
+    font-size: 5vmax;
+    z-index: 1;
+}
+#mouse-move-body {
+    position: fixed;
+    background: black;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    opacity: 0.5;
+    /* z-index: 10; */
+}
+
+
+
+/* This is temperory CSS to show width & height of the Browser */
+#p-width-height {
+    padding-left: 2vmax;
+    font-size: 2.5vmax;
+}

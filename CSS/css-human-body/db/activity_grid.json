@@ -1,0 +1,239 @@
+{
+    "19 april 2018": {
+        "0630": {
+            "ate apple pumpkin seeds 5 dates": [
+                {
+                    "item": "apple",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "pumpkin seeds",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "dates",
+                    "quantity": 5,
+                    "action": "subtract"
+                }
+            ]
+        },
+        "0725": {
+            "spent 10 cash local bus pernem - mapusa": [
+                {
+                    "account": "cash",
+                    "quantity": 10,
+                    "action": "subtract",
+                    "category": "transport",
+                    "payee": "bus service provider",
+                    "title": "local bus pernem - mapusa"
+                }
+            ]
+        },
+        "1000": {
+            "add 2000 axis salary persistent": [
+                {
+                    "account": "axis",
+                    "quantity": 2000,
+                    "action": "add",
+                    "category": "salary"
+                }
+            ]
+        },
+        "1300": {
+            "spent 100 cash icecream category food payee maxsons verna, ate icecream": [
+                {
+                    "item": "cash",
+                    "quantity": 100,
+                    "action": "add",
+                    "category": "food",
+                    "payee": "maxsons verna"
+                },
+                {
+                    "item": "icecream",
+                    "quantity": 1,
+                    "action": "subtract"
+                }
+            ]
+        },
+        "1630": {
+            "spent 120 axis watermelon payee babaji mapusa, ate watermelon":[
+                {
+                    "account": "axis",
+                    "quantity": 120,
+                    "action": "subtract",
+                    "category": ["food", "fruit"],
+                    "payee": "babaji mapusa",
+                    "title": "1 watermelon"
+                },
+                {
+                    "item": "watermelon",
+                    "quantity": 1,
+                    "action": "subtract"
+                }
+            ]
+        },
+        "1730":{
+            "spent 100 axis 5 oranges watermelon payee fruit shop pernem, ate pumpkin seeds apple 5 dates": [
+                {
+                    "item": "orange",
+                    "quantity": 5,
+                    "action": "add"
+                },
+                {
+                    "item": "watermelon",
+                    "quantity": 1,
+                    "action": "add"
+                },
+                {
+                    "account": "axis",
+                    "quantity": 100,
+                    "action": "subtract",
+                    "category": "food",
+                    "payee": "fruit shop pernem",
+                    "title": "5 orange 1 watermelon"
+                },
+                {
+                    "item": "pumpkin seeds",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "apple",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "dates",
+                    "quantity": 5,
+                    "action": "subtract"
+                }
+            ]
+        },
+        "1800":{
+            "delete 200 axis category correction title balance correction":[
+                {
+                    "account": "axis",
+                    "quantity": 200,
+                    "action": "subtract",
+                    "category": "correction",
+                    "payee": "",
+                    "title": "balance correction"
+                }
+            ]
+        },
+        "1830":{
+            "add 200 axis category correction title balance correction":[
+                {
+                    "account": "axis",
+                    "quantity": 200,
+                    "action": "add",
+                    "category": "correction",
+                    "payee": "",
+                    "title": "balance correction"
+                }
+            ]
+        },
+        "1900": {
+            "add 5 apple": [
+                {
+                    "item": "apple",
+                    "quantity": 5,
+                    "action": "add",
+                    "category": "",
+                    "payee": "",
+                    "title": ""
+                }
+            ]
+        },
+        "1930": {
+            "delete 2 apple": [
+                {
+                    "item":"apple",
+                    "quantity": 2,
+                    "action": "subtract",
+                    "category": "",
+                    "payee": "",
+                    "title": ""
+                }
+            ]
+        },
+        "2100": {
+            "ate boiled rice green spinach bhindi milk": [
+                {
+                    "item": "boiled rice",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "green spinach",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "bhindi",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "milk",
+                    "quantity": 1,
+                    "action": "subtract"
+                }
+            ]
+        }
+    },
+    "folder_items": {
+        "food" : {"parent": null},
+        "vegetables" : {"parent": ["food"]},
+        "fruits" : {"parent": ["food"]},
+        "dairy" : {"parent": ["food"]},
+        "apple": {"parent": ["fruits"],"quantity": 5},
+        "dates": {"parent": ["fruits"]},
+        "watermelon": {"parent": ["fruits"],"quantity": 5},
+        "orange": {"parent": ["fruits"], "quantity": 10},
+        "mulo": {"parent": ["vegetables"]},
+        "red spinach": {"parent": ["vegetables"]},
+        "green spinach": {"parent": ["vegetables"]},
+        "broccoli": {"parent": ["vegetables"]},
+        "bhindi": {"parent": ["vegetables"]},
+        "add ons": {"parent": ["food"]},
+        "turmeric": {"parent": ["add ons"]},
+        "salt": {"parent": ["add ons", "pulav"]},
+        "sugar": {"parent": ["add ons"]},
+        "chili powder": {"parent": ["add ons"]},
+        "ginger": {"parent": ["add ons", "pulav"]},
+        "garlic": {"parent": ["add ons", "pulav"]},
+        "cereal": {"parent": ["food"]},
+        "rice": {"parent": ["cereal", "pulav"]},
+        "brown rice": {"parent": ["cereal"]},
+        "pulav": {"parent": ["food"]},
+        "money": {"parent": null},
+        "axis": {"parent": "money", "quantity": 3000},
+        "central": {"parent": "money", "quantity": 5000},
+        "cash": {"parent": "money", "quantity": 1000},
+        "transport": {"parent": null},
+        "local bus pernem-mapusa": {"parent": "transport", "payee":"bus service provider"},
+        "local bus mapusa-pernem": {"parent": "transport", "payee":"bus service provider"},
+        "fuel": {"parent": null},
+        "fuel fz": {"parent": "fuel", "payee":"binani petrol pump"},
+        "fuel 800": {"parent": "fuel", "payee":"bhutan petrol pump"},
+        "personal": {"parent": null},
+        "salary": {"parent": null},
+        "salary persistent": {"parent": "salary"},
+        "salary free lancer": {"parent": "salary"},
+
+        "attributes": {"parent": null},
+        "payee": {"parent": "attributes", "type":"string"},
+        "title": {"parent": "attributes", "type":"string"},
+        "quantity": {"parent": "attributes", "type":"number"},
+        "category": {"parent": "attributes", "type":"number"},
+
+        "verb": {"parent": null},
+        "ate": {"parent": "verb", "attributes":["item", "quantity", "action"]},
+        "spent": {"parent": "verb",  "attributes":["item", "quantity", "action", "category", "payee", "title"]},
+        "delete": {"parent": "verb", "attributes":["item", "quantity", "action", "caterory", "payee", "title"]},
+        "add": {"parent": "verb", "attributes":["item", "quantity", "action", "caterory", "payee", "title"]}
+    }
+}

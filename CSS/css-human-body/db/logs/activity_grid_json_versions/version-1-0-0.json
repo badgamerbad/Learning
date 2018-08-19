@@ -1,0 +1,109 @@
+{
+    "20 april 2018": {
+        "0630": [
+            "apple", "dates", "dates", "dates", "pumpkin seeds"
+        ],
+        "0710": [
+            "oatmeal", "quinoa", "chia seeds", "red spinach", "mulo", "chapati" 
+        ],
+        "1000": [
+            "mulo", "red spinach"
+        ],
+        "1300": [
+            "mulo", "red spinach", "pulav", "chapati"
+        ],
+        "1630": [
+            "pumpkin seeds"
+        ],
+        "1900": [
+            "orange"
+        ],
+        "2100": [
+            "boiled rice", "red spinach", "mulo", "milk"
+        ]
+    },
+    "19 april 2018": {
+        "0630": [
+            "apple", "dates", "dates", "dates", "pumpkin seeds"
+        ],
+        "0710": [
+            "oatmeal", "quinoa", "chia seeds", "green spinach", "bhindi", "chapati" 
+        ],
+        "0725": {
+            "title": "Bus fare",
+            "axis": 10,
+            "transport": "",
+            "process": "subtract"
+        },
+        "1000": [
+            "green spinach", "bhindi"
+        ],
+        "1300": [
+            "green spinach", "bhindi", "pulav", "chapati"
+        ],
+        "1630": {
+            "pumpkin seeds": ""
+        },
+        "1730":{
+            "bought 5 oranges from 'fruit shop pernem', spent 100 axis to ": [
+                {
+                    "bought": "5 orange",
+                    "from": 
+                }
+            ]
+        },
+        "1900": {
+            "ate 1 oranges"
+        },
+        "2100": [
+            "boiled rice", "green spinach", "bhindi", "milk"
+        ]
+    },
+    "folder_items": {
+        "food" : {"parent": null},
+        "vegetables" : {"parent": ["food"]},
+        "fruits" : {"parent": ["food"]},
+        "dairy" : {"parent": ["food"]},
+        "apple": {
+            "parent": ["fruits"],
+            "quantity": 5
+        },
+        "dates": {"parent": ["fruits"]},
+        "orange": {"parent": ["fruits"], "quantity": 10},
+        "mulo": {"parent": ["vegetables"]},
+        "red spinach": {"parent": ["vegetables"]},
+        "green spinach": {"parent": ["vegetables"]},
+        "broccoli": {"parent": ["vegetables"]},
+        "bhindi": {"parent": ["vegetables"]},
+        "add ons": {"parent": ["food"]},
+        "turmeric": {"parent": ["add ons"]},
+        "salt": {"parent": ["add ons", "pulav"]},
+        "sugar": {"parent": ["add ons"]},
+        "chili powder": {"parent": ["add ons"]},
+        "ginger": {"parent": ["add ons", "pulav"]},
+        "garlic": {"parent": ["add ons", "pulav"]},
+        "cereal": {"parent": ["food"]},
+        "rice": {"parent": ["cereal", "pulav"]},
+        "brown rice": {"parent": ["cereal"]},
+        "pulav": {"parent": ["food"]},
+        "money": {"parent": null},
+        "axis": {"parent": "money", "quantity": 1000},
+        "central": {"parent": "money", "quantity": 2000},
+        "cash": {"parent": "money", "quantity": 500},
+        "category": {"parent": "money"},
+        "transport": {"parent": "category"},
+        "food and drinks": {"parent": "category"},
+        "fuel": {"parent": "category"},
+        "personal": {"parent": "category"},
+        "type": {"parent": "money"},
+        //"income": {"parent": "type"},
+        //"expense": {"parent": "type"},
+        "title":{"parent": "money", "type": "string"},
+        "amount":{"parent": "money", "process": "subtract"},
+        "operation": {"parent": null},
+        "ate": {"parent": "operation", "process": "subtract"},
+        "expense": {"parent": "operation", "process": "subtract"},
+        "income": {"parent": "operation", "process": "add"},
+        "bought": {"parent": "operation", "process": "add"},
+    }
+}

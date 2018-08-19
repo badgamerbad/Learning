@@ -1,0 +1,455 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/activity.css">
+        <link rel="stylesheet" type="text/css" href="css/custom-style.css">
+        <link rel="stylesheet" type="text/css" href="css/font.css">
+        <link rel="stylesheet" type="text/css" href="icons/styles.css">
+	</head>
+	<body>
+        <div id="top-menu" class="">
+            <p class="font-family-verdana font-color-inherit">TOP MENU
+        </div>
+        <div id="menu-title" class="display-inline-flex font-size-5vmax font-family-verdana">
+            <span class="icon icon-clock-o span-icon"></span>
+            <span class="span-text">           
+                21:00
+            </span>
+            <span class="span-control">
+                <button type="button" class="span-control-button-left no-border no-background font-color-inherit font-size-inherit"><div class="icon icon-pencil-square-o"></div></button>
+            </span>
+        </div>
+        <!-- #menu-title -->
+    	<div id="content" class="position-relative background-color-transparent">
+            <div class="content-div">
+                <div class="content-div-header width-100-percent display-table font-family-verdana font-size-3-5vmax">
+                    <span class="span-text display-inline-table">           
+                        TASK 1 - TYPE 1
+                    </span>
+                    <span class="icon icon-tasks span-icon float-left"></span>
+                    <span class="float-right span-control display-inline-table">
+                        <div class="span-control-button-left display-inline-table no-border no-background">
+                            <div class="icon icon-bars"></div>
+                        </div>
+                        <div class="span-control-button-right dropdown display-inline-table no-border no-background" id="content-div-header-menu-button">
+                            <div class="icon icon-bars"></div>
+                            <div class="dropdown-content" id="content-div-header-menu">
+                                <button type="button" class="no-border no-background font-family-verdana font-size-3-5vmax">
+                                    <span class="span-text display-inline-table">           
+                                        Rename
+                                    </span>
+                                    <span class="icon icon-tasks span-icon float-left"></span>
+                                </button>
+                                <button type="button" class="no-border no-background font-family-verdana font-size-3-5vmax">
+                                    <span class="span-text display-inline-table">           
+                                        Delete
+                                    </span>
+                                    <span class="icon icon-tasks span-icon float-left"></span>
+                                </button>
+                                <button type="button" class="no-border no-background font-family-verdana font-size-3-5vmax">
+                                    <span class="span-text display-inline-table">           
+                                        Move
+                                    </span>
+                                    <span class="icon icon-tasks span-icon float-left"></span>
+                                </button>
+                            </div>
+                        </div>        
+                    </span>
+                </div>
+                <!-- #content-div-header -->
+                <div class="content-div-mid font-family-verdana"> 
+                    <div class="content-div-mid-overflowing-container" id="content-div-mid-overflowing-container">
+                        <div class="content-div-mid-row display-table">
+                            <div class="display-inline-table">
+                                <div class="font-size-3vmax">
+                                    Task 1
+                                </div>
+                                <div class="font-size-1-5vmax"> 
+                                    Contains 1000 items
+                                </div>
+                            </div>
+                            <div class="content-div-mid-row-main-icon float-left">
+                                <div class="icon icon-tasks"></div>
+                            </div>
+                            <div class="float-right dropdown">
+                                <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit" onclick="deleteItem(this);"><div class="icon icon-trash-o"></div></button>
+                                <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button>                                
+                            </div>
+                        </div>
+						<!-- .content-div-mid-row-->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 2
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button> 
+                                </div>
+                        </div>
+						<!-- .content-div-mid-row-->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 3
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button> 
+                                </div>
+                            </div>
+						<!-- .content-div-mid-row-->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 4
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button> 
+                                </div>
+                            </div>
+						<!-- .content-div-mid-row-->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 5
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button> 
+                                </div>
+                            </div>
+						<!-- .content-div-mid-row -->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 6
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right dropdown">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button>
+                                </div>
+                            </div>
+						<!-- .content-div-mid-row-->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 7
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button> 
+                                </div>
+                            </div>
+						<!-- .content-div-mid-row-->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 8
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button> 
+                                </div>
+                            </div>
+						<!-- .content-div-mid-row-->
+                    </div>
+                    <!-- .content-div-mid-overflowing-container -->
+                </div>
+                <!-- #content-div-mid -->
+                <div class="content-div-footer">
+                    <div class="content-div-footer-pagination-button-group display-table">
+                        <button type="button" class="no-background no-border next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="icon icon-tasks"></div></button>
+                        <button type="button" class="no-background no-border no-next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="page-num">1</div></button>
+                        <button type="button" class="no-background no-border no-next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="page-num">2</div></button>
+                        <button type="button" class="no-background no-border no-next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="page-num">3</div></button>
+                        <button type="button" class="no-background no-border no-next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="page-num">4</div></button>
+                        <button type="button" class="no-background no-border no-next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="page-num">5</div></button>
+                        <button type="button" class="no-background no-border next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="icon icon-tasks"></div></button>
+                    </div>
+                    <!-- #content-div-footer-pagination-button-group -->
+                </div>
+                <!-- #content-div-footer -->
+            </div>
+            <!-- #content-div -->
+            <div class="content-div" style="margin-top: 20px;">
+                <div class="content-div-header display-flex width-100-percent font-family-verdana font-size-3-5vmax">
+                    <span id="search-box" class="span-input-type-text width-100-percent display-none"><input class="no-border flex-grow-1" type="text"></span>
+                    <span id="search-box-filter" class="icon icon-tasks span-icon display-none"></span>
+                    <span class="icon icon-pencil-square-o span-icon" onclick="show_hide_search_box()"></span>
+                    <span id="content-path-placeholder" class="span-text horizontal-scroll"> 
+                        <span>></span>  
+                        <span>CAT 1</span> 
+                        <span>></span>    
+                        <span>CAT 1</span>
+                        <span>></span>  
+                        <span>CAT 1</span>
+                        <span>></span> 
+                        <span>CAT 1</span>
+                        <span>></span> 
+                        <span>CAT 1</span> 
+                        <span>></span>  
+                        <span>CATEGORY 1</span>
+                        <span>></span>
+                        <span>TASK 1</span>
+                    </span>
+                    <span id="content-menu" class="span-control display-flex">
+                        <div class="span-control-button-left no-border no-background">
+                            <div class="icon icon-bars"></div>
+                        </div>
+                        <div class="span-control-button-right dropdown no-border no-background">
+                            <div class="icon icon-bars"></div>
+                            <div class="dropdown-content">
+                                <button type="button" class="no-border no-background font-family-verdana font-size-3-5vmax">
+                                    <span class="span-text display-inline-table">           
+                                        Rename
+                                    </span>
+                                    <span class="icon icon-tasks span-icon float-left"></span>
+                                </button>
+                                <button type="button" class="no-border no-background font-family-verdana font-size-3-5vmax">
+                                    <span class="span-text display-inline-table">           
+                                        Delete
+                                    </span>
+                                    <span class="icon icon-tasks span-icon float-left"></span>
+                                </button>
+                                <button type="button" class="no-border no-background font-family-verdana font-size-3-5vmax">
+                                    <span class="span-text display-inline-table">           
+                                        Move
+                                    </span>
+                                    <span class="icon icon-tasks span-icon float-left"></span>
+                                </button>
+                            </div>
+                        </div>        
+                    </span>
+                </div>
+                <!-- #content-div-header -->
+                <div class="content-div-mid font-family-verdana"> 
+                    <div class="content-div-mid-overflowing-container">
+                        <div class="content-div-mid-row display-table" id="test-div-creater">
+                            <div class="display-inline-table">
+                                <div class="font-size-3vmax">
+                                    Task 1
+                                </div>
+                                <div class="font-size-1-5vmax">
+                                    Contains 1000 items
+                                </div>
+                            </div>
+                            <div class="content-div-mid-row-main-icon float-left">
+                                <div class="icon icon-tasks"></div>
+                            </div>
+                            <div class="float-right dropdown">
+                                <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button>                                
+                            </div>
+                        </div>
+						<!-- .content-div-mid-row-->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 2
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button> 
+                                </div>
+                        </div>
+						<!-- .content-div-mid-row-->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 3
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button> 
+                                </div>
+                            </div>
+						<!-- .content-div-mid-row-->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 4
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button> 
+                                </div>
+                            </div>
+						<!-- .content-div-mid-row-->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 5
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button> 
+                                </div>
+                            </div>
+						<!-- .content-div-mid-row -->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 6
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right dropdown">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button>
+                                </div>
+                            </div>
+						<!-- .content-div-mid-row-->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 7
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button> 
+                                </div>
+                            </div>
+						<!-- .content-div-mid-row-->
+                        <div class="content-div-mid-row display-table">
+                                <div class="display-inline-table">
+                                    <div class="font-size-3vmax">
+                                        Task 8
+                                    </div>
+                                    <div class="font-size-1-5vmax">
+                                        Contains 1000 items
+                                    </div>
+                                </div>
+                                <div class="content-div-mid-row-main-icon float-left">
+                                    <div class="icon icon-tasks"></div>
+                                </div>
+                                <div class="float-right">
+                                    <button type="button" class="no-border no-background font-size-4vmax delete-button font-color-inherit"><div class="icon icon-trash-o"></div></button>
+                                    <button type="button" class="no-border no-background font-size-4vmax edit-button font-color-inherit"><div class="icon icon-bars"></div></button> 
+                                </div>
+                            </div>
+						<!-- .content-div-mid-row-->
+                    </div>
+                    <!-- .content-div-mid-overflowing-container -->
+                </div>
+                <!-- #content-div-mid -->
+                <div class="content-div-footer">
+                    <div class="content-div-footer-pagination-button-group display-table">
+                        <button type="button" class="no-background no-border next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="icon icon-tasks"></div></button>
+                        <button type="button" class="no-background no-border no-next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="page-num">1</div></button>
+                        <button type="button" class="no-background no-border no-next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="page-num">2</div></button>
+                        <button type="button" class="no-background no-border no-next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="page-num">3</div></button>
+                        <button type="button" class="no-background no-border no-next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="page-num">4</div></button>
+                        <button type="button" class="no-background no-border no-next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="page-num">5</div></button>
+                        <button type="button" class="no-background no-border next-prev float-left display-inline-table font-size-2vmax font-family-verdana font-color-inherit"><div class="icon icon-tasks"></div></button>
+                    </div>
+                    <!-- #content-div-footer-pagination-button-group -->
+                </div>
+                <!-- #content-div-footer -->
+            </div>
+            <!-- #content-div -->
+        </div>
+        <!-- #content -->
+        <div id="bottom-menu">
+            <button id="bottom-menu-button" type="button"><div class="icon icon-calendar-o"></div></button>
+        </div>
+	    <div id="side-left-menu">
+		</div>
+        <!-- #side-left-menu -->
+        <div id="mouse-move-body" style="display:none"></div>
+        <!-- Temporery Element to show width and height of browser -->
+        <p id="p-width-height"></p>
+    </body>
+	<script src="js/activity.js" type="text/javascript"></script>
+</html>

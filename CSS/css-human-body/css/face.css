@@ -1,0 +1,29 @@
+body {
+	background-color: #A41322;
+}
+#face {
+    position: relative;
+    background-color:#F8D9C7;
+    margin: auto;
+}
+#ears, #hair, #eyes, #eye-left, #eye-brows-left, #eye-right, #eye-brows-right, #nose, #mouth{
+    position: absolute;
+}
+#hair-left, #hair-right, #hair-center-upper, #hair-center-lower{
+    position: absolute;
+    background: transparent;
+}
+#ear-left, #ear-right{
+    position: absolute;
+    z-index: -1;
+}
+#nose-top{
+    position: absolute;
+    background: transparent;
+    border-radius: 50%;
+}
+#nose-bottom{
+    position: absolute;
+    background: #E8AC97;
+    border-radius: 50%;
+}
