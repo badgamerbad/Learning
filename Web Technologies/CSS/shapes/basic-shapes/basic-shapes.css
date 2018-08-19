@@ -1,0 +1,62 @@
+section {
+  height: 200px;
+  padding: 60px;
+}
+
+h1 {
+  font-family: Roboto, Arial, sans-serif;
+  color: #FFFFFF;
+  margin-top: 0;
+  text-align: center;
+}
+
+.one {
+  background: #FFC03E;
+  position: relative;
+  z-index: 100;
+}
+.one::after, .one::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: #FFC03E;
+  bottom: -1em;
+}
+.one::after {
+  left: 50%;
+  transform: skew(0, -20deg);
+}
+.one::before {
+  right: 50%;
+  transform: skew(0, 20deg);
+}
+
+.one__icon {
+  background: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.3);
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 2em;
+}
+
+.two {
+  background: #FF7969;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
+  margin-bottom: -10vw;
+}
+
+.two__image {
+  -webkit-clip-path: polygon(100% 36%, 50% 51%, 100% 65%, 0 100%, 0 0);
+  clip-path: polygon(100% 36%, 50% 51%, 100% 65%, 0 100%, 0 0);
+}
+
+.three {
+  background: #596299;
+}
+
+/*# sourceMappingURL=basic-shapes.css.map */

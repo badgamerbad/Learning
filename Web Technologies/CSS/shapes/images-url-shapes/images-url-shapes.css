@@ -1,0 +1,17 @@
+.shape--bear {
+    background: url(images/bear.png);
+    float: left;
+    height: 26.9375em;
+    margin: 0 1em 1em -6.75em;
+    width: 36.062em;
+    shape-outside: url(images/bear.png);
+    shape-margin: 0.6em;
+}
+.shape--y {
+    background: url(images/letter-y.png);
+    float: right;
+    height: 35.687em;
+    width: 21.9375em;
+    shape-outside: url(images/letter-y.png);
+    shape-margin: 0.6em;
+}
