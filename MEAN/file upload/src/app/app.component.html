@@ -1,0 +1,23 @@
+<ul>
+  <li *ngFor="let folder of folders" (click)="getFoldersByParent(folder._id)">{{folder.name}}</li>
+</ul>
+<li *ngFor="let power of powers">{{power}}</li>
+<form #createFolderForm="ngForm" (ngSubmit)="createFolder()">
+  <label>Name</label>
+  <input type="text" name="name" placeholder="Hero Name" [(ngModel)]="form_folder_name">
+  <input type="text" name="powers" placeholder="Hero powers" [(ngModel)]="form_folder_powers">
+  <input type="submit" value="Submit">
+</form>
+<br>
+<input type="file" name="file" placeholder="Hero Files" (change)="changeFileEvent($event)">
+<input type="button" value="Upload File" (click)="uploadFile()">
+<div id="progress_bar" [ngStyle]="{'width': progress}"></div>
+<p>Progress: {{progress}}</p>
+<div *ngIf="errorObject.status == 404">
+  <ul>
+    <li>Status: {{errorObject.status}}</li>
+    <li>Message: {{errorObject.message}}</li>
+    <li>Status Text: {{errorObject.statusText}}</li>
+    <li>Url: {{errorObject.url}}</li>
+  </ul>
+</div>

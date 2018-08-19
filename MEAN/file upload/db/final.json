@@ -1,0 +1,187 @@
+{
+    "19 april 2018": {
+        "0630": {
+            "ate apple pumpkin seeds 5 dates": [
+                {
+                    "item": "apple",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "pumpkin seeds",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "dates",
+                    "quantity": 5,
+                    "action": "subtract"
+                }
+            ]
+        },
+        "0725": {
+            "spent 10 cash local bus pernem - mapusa": [
+                {
+                    "account": "cash",
+                    "quantity": 10,
+                    "action": "subtract",
+                    "category": "transport",
+                    "payee": "bus service provider",
+                    "title": "local bus pernem - mapusa"
+                }
+            ]
+        },
+        "1000": {
+            "add 2000 axis salary persistent": [
+                {
+                    "account": "axis",
+                    "quantity": 2000,
+                    "action": "add",
+                    "category": "salary"
+                }
+            ]
+        },
+        "1300": {
+            "spent 100 cash icecream category food payee maxsons verna, ate icecream": [
+                {
+                    "item": "cash",
+                    "quantity": 100,
+                    "action": "add",
+                    "category": "food",
+                    "payee": "maxsons verna"
+                },
+                {
+                    "item": "icecream",
+                    "quantity": 1,
+                    "action": "subtract"
+                }
+            ]
+        },
+        "1630": {
+            "spent 120 axis watermelon payee babaji mapusa, ate watermelon":[
+                {
+                    "account": "axis",
+                    "quantity": 120,
+                    "action": "subtract",
+                    "category": ["food", "fruit"],
+                    "payee": "babaji mapusa",
+                    "title": "1 watermelon"
+                },
+                {
+                    "item": "watermelon",
+                    "quantity": 1,
+                    "action": "subtract"
+                }
+            ]
+        },
+        "1730":{
+            "spent 100 axis 5 oranges watermelon payee fruit shop pernem, ate pumpkin seeds apple 5 dates": [
+                {
+                    "item": "orange",
+                    "quantity": 5,
+                    "action": "add"
+                },
+                {
+                    "item": "watermelon",
+                    "quantity": 1,
+                    "action": "add"
+                },
+                {
+                    "account": "axis",
+                    "quantity": 100,
+                    "action": "subtract",
+                    "category": "food",
+                    "payee": "fruit shop pernem",
+                    "title": "5 orange 1 watermelon"
+                },
+                {
+                    "item": "pumpkin seeds",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "apple",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "dates",
+                    "quantity": 5,
+                    "action": "subtract"
+                }
+            ]
+        },
+        "1800":{
+            "delete 200 axis category correction title balance correction":[
+                {
+                    "account": "axis",
+                    "quantity": 200,
+                    "action": "subtract",
+                    "category": "correction",
+                    "payee": "",
+                    "title": "balance correction"
+                }
+            ]
+        },
+        "1830":{
+            "add 200 axis category correction title balance correction":[
+                {
+                    "account": "axis",
+                    "quantity": 200,
+                    "action": "add",
+                    "category": "correction",
+                    "payee": "",
+                    "title": "balance correction"
+                }
+            ]
+        },
+        "1900": {
+            "add 5 apple": [
+                {
+                    "item": "apple",
+                    "quantity": 5,
+                    "action": "add",
+                    "category": "",
+                    "payee": "",
+                    "title": ""
+                }
+            ]
+        },
+        "1930": {
+            "delete 2 apple": [
+                {
+                    "item":"apple",
+                    "quantity": 2,
+                    "action": "subtract",
+                    "category": "",
+                    "payee": "",
+                    "title": ""
+                }
+            ]
+        },
+        "2100": {
+            "ate boiled rice green spinach bhindi milk": [
+                {
+                    "item": "boiled rice",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "green spinach",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "bhindi",
+                    "quantity": 1,
+                    "action": "subtract"
+                },
+                {
+                    "item": "milk",
+                    "quantity": 1,
+                    "action": "subtract"
+                }
+            ]
+        }
+    }
+}
