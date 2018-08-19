@@ -1,0 +1,7 @@
+.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+#page{
+	margin: 0px auto;
+}

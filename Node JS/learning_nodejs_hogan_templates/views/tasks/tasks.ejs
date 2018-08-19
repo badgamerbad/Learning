@@ -1,0 +1,108 @@
+			<div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Manage Tasks</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+			<div class = "row">
+				<div class = "col-lg-12" >
+					<div class="panel panel-default">
+						<div class = "panel-heading">
+							<a href="#addTasks"><i class="fa fa-sitemap fa-fw"></i> Add Task<span class="fa arrow"></span></a>
+						</div>	
+						<div class = "panel-body" id = "addTasks">
+							<div class = "row">
+								<div class = "col-lg-6">
+									<form role = "form" action="/addTask" method="POST">
+										<div class = "form-group">
+											<label>Name:</label>
+											<input class = "form-control" name="taskName" id="taskName">
+										</div>
+										<div class = "form-group">
+											<label>Description:</label>
+											<textarea class = "form-control" rows = "4" name="taskDescription" id="taskDescription"></textarea>
+										</div>
+								</div>
+								<!-- /.col-lg-6 -->
+								<div class = "col-lg-6">
+									<div class = "row">
+										<div class = "col-lg-6">
+											<div class = "form-group">
+												<label>Start Date:</label>
+												<input class = "form-control" name="taskStartDate" id="taskStartDate">
+											</div>
+										</div>
+										<div class = "col-lg-6">
+											<div class = "form-group">
+												<label>End Date:</label>
+												<input class = "form-control" name="taskEndDate" id="taskEndDate">
+											</div>
+										</div>	
+									</div>
+									<div class = "form-group">
+										<label>Priority</label>
+										<select class="form-control" name="taskPriority" id="taskPriority">
+											<option value="0">Low</option>
+											<option value="1">Medium</option>
+											<option value="2">High</option>
+										</select>
+									</div>
+									<div class = "form-group">
+										<label>Level : </label>
+										<label class="radio-inline">
+											<input type="radio" name="taskLevel" id="optionsRadiosInline1" value="0" checked>Initial
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="taskLevel" id="optionsRadiosInline2" value="1">Intermediate
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="taskLevel" id="optionsRadiosInline3" value="2">Final
+										</label>
+									</div>
+									<div class = "form-group">
+										<label>Approval : </label>
+										<label class = "checkbox-inline">
+											<input type ="checkbox" name="taskApproval" value="1">( Check if task requires Approval )
+										</label>
+									</div>
+								</div>
+								<!-- /.col-lg-6 -->
+							</div>
+							<!-- /.row -->
+							<div class = "row">
+								<div class = "col-lg-12 text-center">
+									<button type="submit" class="btn btn-default" id="submitTask">Submit Button</button>
+									<button type="reset" class="btn btn-default">Reset Button</button>
+									</form>
+								</div>
+								<!-- /.col-lg-12 -->
+							</div>
+							<!-- /.row -->
+						</div>
+						<!-- /.panel-body -->
+						<div class = "panel-heading">
+							<a href="#newTasks"><i class="fa fa-sitemap fa-fw"></i> View Tasks<span class="fa arrow"></span></a>
+						</div>	
+						<div class = "panel-body" id = "viewTasks">
+							<div class = "form-group" id = "viewTasksPanel">
+								<label>Approval : </label>
+								<label class = "checkbox-inline">
+									<input type ="checkbox">( Check if task requires Approval )
+								</label>
+							</div>
+							<div class = "row">
+								<div class = "col-lg-12 text-center">
+									<button type="reset" class="btn btn-default">Reset Button</button>
+									</form>
+								</div>
+								<!-- /.col-lg-12 -->
+							</div>
+							<!-- /.row -->
+						</div>
+					</div>
+					<!-- /.panel panel-default -->				
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
