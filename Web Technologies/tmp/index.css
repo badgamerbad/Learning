@@ -31,6 +31,9 @@ html body a {
 .header a {
   white-space: nowrap;
 }
+.header .menu-bar li:hover {
+  border-bottom: 1px solid red;
+}
 
 .content {
   position: relative;
@@ -190,6 +193,47 @@ html body a {
 @media only screen and (max-width: 1300px) {
   .content .services {
     flex-direction: column;
+  }
+}
+
+.footer {
+  background: #0D9361;
+  display: flex;
+  justify-content: space-around;
+  color: #ffffff;
+  padding-bottom: 50px;
+}
+.footer > div {
+  margin: 10px;
+}
+.footer .contact p {
+  font-size: 2rem;
+  margin: 0.5vmax 0;
+}
+.footer .contact form {
+  display: flex;
+  flex-direction: column;
+}
+.footer .contact form label {
+  margin-top: 0.5vmax;
+}
+.footer .about {
+  position: relative;
+  width: 50%;
+  text-align: end;
+}
+.footer .about :nth-child(2) {
+  font-size: 2rem;
+}
+.footer .about .red-div {
+  position: absolute;
+  background: red;
+  width: 100%;
+}
+@media only screen and (max-width: 370px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
   }
 }
 

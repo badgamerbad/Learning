@@ -38,6 +38,13 @@ html {
     a {
         white-space: nowrap;
     }
+    .menu-bar {
+        li {
+            &:hover {
+                border-bottom: 1px solid map-get($map: $colors, $key: redd);
+            }
+        }
+    }
 }
 .content {
     position: relative;
@@ -186,6 +193,47 @@ html {
         }
     }
 
+}
+.footer {
+    background: map-get($map: $colors, $key: greenn);
+    display: flex;
+    justify-content: space-around;
+    color: map-get($map: $colors, $key: whitee);
+    padding-bottom: 50px; 
+    > div {
+        margin: 10px;
+    } 
+    .contact {
+        p {
+            font-size: 2rem;
+            margin: 0.5vmax 0
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            label {
+                margin-top: 0.5vmax; 
+            }
+        }
+    }
+    .about {
+        position: relative;
+        width: 50%;
+        text-align: end;
+        :nth-child(2) {
+            font-size: 2rem;
+        }
+        .red-div {
+            position: absolute;
+            background: map-get($map: $colors, $key: redd);
+            width: 100%;
+            // height: 1px;
+        }
+    }
+    @media only screen and (max-width: 370px) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 /* <keyframes> */
 @-webkit-keyframes move-to-center {
