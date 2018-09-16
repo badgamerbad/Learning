@@ -1,4 +1,8 @@
 const config = require(`./config.json`);
+if(config.enableDevMode){
+    require(`./index.html`);
+    require(`./index.css`);
+}
 class SlideShow {
     constructor(){
         this.imageNumber = 2;

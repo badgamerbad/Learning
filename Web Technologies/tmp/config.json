@@ -1,3 +1,4 @@
 {
-    "slideTime": 3000
+    "enableDevMode": true,
+    "slideTime": 10000
 }
