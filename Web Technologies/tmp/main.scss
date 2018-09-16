@@ -206,7 +206,9 @@ html {
     .contact {
         p {
             font-size: 2rem;
-            margin: 0.5vmax 0
+            @media only screen and (min-width: 370px) {
+                margin: 0.5vmax 0;
+            }
         }
         form {
             display: flex;
