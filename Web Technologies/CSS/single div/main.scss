@@ -1,0 +1,65 @@
+@mixin black($a) {
+    rgba: (0,0,0, $a);
+}
+@mixin white($a) {
+    rgba: (1,1,1, $a);
+}
+
+div {
+    background: #237449;
+    box-shadow: 2px 2px 3px rgba(0,0,0, 0.3);
+    height: 30px;
+    width: 247px;
+}
+div {
+    background-image: linear-gradient(
+        to right,
+        transparent 12px,
+        rgba(41, 237, 133, .6) 12px,
+        rgba(41, 237, 133, .6) 235px,
+        transparent 235px
+    ),
+    linear-gradient(
+        to right,
+        transparent 25px,
+        rgba(0,0,0,.6) 25px,
+        rgba(0,0,0,.6) 30px,
+        transparent 30px,
+        transparent 35px,
+        rgba(0,0,0,.6) 35px,
+        rgba(0,0,0,.6) 40px,
+        transparent 40px,
+        transparent 215px,
+        rgba(0,0,0,.6) 215px,
+        rgba(0,0,0,.6) 220px,
+        transparent 220px,
+        transparent 225px,
+        rgba(0,0,0,.6) 225px,
+        rgba(0,0,0,.6) 230px,
+        transparent 230px,
+    ),
+    radial-gradient(
+        ellipse at top,
+        rgba(0,0,0,.6) 50px,
+        transparent 54px
+    );
+}
+div:before {
+    content: "";
+    height: 27px;
+    border-right: 100px solid #237449;
+    border-bottom: 13px solid transparent;
+    border-top: 13px solid transparent;
+    top: 53px;
+    position: absolute;
+}
+div:after {
+    content: "";
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 12px,
+        rgba(255, 255, 255, 0.9) 17px,
+        rgba(255, 255, 255, 0.9) 19px,
+        rgba(255, 255, 255, 1) 24px
+    );
+}
