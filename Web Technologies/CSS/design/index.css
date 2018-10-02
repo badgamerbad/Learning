@@ -1,0 +1,51 @@
+.house {
+  position: relative;
+  top: 200px;
+  left: 200px;
+}
+.house .roof {
+  display: flex;
+  perspective: 1000px;
+}
+.house .roof > div {
+  border: 1px solid #e89338;
+}
+.house .roof .roof-left {
+  width: 50px;
+  height: 50px;
+  transform: rotate3d(0, 0, 0, 20deg);
+}
+.house .roof .roof-right {
+  width: 50px;
+  height: 50px;
+  transform: rotate3d(0, 0, 0, 20deg);
+}
+.house .roof .roof-bottom {
+  width: 50px;
+  height: 50px;
+  transform: rotate3d(0, 0, 0, 20deg);
+}
+.house .walls {
+  display: flex;
+}
+.house .walls .side-wall {
+  width: 20px;
+  height: 150px;
+  border: 1px solid brown;
+  transform: skew(0, 20deg);
+}
+.house .walls .front-wall {
+  width: 100px;
+  height: 150px;
+  border: 1px solid brown;
+  transform: skew(0deg, -20deg) translate(0, -14px);
+}
+
+.four {
+  display: none;
+  border: 1px solid black;
+  transform: skew(0deg, -20deg);
+  font-size: 81px;
+}
+
+/*# sourceMappingURL=index.css.map */
