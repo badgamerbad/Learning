@@ -1,0 +1,81 @@
+$colors: (
+  brownn: brown,
+  orangee: #e89338
+);
+
+.house {
+  position: relative;
+  top: 200px;
+  left: 200px;
+  .roof {
+    // position: relative;
+    // z-index: 1;
+    // .roof-left {
+    //   width: 40px;
+    //   height: 70px;
+    //   border: 1px solid #e89338;
+    //   transform: skew(-45deg, 20deg) translate(135px, -9px);
+    //   background: black;
+    // }
+    // .roof-right {
+    //   width: 14px;
+    //   height: 25px;
+    //   border: 0.5px solid red;
+    //   transform: skew(62deg, 0deg) translate(274px, -30px);
+    //   background: black;
+    //   z-index: -1;
+    //   position: relative;
+    // }
+    display: flex;
+    perspective: 1000px;
+    > div {
+        border: 1px solid map-get($map: $colors, $key: orangee);
+    }
+    .roof-left { 
+        width: 50px;
+        height: 50px;
+        transform: rotate3d(0, 0, 0, 20deg);
+    }
+    .roof-right { 
+        width: 50px;
+        height: 50px;
+        transform: rotate3d(0, 0, 0, 20deg);
+    }
+    .roof-bottom {
+        width: 50px;
+        height: 50px;
+        transform: rotate3d(0, 0, 0, 20deg);
+    }
+  }
+  .walls {
+    display: flex;
+    // .upper-wall {
+    //   display: flex; /* position: relative; */
+    //   width: 120px;
+    //   height: 40px;
+    //   /* border: 1px solid brown; */
+    //   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    //   background: linear-gradient(45deg, brown, orange);
+    //   transform: rotate(-20deg) skew(-32deg, 0deg) translate(137px, -5px);
+    //   /* z-index: 1; */
+    // }
+    .side-wall {
+      width: 20px;
+      height: 150px;
+      border: 1px solid map-get($map: $colors, $key: brownn);
+      transform: skew(0, 20deg);
+    }
+    .front-wall {
+      width: 100px;
+      height: 150px;
+      border: 1px solid map-get($map: $colors, $key: brownn);
+      transform: skew(0deg, -20deg) translate(0, -14px);
+    }
+  }
+}
+.four {
+  display: none;
+  border: 1px solid black;
+  transform: skew(0deg, -20deg);
+  font-size: 81px;
+}

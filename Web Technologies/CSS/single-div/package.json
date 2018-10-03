@@ -1,0 +1,13 @@
+{
+  "name": "single-div",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"dev": "sass main.scss index.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
