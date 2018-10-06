@@ -1,75 +1,104 @@
 $colors: (
   brownn: brown,
-  orangee: #e89338
+  orangee: #e89338,
+  blackk: black,
+  redd: red,
+  transparentt: transparent,
+  front-wall: #D9B283,
+  left-wall: #D1904E,
+  roof: #AE6A3D,
+  dark: #464236,
+  inner-wall: #D87744,
 );
 
-.house {
+.wrapper {
   position: relative;
   top: 200px;
   left: 200px;
-  .roof {
-    // position: relative;
-    // z-index: 1;
-    // .roof-left {
-    //   width: 40px;
-    //   height: 70px;
-    //   border: 1px solid #e89338;
-    //   transform: skew(-45deg, 20deg) translate(135px, -9px);
-    //   background: black;
-    // }
-    // .roof-right {
-    //   width: 14px;
-    //   height: 25px;
-    //   border: 0.5px solid red;
-    //   transform: skew(62deg, 0deg) translate(274px, -30px);
-    //   background: black;
-    //   z-index: -1;
-    //   position: relative;
-    // }
-    display: flex;
-    perspective: 1000px;
+  perspective: 1000px;
+  .house {
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(45deg) rotateZ(0deg);
     > div {
-        border: 1px solid map-get($map: $colors, $key: orangee);
+      position: absolute;
+      display: none;
     }
-    .roof-left { 
-        width: 50px;
-        height: 50px;
-        transform: rotate3d(0, 0, 0, 20deg);
+    .roof-left {
+      display: block;
+      // border: 1px solid map-get($map: $colors, $key: roof);
+      background: map-get($map: $colors, $key: roof);
+      width: 4em;
+      height: 8em;
+      transform: rotateY(-90deg) rotateX(45deg) translateY(-3.3em) translateZ(4.3em);
     }
-    .roof-right { 
-        width: 50px;
-        height: 50px;
-        transform: rotate3d(0, 0, 0, 20deg);
+    .roof-right {
+      display: block;
+      // border: 1px solid map-get($map: $colors, $key: roof);
+      background: map-get($map: $colors, $key: roof);
+      width: 4em;
+      height: 8em;
+      transform: rotateY(90deg) rotateX(45deg) translateY(-0.3em) translateZ(7.3em);
     }
-    .roof-bottom {
-        width: 50px;
-        height: 50px;
-        transform: rotate3d(0, 0, 0, 20deg);
+    .top-wall {
+      display: block;
+      // border: 1px solid map-get($map: $colors, $key: front-wall);
+      background: map-get($map: $colors, $key: front-wall);
+      -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 8em;
+      height: 4em;
+      transform: translateY(-4em) translateZ(1em);
+      
     }
-  }
-  .walls {
-    display: flex;
-    // .upper-wall {
-    //   display: flex; /* position: relative; */
-    //   width: 120px;
-    //   height: 40px;
-    //   /* border: 1px solid brown; */
-    //   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    //   background: linear-gradient(45deg, brown, orange);
-    //   transform: rotate(-20deg) skew(-32deg, 0deg) translate(137px, -5px);
-    //   /* z-index: 1; */
-    // }
-    .side-wall {
-      width: 20px;
-      height: 150px;
-      border: 1px solid map-get($map: $colors, $key: brownn);
-      transform: skew(0, 20deg);
+    .left-wall {
+      display: block;
+      // border: 1px solid map-get($map: $colors, $key: left-wall);
+      background: map-get($map: $colors, $key: left-wall);
+      width: 2em;
+      height: 12em;
+      transform: rotateY(-90deg) translateZ(1em);;
+    }
+    .right-wall {
+      display: block;
+      // border: 1px solid map-get($map: $colors, $key: inner-wall);
+      background: map-get($map: $colors, $key: inner-wall);
+      width: 2em;
+      height: 12em;
+      transform: rotateY(90deg) translateZ(7em);
     }
     .front-wall {
-      width: 100px;
-      height: 150px;
-      border: 1px solid map-get($map: $colors, $key: brownn);
-      transform: skew(0deg, -20deg) translate(0, -14px);
+      display: block;
+      // border: 1px solid map-get($map: $colors, $key: front-wall);
+      background: map-get($map: $colors, $key: transparentt);
+      background-image: radial-gradient(circle at 4em 8em, transparent 3em, #D9B283 0);
+      width: 8em;
+      height: 12em;
+      transform: translateZ(1em);
+    }
+    .back-wall {
+      display: block;
+      // border: 1px solid map-get($map: $colors, $key: inner-wall);
+      background: map-get($map: $colors, $key: inner-wall);
+      width: 8em;
+      height: 12em;
+      transform: translateZ(-1em);
+    }
+    .clock-out {
+      display: block;
+      border: 1px solid map-get($map: $colors, $key: blackk);
+      width: 6em;
+      height: 6em;
+      border-radius: 50%;
+      transform: translateX(1em) translateY(5em) translateZ(1em);
+    }
+    .clock-in {
+      display: block;
+      // border: 1px solid map-get($map: $colors, $key: dark);
+      background: map-get($map: $colors, $key: dark);
+      width: 6em;
+      height: 6em;
+      border-radius: 50%;
+      transform: translateX(1em) translateY(5em);
     }
   }
 }
