@@ -3,20 +3,24 @@ $colors: (
   orangee: #e89338,
   blackk: black,
   redd: red,
+  whitee: #fff,
   transparentt: transparent,
-  front-wall: #D9B283,
-  left-wall: #D1904E,
-  roof: #AE6A3D,
+  front-wall: #d9b283,
+  left-wall: #d1904e,
+  roof: #ae6a3d,
   dark: #464236,
-  inner-wall: #D87744,
+  inner-wall: #d87744,
+  wood: #a86f2b
 );
 
 .wrapper {
-  position: relative;
-  top: 200px;
-  left: 200px;
   perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15em;
   .house {
+    margin-left: -3em;
     transform-style: preserve-3d;
     transform: rotateX(0deg) rotateY(45deg) rotateZ(0deg);
     > div {
@@ -24,12 +28,12 @@ $colors: (
       display: none;
     }
     .roof-left {
-      display: block;
-      // border: 1px solid map-get($map: $colors, $key: roof);
+      display: block; // border: 1px solid map-get($map: $colors, $key: roof);
       background: map-get($map: $colors, $key: roof);
       width: 4em;
       height: 8em;
-      transform: rotateY(-90deg) rotateX(45deg) translateY(-3.3em) translateZ(4.3em);
+      transform: rotateY(-90deg) rotateX(45deg) translateY(-3.3em)
+        translateZ(4.3em);
     }
     .roof-right {
       display: block;
@@ -37,7 +41,8 @@ $colors: (
       background: map-get($map: $colors, $key: roof);
       width: 4em;
       height: 8em;
-      transform: rotateY(90deg) rotateX(45deg) translateY(-0.3em) translateZ(7.3em);
+      transform: rotateY(90deg) rotateX(45deg) translateY(-0.3em)
+        translateZ(7.3em);
     }
     .top-wall {
       display: block;
@@ -48,7 +53,6 @@ $colors: (
       width: 8em;
       height: 4em;
       transform: translateY(-4em) translateZ(1em);
-      
     }
     .left-wall {
       display: block;
@@ -56,7 +60,7 @@ $colors: (
       background: map-get($map: $colors, $key: left-wall);
       width: 2em;
       height: 12em;
-      transform: rotateY(-90deg) translateZ(1em);;
+      transform: rotateY(-90deg) translateZ(1em);
     }
     .right-wall {
       display: block;
@@ -70,7 +74,11 @@ $colors: (
       display: block;
       // border: 1px solid map-get($map: $colors, $key: front-wall);
       background: map-get($map: $colors, $key: transparentt);
-      background-image: radial-gradient(circle at 4em 8em, transparent 3em, #D9B283 0);
+      background-image: radial-gradient(
+        circle at 4em 8em,
+        transparent 3em,
+        #d9b283 0
+      );
       width: 8em;
       height: 12em;
       transform: translateZ(1em);
@@ -83,15 +91,70 @@ $colors: (
       height: 12em;
       transform: translateZ(-1em);
     }
-    .clock-out {
+    .door {
       display: block;
-      border: 1px solid map-get($map: $colors, $key: blackk);
+      width: 3em;
+      height: 3em;
+      background: map-get($map: $colors, $key: wood);
+      border-radius: 50% 50% 0 0;
+      transform: translateX(2.5em) translateY(1em) translateZ(1em);
+      background-image: linear-gradient(
+        to right,
+        map-get($map: $colors, $key: transparentt) 50%,
+        rgba(0, 0, 0, 0.1) 50%
+      );
+    }
+    .clock-outer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid map-get($map: $colors, $key: dark);
       width: 6em;
       height: 6em;
       border-radius: 50%;
-      transform: translateX(1em) translateY(5em) translateZ(1em);
+      transform: rotateX(0deg) translateX(1em) translateY(5em) translateZ(1em);
+      transform: rotateX(-45deg) translateX(2em) translateY(1em) translateZ(11em);
+      background: map-get($map: $colors, $key: whitee);
+      background-image: 
+        radial-gradient(
+          circle,
+          map-get($map: $colors, $key: whitee) 50%,
+          transparent 0
+        ),
+        linear-gradient(
+          to bottom,
+          transparent 50%,
+          map-get($map: $colors, $key: dark) 48%,
+          transparent 51%
+        ),
+        linear-gradient(
+          to right,
+          transparent 50%,
+          map-get($map: $colors, $key: dark) 48%,
+          transparent 51%
+        );
+
     }
-    .clock-in {
+    .clock-out {
+      animation: clock-out 1000ms 0s 1 linear forwards;
+    }
+    .clock-time {
+      display: block;
+      width: 4em;
+      height: 4em;
+      background: transparent;
+      border-radius: 50%;
+      background-image:
+        linear-gradient(to right, transparent 51%, #fff 40%), 
+        linear-gradient(159deg, transparent 48%, black 40%, transparent 51%), 
+        linear-gradient(70deg, transparent 50%, black 40%, transparent 52%);
+      transform: rotateX(0deg) translateX(2em) translateY(6em) translateZ(1em);
+      transform: rotateX(-45deg) translateX(3em) translateY(2em) translateZ(12em);
+    }
+    .clock-time-out {
+      animation: clock-time-out 1000ms 0s 1 linear forwards;
+    }
+    .clock-inner {
       display: block;
       // border: 1px solid map-get($map: $colors, $key: dark);
       background: map-get($map: $colors, $key: dark);
@@ -100,11 +163,141 @@ $colors: (
       border-radius: 50%;
       transform: translateX(1em) translateY(5em);
     }
+    .spring {
+      display: block;
+      transform: rotateX(90deg) rotateY(-45deg) translateX(-4em) translateY(3em)
+        translateZ(-5em);
+      transform: rotateY(90deg) rotateZ(-90deg) translateX(-7em) translateY(2em)
+        translateZ(3em);
+      > div {
+        border: 1px solid map-get($map: $colors, $key: blackk);
+        border-radius: 50%;
+      }
+      .s1 {
+        width: 2em;
+        height: 2em;
+        border-width: 0px 1px 0px 0px;
+        margin-top: -1em;
+      }
+      .s1-out {
+        animation: s1-out 1000ms 0s 1 linear forwards;
+      }
+      .s2 {
+        width: 2em;
+        height: 1em;
+        border-width: 0px 0px 0px 1px;
+        margin-top: -1em;
+      }
+    }
+    .spring-out {
+      animation: spring-out 1000ms 0s 1 linear forwards;
+    }
+    .four {
+      display: block;
+      // border: 1px solid black;
+      font-size: 5em;
+      transform: translateZ(1em) translateX(-2em);
+      p {
+        -webkit-text-stroke: 1px map-get($map: $colors, $key: roof);
+        color: map-get($map: $colors, $key: front-wall);
+        text-shadow: 
+          -4px 0px 0 map-get($map: $colors, $key: roof),
+          -4px 0px 0 map-get($map: $colors, $key: roof), 
+          1px -1px 0 map-get($map: $colors, $key: roof), 
+          -4px -1px 0 map-get($map: $colors, $key: roof), 
+          -4px 0px 0 map-get($map: $colors, $key: roof);
+      }
+    }
+    .eight {
+      display: block;
+      // border: 1px solid black;
+      font-size: 5em;
+      transform: translateZ(0em) translateX(2.2em) translateY(0.2em);
+      p {
+        -webkit-text-stroke: 1px map-get($map: $colors, $key: roof);
+        color: map-get($map: $colors, $key: front-wall);
+        text-shadow:
+          -5px -1px 0 map-get($map: $colors, $key: roof),
+          -1px -1px 0 map-get($map: $colors, $key: roof),  
+          1px -1px 0 map-get($map: $colors, $key: roof),
+          -1px 1px 0 map-get($map: $colors, $key: roof),
+          1px 1px 0 map-get($map: $colors, $key: roof);
+      }
+    }
+  }
+  .timeout {
+    position: relative;
+    top: 12em;
+    left: 12em;
+    opacity: 0;
+    animation: opac 500ms 1s 1 linear forwards;
   }
 }
-.four {
-  display: none;
-  border: 1px solid black;
-  transform: skew(0deg, -20deg);
-  font-size: 81px;
+
+/* <keyframes> */
+@keyframes clock-out {
+  0% {
+    transform: rotateX(0deg) translateX(1em) translateY(5em) translateZ(1em);
+  }
+  50% {
+    transform: rotateX(-45deg) translateX(2em) translateY(1em) translateZ(11em);
+  }
+  75% {
+    transform: rotateX(-35deg) translateX(1.5em) translateY(2.5em)
+      translateZ(9em);
+  }
+  100% {
+    transform: rotateX(-45deg) translateX(2em) translateY(1em) translateZ(11em);
+  }
 }
+@keyframes clock-time-out {
+  0% {
+    transform: rotateX(0deg) translateX(2em) translateY(6em) translateZ(1em);
+  }
+  50% {
+    transform: rotateX(-45deg) translateX(3em) translateY(2em) translateZ(12em);
+  }
+  75% {
+    transform: rotateX(-45deg) translateX(3em) translateY(2em) translateZ(14em);
+  }
+  100% {
+    transform: rotateY(-15deg) rotateX(-50deg) translateX(3em) translateY(2em) translateZ(14em);
+  }
+}
+@keyframes spring-out {
+  0% {
+    transform: rotateY(90deg) rotateZ(-90deg) translateX(-7em) translateY(2em)
+      translateZ(3em);
+  }
+  50% {
+    transform: rotateY(90deg) rotateZ(-110deg) translateX(-4em) translateY(-3em)
+      translateZ(3em);
+  }
+  75% {
+    transform: rotateY(90deg) rotateZ(-100deg) translateX(-5em) translateY(-3em)
+      translateZ(3em);
+  }
+  100% {
+    transform: rotateY(90deg) rotateZ(-110deg) translateX(-4em) translateY(-3em)
+      translateZ(3em);
+  }
+}
+@keyframes s1-out {
+  0% {
+    height: 2em;
+  }
+  50% {
+    height: 4em;
+  }
+  75% {
+    height: 3em;
+  }
+  100% {
+    height: 4em;
+  }
+}
+@keyframes opac {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+/* </keyframes> */
