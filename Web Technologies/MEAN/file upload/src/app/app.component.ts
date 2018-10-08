@@ -16,6 +16,7 @@ import { ApiDirectory } from './apiDirectory';
 export class AppComponent {
   folders: Array<Result>;
   powers: Array<String>;
+  images: Array<String> = [];
   errorObject = {};
   file:File;
   _apiDirectory = new ApiDirectory();
@@ -61,9 +62,10 @@ export class AppComponent {
     try{
       this.progress = "0%";
       const formData = {
-        fileSize: this.file.size
+        fileSize: this.file.size,
+        fileName: this.file.name
       }
-      const tokenId = await this._appService.synchronousPost(this._apiDirectory.getApiDirectory("fileSize"), formData);
+      const tokenId = await this._appService.synchronousPost(this._apiDirectory.getApiDirectory("fileDetails"), formData);
       
       const fileStreamer = new FileStremer(this.file);
       while(!fileStreamer.isEndOfFile()){
