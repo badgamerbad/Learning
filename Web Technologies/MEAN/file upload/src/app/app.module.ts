@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 import { appService } from './app.service';
-import { UploadModule } from './upload/upload.module';
 
 @NgModule({
   declarations: [
@@ -14,8 +13,7 @@ import { UploadModule } from './upload/upload.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
-    UploadModule
+    FormsModule
   ],
   providers: [appService],
   bootstrap: [AppComponent]

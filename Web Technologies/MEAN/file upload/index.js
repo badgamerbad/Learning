@@ -6,13 +6,6 @@ const http = require('http');
 const mongoose = require('mongoose');
 const config = require('./config/config');
 
-const cors = require('cors');
-var corsOptions = {
-    origin: '*',
-    optionsSuccessStatus: 200
-};
-app.use(cors(corsOptions));
-
 mongoose.connect('mongodb://root:root@ds121309.mlab.com:21309/mongo-test-server-v1');
 
 require('./models/folder');

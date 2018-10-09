@@ -5,7 +5,7 @@ export class FileStremer{
     constructor(file){
         this.file = file;
         this.offset = 0;
-        this.defaultChunkSize = 4 * 1024; // bytes
+        this.defaultChunkSize = 64 * 1024; // bytes
         this.rewind();
     }
     rewind(){
