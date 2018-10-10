@@ -13,7 +13,8 @@ var corsOptions = {
 };
 app.use(cors(corsOptions));
 
-mongoose.connect('mongodb://root:root@ds121309.mlab.com:21309/mongo-test-server-v1');
+// mongoose.connect('mongodb://root:root@ds121309.mlab.com:21309/mongo-test-server-v1');
+mongoose.connect('mongodb://127.0.0.1:27017');
 
 require('./models/folder');
 

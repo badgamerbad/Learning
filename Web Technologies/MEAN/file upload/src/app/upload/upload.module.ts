@@ -9,17 +9,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from './dialog/dialog.component';
 import { UploadService } from './upload.service';
 
+import { ApiDirectory } from '../apiDirectory';
+
 @NgModule({
   imports: [
     CommonModule,
     MatButtonModule, MatDialogModule, MatListModule, MatProgressBarModule,
     BrowserAnimationsModule,
     FlexLayoutModule, 
-    HttpClientModule
+    HttpClientModule,
   ],
   declarations: [UploadComponent, DialogComponent],
   exports: [UploadComponent],
   entryComponents: [DialogComponent],
-  providers: [UploadService]
+  providers: [UploadService, ApiDirectory]
 })
 export class UploadModule { }

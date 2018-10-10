@@ -22,7 +22,7 @@ export class UploadService {
 
       // create a http-post request and pass the form
       // tell it to report the upload progress
-      const req = new HttpRequest('POST', this._apiDirectory.getApiDirectory("fileUpload"), formData, {
+      const req = new HttpRequest('POST', this._apiDirectory.getApiDirectory("fooUpload"), formData, {
         reportProgress: true
       });
 
