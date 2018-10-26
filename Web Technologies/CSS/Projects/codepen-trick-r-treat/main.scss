@@ -1,0 +1,8 @@
+$colors: (
+    primary: red,
+    secondery: green,
+);
+
+body {
+    background: linear-gradient( 45deg, map-get($map: $colors, $key: primary), map-get($map: $colors, $key: secondery) );
+}
