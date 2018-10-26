@@ -3,6 +3,9 @@ $colors: (
     secondery: green,
 );
 
-body {
+.candy {
     background: linear-gradient( 45deg, map-get($map: $colors, $key: primary), map-get($map: $colors, $key: secondery) );
+    width: 100px;
+    height: 100px;
+    position: relative;
 }
