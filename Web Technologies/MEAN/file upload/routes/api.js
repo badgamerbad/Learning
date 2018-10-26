@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 const Folders = mongoose.model('folders');
 
+const IncomingForm = require('formidable').IncomingForm;
+
 const fs = require("fs");
+let fileCount = 0;
 
 require('./fileBuilder');
 
@@ -64,18 +67,32 @@ module.exports = app => {
             percentComplete: percentComplete
         });
         if(percentComplete == 100){
-            const writerStream = fs.createWriteStream('output.txt');
+            const writerStream = fs.createWriteStream(`uploads/img.file`);
             for(index in file[tokenId]){
                 if(index != "size")
                     writerStream.write(file[tokenId][index]);
             }
             writerStream.end();
+            fileCount++;
         }
     })
-    app.post('/api/fileSize', async (req, res) => {
+    app.post('/api/fileDetails', async (req, res) => {
         tokenId++;
         file[tokenId] = new Array();
         file[tokenId]["size"] = req.body.fileSize;
+        // file[tokenId]["name"] = req.body.fileName;
         res.json({tokenId: tokenId}); 
     });
+
+    app.post(`/api/fooUpload`, async (req, res) => {
+        var form = new IncomingForm();
+        form.on('file', (field, file) => {
+            console.log(`file.path-------------------------`);
+            console.log(file.path);
+        });
+        form.on('end', () => {
+            res.json();
+        });
+        form.parse(req);
+    })
 };

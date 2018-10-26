@@ -2,9 +2,10 @@ export class ApiDirectory {
     url;
     constructor(){
         this.url = {
-            fileSize: "api/fileSize",
+            fileDetails: "api/fileDetails",
             fileUpload: "api/fileUpload",
-            folders: "api/folders"
+            folders: "api/folders",
+            fooUpload: "api/fooUpload"
         }
     }
     getApiDirectory(endpoint){
