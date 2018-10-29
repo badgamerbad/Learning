@@ -10,8 +10,12 @@ class foo {
         this.init();
     }
     init() {
-        let body = document.getElementsByTagName(`body`);
-        let link = `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent`;
+        let body = document.querySelector(`body`);
+        let candy = document.querySelector('.candy');
+        body.addEventListener('mousemove', (e) => {
+            var foo = {}
+            // console.log(`x: ${e.x}, y: ${e.y}`)
+        });
     }
 }
 new foo();

@@ -3,9 +3,18 @@ $colors: (
     secondery: green,
 );
 
+html, body {
+    height: 100%;
+}
+
 .candy {
     background: linear-gradient( 45deg, map-get($map: $colors, $key: primary), map-get($map: $colors, $key: secondery) );
     width: 100px;
     height: 100px;
     position: relative;
+}
+.pumpkin {
+    width: 300px;
+    height: 200px;
+    background: radial-gradient(ellipse at center, red, green);
 }
