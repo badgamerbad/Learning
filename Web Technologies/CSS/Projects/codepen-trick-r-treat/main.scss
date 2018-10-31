@@ -14,40 +14,76 @@ html, body {
     position: relative;
 }
 .pumpkin {
-    border: 1px solid black;
-    width: 350px;
-    height: 320px;
-    background-image:
-        radial-gradient(ellipse at 59% 42%, orange 8%, transparent 0%), 
-        radial-gradient(ellipse at 42% 46%, orange 10%, transparent 0%), 
-        radial-gradient(ellipse at 62% 34%, black 9%, transparent 0%), 
-        radial-gradient(ellipse at 37% 38%, black 11%, transparent 0%),
-        radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
-        radial-gradient(ellipse at 50% 40%, orange 40%, transparent 30%), 
-        radial-gradient(ellipse at 50% 40%, brown 42%, transparent 30%),
-        radial-gradient(ellipse at 60% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
-        radial-gradient(ellipse at 60% 40%, orange 40%, transparent 30%), 
-        radial-gradient(ellipse at 60% 40%, brown 42%, transparent 30%),
-        radial-gradient(ellipse at 40% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
-        radial-gradient(ellipse at 40% 40%, orange 40%, transparent 30%), 
-        radial-gradient(ellipse at 40% 40%, brown 42%, transparent 30%) 
+    // border: 1px solid red;
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    background: orange;
+    border-radius: 50%;
+    margin: 200px 141px;
+    box-shadow:
+        31px -6px 0px 9px orange, 
+        71px -9px 0 8px orange, 
+        -1px 24px 0 -4px black, 
+        31px 13px 0 10px black, 
+        68px 11px 0 12px black
     ;
-    background-size: 350px 400px;
-    &:after {
-        // border: 1px solid red;
+    &:hover{
+        animation: open-mouth 2s 0s forwards;
+    }
+    &:before {
+        border: 1px solid black;
         content: "";
         position: absolute;
-        width: 30px;
-        height: 50px;
-        background: transparent;
-        border-radius: 50%;
-        box-shadow: -1px 7px 0 0px #0d1a0d, 31px 5px 0 7px orange, 31px 13px 0 10px blue;
-        top: 299px;
-        left: 121px;
+        width: 350px;
+        height: 320px;
+        background-image:
+            radial-gradient(ellipse at 59% 42%, orange 8%, transparent 0%), 
+            radial-gradient(ellipse at 42% 42%, orange 10%, transparent 0%), 
+            radial-gradient(ellipse at 62% 34%, black 9%, transparent 0%), 
+            radial-gradient(ellipse at 37% 33%, black 11%, transparent 0%),
+            radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
+            radial-gradient(ellipse at 50% 40%, orange 40%, transparent 30%), 
+            radial-gradient(ellipse at 50% 40%, brown 42%, transparent 30%),
+            radial-gradient(ellipse at 60% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
+            radial-gradient(ellipse at 60% 40%, orange 40%, transparent 30%), 
+            radial-gradient(ellipse at 60% 40%, brown 42%, transparent 30%),
+            radial-gradient(ellipse at 40% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
+            radial-gradient(ellipse at 40% 40%, orange 40%, transparent 30%), 
+            radial-gradient(ellipse at 40% 40%, brown 42%, transparent 30%) 
+        ;
+        background-size: 350px 400px;
+        z-index: -1;
+        top: -175px;
+        left: -117px;
     }
 }
+
+@keyframes open-mouth {
+    0% {
+        box-shadow: 
+            31px -6px 0px 9px orange, 
+            71px -9px 0 8px orange,
+            -1px 24px 0 -4px black, 
+            31px 13px 0 10px black, 
+            68px 11px 0 12px black
+        ;
+    }
+    100% {
+        box-shadow: 
+            37px -13px 0px 7px orange, 
+            76px -20px 0 3px orange, 
+            -1px 24px 0 4px black, 
+            39px 31px 0 23px black, 
+            68px 11px 0 23px black
+        ;
+    }
+}
+
+
 .pumpkin2 {
     // border: 1px solid black;
+    display: none;
     width: 220px;
     height: 300px;
     background: orange;
@@ -62,7 +98,7 @@ html, body {
         -70px 0 0 5px brown
     ;
     &:hover {
-        animation: shadow 2s 0s 1 forwards;
+        animation: open-mouth 2s 0s 1 forwards;
     }
 }
 @keyframes foo {
@@ -117,26 +153,5 @@ html, body {
             radial-gradient(ellipse at 40% 40%, brown 42%, transparent 30%) 
         ;
         background-size: 350px 400px;
-    }
-}
-
-@keyframes open-mouth {
-    0% {
-        box-shadow: 
-            0px 0px 0 5px brown, 
-            70px 0px 0 0 orange, 
-            70px 0px 0 5px brown, 
-            -70px 0px 0 0px orange, 
-            -70px 0 0 5px brown
-        ;
-    }
-    100% {
-        box-shadow: 
-            0px 0px 0 5px blue, 
-            70px 0px 0 0 orange, 
-            70px 0px 0 5px blue, 
-            -70px 0px 0 0px orange, 
-            -70px 0 0 5px blue
-        ;
     }
 }
