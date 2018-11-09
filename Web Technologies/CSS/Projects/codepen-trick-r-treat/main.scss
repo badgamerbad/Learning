@@ -8,26 +8,70 @@ html, body {
 }
 
 .candy {
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0, 0.5) 100%), linear-gradient(45deg, green, green);
+    width: 100px;
+    height: 37px;
+    position: absolute;
+    top: 30px;
+    left: 72px;
+    &:before {
+        content: "";
+        position: absolute;
+        /* width: 143px; */
+        /* height: 71px; */
+        /* background: magenta; */
+        /* border: 1px solid magenta; */
+        /* border-radius: 58px 0px 0px 54px; */
+        border-top: 30px solid transparent;
+        border-right: 60px solid green;
+        border-bottom: 30px solid transparent;
+        border-left: 0px solid orange;
+        left: 98px;
+        top: -11px;
+        z-index: -1;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        /* width: 143px; */
+        /* height: 71px; */
+        /* background: magenta; */
+        /* border: 1px solid magenta; */
+        /* border-radius: 58px 0px 0px 54px; */
+        border-top: 20px solid transparent;
+        border-right: 0px solid green;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid green;
+        left: 98px;
+        top: -1px;
+        z-index: -1;
+        box-shadow: 0px 0px 0px 11px red;
+    }
+}
+.spider {
+    display: none;
     background: linear-gradient( 45deg, map-get($map: $colors, $key: primary), map-get($map: $colors, $key: secondery) );
     width: 100px;
     height: 100px;
-    position: relative;
+    position: absolute;
 }
 .pumpkin {
     // border: 1px solid red;
+    display: none;
     position: absolute;
-    width: 40px;
-    height: 50px;
+    width: 36px;
+    height: 33px;
     background: orange;
     border-radius: 50%;
-    margin: 200px 141px;
-    box-shadow:
-        31px -6px 0px 9px orange, 
-        71px -9px 0 8px orange, 
-        -1px 24px 0 -4px black, 
-        31px 13px 0 10px black, 
-        68px 11px 0 12px black
+    margin: 125px 79px;
+    box-shadow: 
+        25px -4px 0px 8px orange, 
+        58px 1px 0 1px orange, 
+        0px 26px 0 -1px black, 
+        22px 13px 0 10px black, 
+        49px 16px 0 7px black
     ;
+    top: 0;
     &:hover{
         animation: open-mouth 2s 0s forwards;
     }
@@ -35,8 +79,8 @@ html, body {
         border: 1px solid black;
         content: "";
         position: absolute;
-        width: 350px;
-        height: 320px;
+        width: 259px;
+        height: 230px;
         background-image:
             radial-gradient(ellipse at 59% 42%, orange 8%, transparent 0%), 
             radial-gradient(ellipse at 42% 42%, orange 10%, transparent 0%), 
@@ -52,106 +96,44 @@ html, body {
             radial-gradient(ellipse at 40% 40%, orange 40%, transparent 30%), 
             radial-gradient(ellipse at 40% 40%, brown 42%, transparent 30%) 
         ;
-        background-size: 350px 400px;
+        background-size: 260px 290px;
         z-index: -1;
-        top: -175px;
-        left: -117px;
+        top: -121px;
+        left: -86px;
+    }
+    &:after {
+        border: 1px solid red;
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 50px;
+        border-radius: 60% 0% 70% 0;
+        border-top: 6px solid transparent;
+        border-left: 19px solid green;
+        border-bottom: 0px solid transparent;
+        border-right: 26px solid transparent;
+        top: -162px;
+        left: 35px;
     }
 }
 
 @keyframes open-mouth {
     0% {
         box-shadow: 
-            31px -6px 0px 9px orange, 
-            71px -9px 0 8px orange,
-            -1px 24px 0 -4px black, 
-            31px 13px 0 10px black, 
-            68px 11px 0 12px black
+            25px -4px 0px 8px orange, 
+            58px 1px 0 1px orange, 
+            0px 26px 0 -1px black, 
+            22px 13px 0 10px black, 
+            49px 16px 0 7px black
         ;
     }
     100% {
         box-shadow: 
-            37px -13px 0px 7px orange, 
-            76px -20px 0 3px orange, 
-            -1px 24px 0 4px black, 
-            39px 31px 0 23px black, 
-            68px 11px 0 23px black
+            25px -7px 0px 5px orange, 
+            51px 1px 0 0px orange, 
+            0px 26px 0 4px black, 
+            29px 28px 0 17px black, 
+            57px 20px 0 7px black
         ;
-    }
-}
-
-
-.pumpkin2 {
-    // border: 1px solid black;
-    display: none;
-    width: 220px;
-    height: 300px;
-    background: orange;
-    border-radius: 50%;
-    position: relative;
-    margin: 200px;
-    box-shadow: 
-        0px 0px 0 5px brown, 
-        70px 0px 0 0 orange, 
-        70px 0px 0 5px brown, 
-        -70px 0px 0 0px orange, 
-        -70px 0 0 5px brown
-    ;
-    &:hover {
-        animation: open-mouth 2s 0s 1 forwards;
-    }
-}
-@keyframes foo {
-    0% {
-        background-image:
-            radial-gradient(ellipse at 59% 42%, orange 8%, transparent 0%), 
-            radial-gradient(ellipse at 42% 46%, orange 10%, transparent 0%), 
-            radial-gradient(ellipse at 62% 34%, black 9%, transparent 0%), 
-            radial-gradient(ellipse at 37% 38%, black 11%, transparent 0%),
-            radial-gradient(ellipse at 62% 50%, orange 7%, transparent 0%), 
-            radial-gradient(ellipse at 53% 52%, orange 6%, transparent 0%), 
-            radial-gradient(ellipse at 48% 52%, orange 7%, transparent 0%), 
-            radial-gradient(ellipse at 40% 51%, orange 8%, transparent 0%), 
-            radial-gradient(ellipse at 60% 54%, black 8%, transparent 0%), 
-            radial-gradient(ellipse at 53% 55%, black 8%, transparent 0%), 
-            radial-gradient(ellipse at 47% 55%, black 8%, transparent 0%), 
-            radial-gradient(ellipse at 40% 55%, black 8%, transparent 0%),
-            radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
-            radial-gradient(ellipse at 50% 40%, orange 40%, transparent 30%), 
-            radial-gradient(ellipse at 50% 40%, brown 42%, transparent 30%),
-            radial-gradient(ellipse at 60% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
-            radial-gradient(ellipse at 60% 40%, orange 40%, transparent 30%), 
-            radial-gradient(ellipse at 60% 40%, brown 42%, transparent 30%),
-            radial-gradient(ellipse at 40% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
-            radial-gradient(ellipse at 40% 40%, orange 40%, transparent 30%), 
-            radial-gradient(ellipse at 40% 40%, brown 42%, transparent 30%) 
-        ;
-        background-size: 350px 400px;
-    }
-    100% {
-            background-image:
-            radial-gradient(ellipse at 59% 42%, orange 8%, transparent 0%), 
-            radial-gradient(ellipse at 42% 46%, orange 10%, transparent 0%), 
-            radial-gradient(ellipse at 62% 34%, black 9%, transparent 0%), 
-            radial-gradient(ellipse at 37% 38%, black 11%, transparent 0%),
-            radial-gradient(ellipse at 63% 45%, orange 7%, transparent 0%), 
-            radial-gradient(ellipse at 57% 46%, orange 6%, transparent 0%), 
-            radial-gradient(ellipse at 48% 49%, orange 7%, transparent 0%), 
-            radial-gradient(ellipse at 40% 45%, orange 8%, transparent 0%), 
-            radial-gradient(ellipse at 61% 55%, black 15%, transparent 0%), 
-            radial-gradient(ellipse at 53% 60%, black 15%, transparent 0%), 
-            radial-gradient(ellipse at 47% 59%, black 15%, transparent 0%), 
-            radial-gradient(ellipse at 41% 59%, black 13%, transparent 0%),
-            radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
-            radial-gradient(ellipse at 50% 40%, orange 40%, transparent 30%), 
-            radial-gradient(ellipse at 50% 40%, brown 42%, transparent 30%),
-            radial-gradient(ellipse at 60% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
-            radial-gradient(ellipse at 60% 40%, orange 40%, transparent 30%), 
-            radial-gradient(ellipse at 60% 40%, brown 42%, transparent 30%),
-            radial-gradient(ellipse at 40% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
-            radial-gradient(ellipse at 40% 40%, orange 40%, transparent 30%), 
-            radial-gradient(ellipse at 40% 40%, brown 42%, transparent 30%) 
-        ;
-        background-size: 350px 400px;
     }
 }
