@@ -5,9 +5,11 @@ $colors: (
 
 html, body {
     height: 100%;
+    margin: 0;
 }
 
 .candy {
+    display: none;
     background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0, 0.5) 100%), linear-gradient(45deg, green, green);
     width: 100px;
     height: 37px;
@@ -55,65 +57,74 @@ html, body {
     height: 100px;
     position: absolute;
 }
-.pumpkin {
-    // border: 1px solid red;
-    display: none;
-    position: absolute;
-    width: 36px;
-    height: 33px;
-    background: orange;
-    border-radius: 50%;
-    margin: 125px 79px;
-    box-shadow: 
-        25px -4px 0px 8px orange, 
-        58px 1px 0 1px orange, 
-        0px 26px 0 -1px black, 
-        22px 13px 0 10px black, 
-        49px 16px 0 7px black
-    ;
-    top: 0;
-    &:hover{
+.pumpkin-container {
+    height: 100%;
+    // display: flex;
+    // align-items: center;
+    .pumpkin {
+        // border: 1px solid red;
+        // display: none;
+        position: relative;
+        width: 36px;
+        height: 33px;
+        background: orange;
+        border-radius: 50%;
+        // margin: 0 auto;
+        box-shadow: 
+            25px -4px 0px 8px orange, 
+            58px 1px 0 1px orange, 
+            0px 26px 0 -1px #1D1E22, 
+            22px 13px 0 10px #1D1E22, 
+            49px 16px 0 7px #1D1E22
+        ;
+        top: -110px;
+        left: 0;
+        &:before {
+            // border: 1px solid black;
+            content: "";
+            position: absolute;
+            width: 259px;
+            height: 230px;
+            background-image:
+                radial-gradient(ellipse at 59% 42%, orange 8%, transparent 0%), 
+                radial-gradient(ellipse at 42% 42%, orange 10%, transparent 0%), 
+                radial-gradient(ellipse at 62% 34%, #1D1E22 9%, transparent 0%), 
+                radial-gradient(ellipse at 37% 33%, #1D1E22 11%, transparent 0%),
+                radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
+                radial-gradient(ellipse at 50% 40%, orange 40%, transparent 30%), 
+                radial-gradient(ellipse at 50% 40%, brown 42%, transparent 30%),
+                radial-gradient(ellipse at 60% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
+                radial-gradient(ellipse at 60% 40%, orange 40%, transparent 30%), 
+                radial-gradient(ellipse at 60% 40%, brown 42%, transparent 30%),
+                radial-gradient(ellipse at 40% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
+                radial-gradient(ellipse at 40% 40%, orange 40%, transparent 30%), 
+                radial-gradient(ellipse at 40% 40%, brown 42%, transparent 30%) 
+            ;
+            background-size: 260px 290px;
+            z-index: -1;
+            top: -121px;
+            left: -86px;
+        }
+        &:after {
+            // border: 1px solid red;
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 50px;
+            border-radius: 60% 0% 70% 0;
+            border-top: 6px solid transparent;
+            border-left: 19px solid #86B37D;
+            border-bottom: 0px solid transparent;
+            border-right: 26px solid transparent;
+            top: -162px;
+            left: 35px;
+        }
+    }
+    .open-mouth {
         animation: open-mouth 2s 0s forwards;
     }
-    &:before {
-        border: 1px solid black;
-        content: "";
-        position: absolute;
-        width: 259px;
-        height: 230px;
-        background-image:
-            radial-gradient(ellipse at 59% 42%, orange 8%, transparent 0%), 
-            radial-gradient(ellipse at 42% 42%, orange 10%, transparent 0%), 
-            radial-gradient(ellipse at 62% 34%, black 9%, transparent 0%), 
-            radial-gradient(ellipse at 37% 33%, black 11%, transparent 0%),
-            radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
-            radial-gradient(ellipse at 50% 40%, orange 40%, transparent 30%), 
-            radial-gradient(ellipse at 50% 40%, brown 42%, transparent 30%),
-            radial-gradient(ellipse at 60% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
-            radial-gradient(ellipse at 60% 40%, orange 40%, transparent 30%), 
-            radial-gradient(ellipse at 60% 40%, brown 42%, transparent 30%),
-            radial-gradient(ellipse at 40% 40%, transparent 30%, rgba(169, 69, 0, 0.5) 40%, transparent 43%),
-            radial-gradient(ellipse at 40% 40%, orange 40%, transparent 30%), 
-            radial-gradient(ellipse at 40% 40%, brown 42%, transparent 30%) 
-        ;
-        background-size: 260px 290px;
-        z-index: -1;
-        top: -121px;
-        left: -86px;
-    }
-    &:after {
-        border: 1px solid red;
-        content: "";
-        position: absolute;
-        width: 18px;
-        height: 50px;
-        border-radius: 60% 0% 70% 0;
-        border-top: 6px solid transparent;
-        border-left: 19px solid green;
-        border-bottom: 0px solid transparent;
-        border-right: 26px solid transparent;
-        top: -162px;
-        left: 35px;
+    .close-mouth {
+        animation: close-mouth 2s 0s forwards;
     }
 }
 
@@ -122,18 +133,38 @@ html, body {
         box-shadow: 
             25px -4px 0px 8px orange, 
             58px 1px 0 1px orange, 
-            0px 26px 0 -1px black, 
-            22px 13px 0 10px black, 
-            49px 16px 0 7px black
+            0px 26px 0 -1px #1D1E22, 
+            22px 13px 0 10px #1D1E22, 
+            49px 16px 0 7px #1D1E22
         ;
     }
     100% {
         box-shadow: 
             25px -7px 0px 5px orange, 
             51px 1px 0 0px orange, 
-            0px 26px 0 4px black, 
-            29px 28px 0 17px black, 
-            57px 20px 0 7px black
+            0px 26px 0 4px #1D1E22, 
+            29px 28px 0 17px #1D1E22, 
+            57px 20px 0 7px #1D1E22
+        ;
+    }
+}
+@keyframes close-mouth {
+    0% {
+        box-shadow: 
+            25px -7px 0px 5px orange, 
+            51px 1px 0 0px orange, 
+            0px 26px 0 4px #1D1E22, 
+            29px 28px 0 17px #1D1E22, 
+            57px 20px 0 7px #1D1E22
+        ;
+    }
+    100% {
+        box-shadow: 
+            25px -4px 0px 8px orange, 
+            58px 1px 0 1px orange, 
+            0px 26px 0 -1px #1D1E22, 
+            22px 13px 0 10px #1D1E22, 
+            49px 16px 0 7px #1D1E22
         ;
     }
 }
