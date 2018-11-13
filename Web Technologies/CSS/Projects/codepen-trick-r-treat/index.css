@@ -1,64 +1,24 @@
 html, body {
   height: 100%;
   margin: 0;
-}
-
-.candy {
-  display: none;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%), linear-gradient(45deg, green, green);
-  width: 100px;
-  height: 37px;
-  position: absolute;
-  top: 30px;
-  left: 72px;
-}
-.candy:before {
-  content: "";
-  position: absolute;
-  /* width: 143px; */
-  /* height: 71px; */
-  /* background: magenta; */
-  /* border: 1px solid magenta; */
-  /* border-radius: 58px 0px 0px 54px; */
-  border-top: 30px solid transparent;
-  border-right: 60px solid green;
-  border-bottom: 30px solid transparent;
-  border-left: 0px solid orange;
-  left: 98px;
-  top: -11px;
+  background: linear-gradient(45deg, grey, black);
   z-index: -1;
-}
-.candy:after {
-  content: "";
-  position: absolute;
-  /* width: 143px; */
-  /* height: 71px; */
-  /* background: magenta; */
-  /* border: 1px solid magenta; */
-  /* border-radius: 58px 0px 0px 54px; */
-  border-top: 20px solid transparent;
-  border-right: 0px solid green;
-  border-bottom: 20px solid transparent;
-  border-left: 20px solid green;
-  left: 98px;
-  top: -1px;
-  z-index: -1;
-  box-shadow: 0px 0px 0px 11px red;
-}
-
-.spider {
-  display: none;
-  background: linear-gradient(45deg, red, green);
-  width: 100px;
-  height: 100px;
-  position: absolute;
-}
-
-.pumpkin-container {
-  height: 100%;
-}
-.pumpkin-container .pumpkin {
   position: relative;
+}
+html .message, body .message {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+html .message p, body .message p {
+  text-align: center;
+  width: 100%;
+  font-family: chiller;
+  font-size: 6em;
+  color: orange;
+}
+html .pumpkin, body .pumpkin {
+  position: absolute;
   width: 36px;
   height: 33px;
   background: orange;
@@ -67,7 +27,7 @@ html, body {
   top: -110px;
   left: 0;
 }
-.pumpkin-container .pumpkin:before {
+html .pumpkin:before, body .pumpkin:before {
   content: "";
   position: absolute;
   width: 259px;
@@ -78,7 +38,7 @@ html, body {
   top: -121px;
   left: -86px;
 }
-.pumpkin-container .pumpkin:after {
+html .pumpkin:after, body .pumpkin:after {
   content: "";
   position: absolute;
   width: 18px;
@@ -91,11 +51,11 @@ html, body {
   top: -162px;
   left: 35px;
 }
-.pumpkin-container .open-mouth {
-  animation: open-mouth 2s 0s forwards;
+html .open-mouth, body .open-mouth {
+  animation: open-mouth 1s 0s forwards;
 }
-.pumpkin-container .close-mouth {
-  animation: close-mouth 2s 0s forwards;
+html .close-mouth, body .close-mouth {
+  animation: close-mouth 1s 0s forwards;
 }
 
 @keyframes open-mouth {

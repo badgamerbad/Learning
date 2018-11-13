@@ -1,75 +1,29 @@
-$colors: (
-    primary: red,
-    secondery: green,
-);
-
 html, body {
     height: 100%;
     margin: 0;
-}
-
-.candy {
-    display: none;
-    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0, 0.5) 100%), linear-gradient(45deg, green, green);
-    width: 100px;
-    height: 37px;
-    position: absolute;
-    top: 30px;
-    left: 72px;
-    &:before {
-        content: "";
-        position: absolute;
-        /* width: 143px; */
-        /* height: 71px; */
-        /* background: magenta; */
-        /* border: 1px solid magenta; */
-        /* border-radius: 58px 0px 0px 54px; */
-        border-top: 30px solid transparent;
-        border-right: 60px solid green;
-        border-bottom: 30px solid transparent;
-        border-left: 0px solid orange;
-        left: 98px;
-        top: -11px;
-        z-index: -1;
+    background: linear-gradient(45deg, grey, black);
+    z-index: -1;
+    position: relative;
+    .message {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        p {
+            text-align: center;
+            width: 100%;
+            font-family: chiller;
+            font-size: 6em;
+            color: orange;
+        }
     }
-    &:after {
-        content: "";
-        position: absolute;
-        /* width: 143px; */
-        /* height: 71px; */
-        /* background: magenta; */
-        /* border: 1px solid magenta; */
-        /* border-radius: 58px 0px 0px 54px; */
-        border-top: 20px solid transparent;
-        border-right: 0px solid green;
-        border-bottom: 20px solid transparent;
-        border-left: 20px solid green;
-        left: 98px;
-        top: -1px;
-        z-index: -1;
-        box-shadow: 0px 0px 0px 11px red;
-    }
-}
-.spider {
-    display: none;
-    background: linear-gradient( 45deg, map-get($map: $colors, $key: primary), map-get($map: $colors, $key: secondery) );
-    width: 100px;
-    height: 100px;
-    position: absolute;
-}
-.pumpkin-container {
-    height: 100%;
-    // display: flex;
-    // align-items: center;
     .pumpkin {
         // border: 1px solid red;
         // display: none;
-        position: relative;
+        position: absolute;
         width: 36px;
         height: 33px;
         background: orange;
         border-radius: 50%;
-        // margin: 0 auto;
         box-shadow: 
             25px -4px 0px 8px orange, 
             58px 1px 0 1px orange, 
@@ -121,10 +75,10 @@ html, body {
         }
     }
     .open-mouth {
-        animation: open-mouth 2s 0s forwards;
+        animation: open-mouth 1s 0s forwards;
     }
     .close-mouth {
-        animation: close-mouth 2s 0s forwards;
+        animation: close-mouth 1s 0s forwards;
     }
 }
 
