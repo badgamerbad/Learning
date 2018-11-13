@@ -1,0 +1,26 @@
+{
+  "name": "codepen-trick-r-treat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "start npm run start::sass && start npm run start::webpack-server",
+    "build": "webpack --mode=production --devtool=none",
+    "start::sass": "sass --watch main.scss index.css",
+    "start::webpack-server": "webpack-dev-server --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "raw-loader": "^0.5.1",
+    "sass": "^1.14.3",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
