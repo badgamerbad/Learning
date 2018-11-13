@@ -82,7 +82,7 @@ class hungry_pumpkin {
                 setTimeout( `document.querySelector('.pumpkin').style.top = '${leapY}px'; document.querySelector('.pumpkin').style.left = '${leapX}px';`, timer * speed);
                 timer++;
 
-                if(leapX == stopX || leapY == stopY) {
+                if(leapX == stopX || leapY == stopY || ( stepX == 0 && stepY == 0)) {
                     continue_while = false;
                     setTimeout( `document.querySelector('.pumpkin').classList.add('close-mouth'); document.querySelector('.pumpkin').classList.remove('open-mouth')`, timer * speed);
                 } 
