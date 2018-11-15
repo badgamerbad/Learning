@@ -35,4 +35,60 @@ function draw() {
         ctx.arc(90, 65, 5, 0, Math.PI * 2, true);   //right eye
         ctx.stroke();
     }
+    var canvas_arcs = document.getElementById('canvas_arcs');
+    if(canvas_arcs.getContext) {
+        var ctx = canvas_arcs.getContext('2d');
+        
+        for (var i=0; i < 3; i++) {
+            for (var j=0; j<3; j++) {
+                ctx.beginPath();
+                var x = 25 + j * 50; // x coordinate
+                var y = 25 + i * 50; // y coordinate
+                var radius = 20; // Arc radius
+                var startAngle = 0; // Starting point on circle
+                var endAngle = Math.PI + (Math.PI * j) / 2; // End point on circle
+                var anticlockwise = i % 2 !== 0; // clockwise or anticlockwise
+
+                ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+                if(i>1) {
+                    ctx.fill();
+                }
+                else {
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+    var quadratic_curve = document.getElementById('quadratic_curve');
+    if(quadratic_curve.getContext) {
+        var ctx = quadratic_curve.getContext('2d');
+        ctx.beginPath();
+        ctx.moveTo(30, 0);
+        //px1, py1, x2, y2
+        ctx.quadraticCurveTo(5, 50, 20, 150);
+        ctx.moveTo(90, 0);
+        //px1, py1, px2, py2, x2, y2
+        ctx.bezierCurveTo(30, 40, 140, 100, 100, 150);
+        ctx.stroke();
+    }
+    var rect = document.getElementById('rect');
+    if(rect.getContext){
+        var ctx = rect.getContext('2d');
+        ctx.moveTo(20, 20);
+        //x1, y1, x2, y2, radius
+        ctx.arcTo(80, 80, 50, 150, 50);
+        ctx.stroke();
+    }
+    var path2d = document.getElementById('path2d');
+    if(path2d.getContext) {
+        var ctx = path2d.getContext('2d');
+        var rectangle = new Path2D();
+        rectangle.rect(10, 10, 50, 50);
+
+        var circle = new Path2D();
+        circle.moveTo(125, 35);
+        circle.arc(100, 35, 25, 0, 2*Math.PI);
+        ctx.stroke(rectangle);
+        ctx.fill(circle);
+    }
 }
