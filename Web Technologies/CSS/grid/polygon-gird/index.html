@@ -12,14 +12,14 @@
 <body>
     <div class="main-grid">
         <div class="header">
-            <div>
-                <img style="height: 30px;" src="polygon.svg" />
+            <div class="polygon">
+                <div class="shape"></div>
             </div>
             <div>
                 <p>Grid Grinder</p>
             </div>
         </div>
-        <div class="start-tap">
+        <div onclick="start()" class="start-tap">
             <center><p>Start</p></center>
         </div> 
         <div class="grid-container">
@@ -27,35 +27,42 @@
                 <!-- <img src="polygon.svg" /> -->
             </div>
             <div class="polygon top-50">
-                <!-- <img src="polygon.svg" /> -->
-                <div class="foo"></div>
+                <div class="shape"></div>
             </div>
             <div class="polygon">
                 <!-- <img src="polygon.svg" /> -->
             </div>
             <div class="polygon left-50">
-                <img src="polygon.svg" />
+                <div class="shape"></div>
             </div>
             <div class="polygon centered">
-                <img src="polygon.svg" />
+                <div class="shape"></div>
             </div>
             <div class="polygon right-50">
-                <img src="polygon.svg" />
+                <div class="shape"></div>
             </div>
             <div class="polygon">
                 <!-- <img src="polygon.svg" /> -->
             </div>
             <div class="polygon bottom-50">
-                <img src="polygon.svg" />
+                <div class="shape"></div>
             </div>
             <div class="polygon">
                 <!-- <img src="polygon.svg" /> -->
             </div>
         </div>
-        <div class="stop-tap">
+        <div onclick="stop()" class="stop-tap">
             <center><p>Stop</p></center>
         </div> 
     </div>
+    <script> 
+        function start() {
+            document.getElementsByClassName('grid-container')[0].classList.add('start-rotate');
+        }
+        function stop() {
+            document.getElementsByClassName('grid-container')[0].classList.remove('start-rotate');
+        }
+    </script>
 </body>
 
 </html>

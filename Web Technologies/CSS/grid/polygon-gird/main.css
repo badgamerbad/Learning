@@ -34,24 +34,6 @@ p {
   background-color: #00658C;
   border: 1px solid #00658C;
 }
-.start-tap:hover + .grid-container {
-  animation: clockwise 2s 2s infinite forwards;
-}
-.start-tap:hover + .grid-container > .centered {
-  animation: counter-clockwise 2s 2s infinite forwards;
-}
-.start-tap:hover + .grid-container > .top-50 {
-  animation: counter-clockwise 2s 2s infinite forwards, decrement-top 2s 0s forwards;
-}
-.start-tap:hover + .grid-container > .bottom-50 {
-  animation: counter-clockwise 2s 2s infinite forwards, decrement-bottom 2s 0s forwards;
-}
-.start-tap:hover + .grid-container > .left-50 {
-  animation: counter-clockwise 2s 2s infinite forwards, decrement-left 2s 0s forwards;
-}
-.start-tap:hover + .grid-container > .right-50 {
-  animation: counter-clockwise 2s 2s infinite forwards, decrement-right 2s 0s forwards;
-}
 
 .grid-container {
   display: grid;
@@ -62,14 +44,39 @@ p {
   justify-items: center;
 }
 
+.start-rotate {
+  animation: clockwise 2s 2s infinite forwards;
+}
+
+.start-rotate > .centered {
+  animation: counter-clockwise 2s 2s infinite forwards;
+}
+
+.start-rotate > .top-50 {
+  animation: counter-clockwise 2s 2s infinite forwards, decrement-top 2s 0s forwards;
+}
+
+.start-rotate > .bottom-50 {
+  animation: counter-clockwise 2s 2s infinite forwards, decrement-bottom 2s 0s forwards;
+}
+
+.start-rotate > .left-50 {
+  animation: counter-clockwise 2s 2s infinite forwards, decrement-left 2s 0s forwards;
+}
+
+.start-rotate > .right-50 {
+  animation: counter-clockwise 2s 2s infinite forwards, decrement-right 2s 0s forwards;
+}
+
 .polygon {
   position: relative;
 }
-.polygon .foo {
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
-  background: linear-gradient(30deg, blue 12px, transparent 13px), linear-gradient(-30deg, blue 12px, transparent 13px), linear-gradient(150deg, blue 12px, transparent 13px), linear-gradient(-150deg, blue 12px, transparent 13px), linear-gradient(-90deg, purple 50%, transparent 0%), linear-gradient(-20deg, orange 50%, transparent 0%), linear-gradient(20deg, yellow 50%, transparent 0%);
+.polygon .shape {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(28deg, #00658C 50%, #F04A58 0%);
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
 .polygon img {

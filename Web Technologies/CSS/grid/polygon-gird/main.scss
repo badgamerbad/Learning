@@ -35,28 +35,28 @@ p{
     margin: 5px;
     background-color: map-get($map: $colors, $key: secondery);
     border: 1px solid map-get($map: $colors, $key: secondery);
-    &:hover + .grid-container {
-        animation: clockwise 2s 2s infinite forwards;
-    }
-    &:hover + .grid-container > .centered {
-        animation: counter-clockwise 2s 2s infinite forwards;
-    }
-    &:hover + .grid-container > .top-50{
-        animation: counter-clockwise 2s 2s infinite forwards, 
-        decrement-top 2s 0s forwards;
-    }
-    &:hover + .grid-container > .bottom-50{
-        animation: counter-clockwise 2s 2s infinite forwards, 
-        decrement-bottom 2s 0s forwards;
-    }
-    &:hover + .grid-container > .left-50{
-        animation: counter-clockwise 2s 2s infinite forwards, 
-        decrement-left 2s 0s forwards;
-    }
-    &:hover + .grid-container > .right-50{
-        animation: counter-clockwise 2s 2s infinite forwards, 
-        decrement-right 2s 0s forwards;
-    }
+    // &:hover + .grid-container {
+    //     animation: clockwise 2s 2s infinite forwards;
+    // }
+    // &:hover + .grid-container > .centered {
+    //     animation: counter-clockwise 2s 2s infinite forwards;
+    // }
+    // &:hover + .grid-container > .top-50{
+    //     animation: counter-clockwise 2s 2s infinite forwards, 
+    //     decrement-top 2s 0s forwards;
+    // }
+    // &:hover + .grid-container > .bottom-50{
+    //     animation: counter-clockwise 2s 2s infinite forwards, 
+    //     decrement-bottom 2s 0s forwards;
+    // }
+    // &:hover + .grid-container > .left-50{
+    //     animation: counter-clockwise 2s 2s infinite forwards, 
+    //     decrement-left 2s 0s forwards;
+    // }
+    // &:hover + .grid-container > .right-50{
+    //     animation: counter-clockwise 2s 2s infinite forwards, 
+    //     decrement-right 2s 0s forwards;
+    // }
 }
 .grid-container {
     display: grid;
@@ -98,42 +98,39 @@ p{
     //     decrement-right 2s 0s forwards;
     // }
 }
+.start-rotate {
+    animation: clockwise 2s 2s infinite forwards;
+}
+.start-rotate > .centered {
+    animation: counter-clockwise 2s 2s infinite forwards;
+}
+.start-rotate > .top-50{
+    animation: counter-clockwise 2s 2s infinite forwards, 
+    decrement-top 2s 0s forwards;
+}
+.start-rotate > .bottom-50{
+    animation: counter-clockwise 2s 2s infinite forwards, 
+    decrement-bottom 2s 0s forwards;
+}
+.start-rotate > .left-50{
+    animation: counter-clockwise 2s 2s infinite forwards, 
+    decrement-left 2s 0s forwards;
+}
+.start-rotate > .right-50{
+    animation: counter-clockwise 2s 2s infinite forwards, 
+    decrement-right 2s 0s forwards;
+}
 .polygon {
     // border: 1px solid map-get($map: $colors, $key: primary);
     position: relative;
-    .foo {
-        width: 50px;
-        height: 50px;
-        border: 1px solid black;
+    .shape {
+        width: 40px;
+        height: 40px;
         background:
-            linear-gradient(
-                30deg, blue 12px, transparent 13px
-            ),
-            linear-gradient(
-                -30deg, blue 12px, transparent 13px
-            ),
-            linear-gradient(
-                150deg, blue 12px, transparent 13px
-            ),
-            linear-gradient(
-                -150deg, blue 12px, transparent 13px
-            ),
-            // linear-gradient(
-            //     to bottom, transparent 30%, red 10%, red 70%, transparent 10%
-            // ),
-            // linear-gradient(
-            //     -90deg, green 50%, transparent 0%
-            // ),
-            linear-gradient(
-                -90deg, purple 50%, transparent 0%
-            ),
-            linear-gradient(
-                -20deg, orange 50%, transparent 0%
-            ),
-            linear-gradient(
-                20deg, yellow 50%, transparent 0%
-            ),
+            linear-gradient(28deg, map-get($map: $colors, $key: secondery) 50%, map-get($map: $colors, $key: primary) 0%),
         ;
+        -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);   
     }
 }
 .polygon img {
