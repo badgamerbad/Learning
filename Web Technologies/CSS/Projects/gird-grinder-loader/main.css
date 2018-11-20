@@ -3,6 +3,7 @@
 body {
   margin: 0px;
   background-color: #F47942;
+  overflow-x: hidden;
 }
 
 p {

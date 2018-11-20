@@ -10,6 +10,7 @@ $colors: (
 body{
     margin: 0px;
     background-color: map-get($map: $colors, $key: yellowe);
+    overflow-x: hidden;
 }
 p{
     font-family: "Source Sans Pro", sans-serif;
