@@ -11,155 +11,158 @@ body{
     margin: 0px;
     background-color: map-get($map: $colors, $key: yellowe);
     overflow-x: hidden;
-}
-p{
-    font-family: "Source Sans Pro", sans-serif;
-    color: map-get($map: $colors, $key: whitee);
+    p{
+        font-family: "Source Sans Pro", sans-serif;
+        color: map-get($map: $colors, $key: whitee);
+    }
 }
 .main-grid {
     display: grid;
     grid-gap: 50px;
-}
-.header {
-    display: grid;
-    grid-template-columns: 30px 150px;
-    background-color: map-get($map: $colors, $key: greenn);
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-}
-.header p {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 25px;
-}
-.start-tap {
-    margin: 5px;
-    background-color: map-get($map: $colors, $key: secondery);
-    border: 1px solid map-get($map: $colors, $key: secondery);
-    // &:hover + .grid-container {
-    //     animation: clockwise 2s 2s infinite forwards;
-    // }
-    // &:hover + .grid-container > .centered {
-    //     animation: counter-clockwise 2s 2s infinite forwards;
-    // }
-    // &:hover + .grid-container > .top-50{
-    //     animation: counter-clockwise 2s 2s infinite forwards, 
-    //     decrement-top 2s 0s forwards;
-    // }
-    // &:hover + .grid-container > .bottom-50{
-    //     animation: counter-clockwise 2s 2s infinite forwards, 
-    //     decrement-bottom 2s 0s forwards;
-    // }
-    // &:hover + .grid-container > .left-50{
-    //     animation: counter-clockwise 2s 2s infinite forwards, 
-    //     decrement-left 2s 0s forwards;
-    // }
-    // &:hover + .grid-container > .right-50{
-    //     animation: counter-clockwise 2s 2s infinite forwards, 
-    //     decrement-right 2s 0s forwards;
-    // }
-}
-.grid-container {
-    display: grid;
-    grid-template-columns: 50px 50px 50px;
-    grid-gap: 0px;
-    grid-auto-rows: 50px;
-    justify-content: center;
-    justify-items: center;
-
-    // -webkit-animation-name: increment-corners;
-    // -webkit-animation-duration: 2000ms;
-    // -webkit-animation-delay: 0s;        
-    // -webkit-animation-fill-mode: forwards;
-    // animation-name: increment-corners;
-    // animation-duration: 2000ms;
-    // animation-delay: 0s;
-    // animation-fill-mode: forwards;
-
-    // &:hover {
-    //     animation: clockwise 2s 2s infinite forwards;
-    // }
-    // &:hover > .centered {
-    //     animation: counter-clockwise 2s 2s infinite forwards;
-    // }
-    // &:hover > .top-50{
-    //     animation: counter-clockwise 2s 2s infinite forwards, 
-    //     decrement-top 2s 0s forwards;
-    // }
-    // &:hover > .bottom-50{
-    //     animation: counter-clockwise 2s 2s infinite forwards, 
-    //     decrement-bottom 2s 0s forwards;
-    // }
-    // &:hover > .left-50{
-    //     animation: counter-clockwise 2s 2s infinite forwards, 
-    //     decrement-left 2s 0s forwards;
-    // }
-    // &:hover > .right-50{
-    //     animation: counter-clockwise 2s 2s infinite forwards, 
-    //     decrement-right 2s 0s forwards;
-    // }
-}
-.start-rotate {
-    animation: clockwise 2s 2s infinite forwards;
-}
-.start-rotate > .centered {
-    animation: counter-clockwise 2s 2s infinite forwards;
-}
-.start-rotate > .top-50{
-    animation: counter-clockwise 2s 2s infinite forwards, 
-    decrement-top 2s 0s forwards;
-}
-.start-rotate > .bottom-50{
-    animation: counter-clockwise 2s 2s infinite forwards, 
-    decrement-bottom 2s 0s forwards;
-}
-.start-rotate > .left-50{
-    animation: counter-clockwise 2s 2s infinite forwards, 
-    decrement-left 2s 0s forwards;
-}
-.start-rotate > .right-50{
-    animation: counter-clockwise 2s 2s infinite forwards, 
-    decrement-right 2s 0s forwards;
-}
-.polygon {
-    // border: 1px solid map-get($map: $colors, $key: primary);
-    position: relative;
-    .shape {
-        width: 40px;
-        height: 40px;
-        background:
-            linear-gradient(28deg, map-get($map: $colors, $key: secondery) 50%, map-get($map: $colors, $key: primary) 0%),
-        ;
-        -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);   
+    .header {
+        display: grid;
+        grid-template-columns: 30px 150px;
+        background-color: map-get($map: $colors, $key: greenn);
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 25px;
+        }
     }
-}
-.polygon img {
-    width: 50px;
-    height: 50px;
-    display: none;
-}
-.top-50{
-    top: 50px;
-    animation: increment-top 2s 0s forwards;
-}
-.left-50{
-    left: 50px;
-    animation: increment-left 2s 0s forwards;
-}
-.right-50{
-    right: 50px;
-    animation: increment-right 2s 0s forwards;
-}
-.bottom-50{
-    bottom: 50px;
-    animation: increment-bottom 2s 0s forwards;
-}
-
-.stop-tap {
-    margin: 5px;
-    background-color: map-get($map: $colors, $key: primary);
-    border: 1px solid map-get($map: $colors, $key: primary);
+    .start-tap {
+        margin: 5px;
+        background-color: map-get($map: $colors, $key: secondery);
+        border: 1px solid map-get($map: $colors, $key: secondery);
+        // &:hover + .grid-container {
+        //     animation: clockwise 2s 2s infinite forwards;
+        // }
+        // &:hover + .grid-container > .centered {
+        //     animation: counter-clockwise 2s 2s infinite forwards;
+        // }
+        // &:hover + .grid-container > .top-50{
+        //     animation: counter-clockwise 2s 2s infinite forwards, 
+        //     decrement-top 2s 0s forwards;
+        // }
+        // &:hover + .grid-container > .bottom-50{
+        //     animation: counter-clockwise 2s 2s infinite forwards, 
+        //     decrement-bottom 2s 0s forwards;
+        // }
+        // &:hover + .grid-container > .left-50{
+        //     animation: counter-clockwise 2s 2s infinite forwards, 
+        //     decrement-left 2s 0s forwards;
+        // }
+        // &:hover + .grid-container > .right-50{
+        //     animation: counter-clockwise 2s 2s infinite forwards, 
+        //     decrement-right 2s 0s forwards;
+        // }
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        .grid-container {
+            display: grid;
+            grid-template-columns: 50px 50px 50px;
+            grid-gap: 0px;
+            grid-auto-rows: 50px;
+            justify-content: center;
+            justify-items: center;
+        
+            // -webkit-animation-name: increment-corners;
+            // -webkit-animation-duration: 2000ms;
+            // -webkit-animation-delay: 0s;        
+            // -webkit-animation-fill-mode: forwards;
+            // animation-name: increment-corners;
+            // animation-duration: 2000ms;
+            // animation-delay: 0s;
+            // animation-fill-mode: forwards;
+        
+            // &:hover {
+            //     animation: clockwise 2s 2s infinite forwards;
+            // }
+            // &:hover > .centered {
+            //     animation: counter-clockwise 2s 2s infinite forwards;
+            // }
+            // &:hover > .top-50{
+            //     animation: counter-clockwise 2s 2s infinite forwards, 
+            //     decrement-top 2s 0s forwards;
+            // }
+            // &:hover > .bottom-50{
+            //     animation: counter-clockwise 2s 2s infinite forwards, 
+            //     decrement-bottom 2s 0s forwards;
+            // }
+            // &:hover > .left-50{
+            //     animation: counter-clockwise 2s 2s infinite forwards, 
+            //     decrement-left 2s 0s forwards;
+            // }
+            // &:hover > .right-50{
+            //     animation: counter-clockwise 2s 2s infinite forwards, 
+            //     decrement-right 2s 0s forwards;
+            // }
+            .top-50{
+                top: 50px;
+                animation: increment-top 2s 0s forwards;
+            }
+            .left-50{
+                left: 50px;
+                animation: increment-left 2s 0s forwards;
+            }
+            .right-50{
+                right: 50px;
+                animation: increment-right 2s 0s forwards;
+            }
+            .bottom-50{
+                bottom: 50px;
+                animation: increment-bottom 2s 0s forwards;
+            }
+        }
+        .start-rotate {
+            animation: clockwise 2s 2s infinite forwards;
+        }
+        .start-rotate > .centered {
+            animation: counter-clockwise 2s 2s infinite forwards;
+        }
+        .start-rotate > .top-50{
+            animation: counter-clockwise 2s 2s infinite forwards, 
+            decrement-top 2s 0s forwards;
+        }
+        .start-rotate > .bottom-50{
+            animation: counter-clockwise 2s 2s infinite forwards, 
+            decrement-bottom 2s 0s forwards;
+        }
+        .start-rotate > .left-50{
+            animation: counter-clockwise 2s 2s infinite forwards, 
+            decrement-left 2s 0s forwards;
+        }
+        .start-rotate > .right-50{
+            animation: counter-clockwise 2s 2s infinite forwards, 
+            decrement-right 2s 0s forwards;
+        }
+    }
+    .polygon {
+        // border: 1px solid map-get($map: $colors, $key: primary);
+        position: relative;
+        .shape {
+            width: 40px;
+            height: 40px;
+            background:
+                linear-gradient(28deg, map-get($map: $colors, $key: secondery) 50%, map-get($map: $colors, $key: primary) 0%),
+            ;
+            -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);   
+        }
+        img {
+            width: 50px;
+            height: 50px;
+            display: none;
+        }
+    }
+    .stop-tap {
+        margin: 5px;
+        background-color: map-get($map: $colors, $key: primary);
+        border: 1px solid map-get($map: $colors, $key: primary);
+    }
 }
 
 @-webkit-keyframes decrement-top {

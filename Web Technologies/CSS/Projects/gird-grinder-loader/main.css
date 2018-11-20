@@ -5,8 +5,7 @@ body {
   background-color: #F47942;
   overflow-x: hidden;
 }
-
-p {
+body p {
   font-family: "Source Sans Pro", sans-serif;
   color: #ffffff;
 }
@@ -15,8 +14,7 @@ p {
   display: grid;
   grid-gap: 50px;
 }
-
-.header {
+.main-grid .header {
   display: grid;
   grid-template-columns: 30px 150px;
   background-color: #57AC66;
@@ -24,19 +22,20 @@ p {
   justify-items: center;
   align-items: center;
 }
-
-.header p {
+.main-grid .header p {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 25px;
 }
-
-.start-tap {
+.main-grid .start-tap {
   margin: 5px;
   background-color: #00658C;
   border: 1px solid #00658C;
 }
-
-.grid-container {
+.main-grid .container {
+  display: flex;
+  justify-content: center;
+}
+.main-grid .container .grid-container {
   display: grid;
   grid-template-columns: 50px 50px 50px;
   grid-gap: 0px;
@@ -44,69 +43,56 @@ p {
   justify-content: center;
   justify-items: center;
 }
-
-.start-rotate {
+.main-grid .container .grid-container .top-50 {
+  top: 50px;
+  animation: increment-top 2s 0s forwards;
+}
+.main-grid .container .grid-container .left-50 {
+  left: 50px;
+  animation: increment-left 2s 0s forwards;
+}
+.main-grid .container .grid-container .right-50 {
+  right: 50px;
+  animation: increment-right 2s 0s forwards;
+}
+.main-grid .container .grid-container .bottom-50 {
+  bottom: 50px;
+  animation: increment-bottom 2s 0s forwards;
+}
+.main-grid .container .start-rotate {
   animation: clockwise 2s 2s infinite forwards;
 }
-
-.start-rotate > .centered {
+.main-grid .container .start-rotate > .centered {
   animation: counter-clockwise 2s 2s infinite forwards;
 }
-
-.start-rotate > .top-50 {
+.main-grid .container .start-rotate > .top-50 {
   animation: counter-clockwise 2s 2s infinite forwards, decrement-top 2s 0s forwards;
 }
-
-.start-rotate > .bottom-50 {
+.main-grid .container .start-rotate > .bottom-50 {
   animation: counter-clockwise 2s 2s infinite forwards, decrement-bottom 2s 0s forwards;
 }
-
-.start-rotate > .left-50 {
+.main-grid .container .start-rotate > .left-50 {
   animation: counter-clockwise 2s 2s infinite forwards, decrement-left 2s 0s forwards;
 }
-
-.start-rotate > .right-50 {
+.main-grid .container .start-rotate > .right-50 {
   animation: counter-clockwise 2s 2s infinite forwards, decrement-right 2s 0s forwards;
 }
-
-.polygon {
+.main-grid .polygon {
   position: relative;
 }
-.polygon .shape {
+.main-grid .polygon .shape {
   width: 40px;
   height: 40px;
   background: linear-gradient(28deg, #00658C 50%, #F04A58 0%);
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
-
-.polygon img {
+.main-grid .polygon img {
   width: 50px;
   height: 50px;
   display: none;
 }
-
-.top-50 {
-  top: 50px;
-  animation: increment-top 2s 0s forwards;
-}
-
-.left-50 {
-  left: 50px;
-  animation: increment-left 2s 0s forwards;
-}
-
-.right-50 {
-  right: 50px;
-  animation: increment-right 2s 0s forwards;
-}
-
-.bottom-50 {
-  bottom: 50px;
-  animation: increment-bottom 2s 0s forwards;
-}
-
-.stop-tap {
+.main-grid .stop-tap {
   margin: 5px;
   background-color: #F04A58;
   border: 1px solid #F04A58;
