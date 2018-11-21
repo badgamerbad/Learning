@@ -7,13 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
-  data;
-  // constructor(_global: GlobalRef) {
   constructor() {
-    // this.data = _global.nativeGlobal.DATA;
-    this.data = window;
+    
   }
-
   ngOnInit() {
   }
 }

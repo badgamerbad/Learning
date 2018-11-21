@@ -16,10 +16,10 @@ export class appService {
 
   constructor(private _http: HttpClient) { }
   sychronousGet() {
-    return this._http.get('api/tasks')
+    return this._http.get('api/tasks', httpOptions)
   }
   sychronousPost(body) {
-    return this._http.post('api/tasks', body)
+    return this._http.post('api/tasks', body, httpOptions)
   }
   sychronousDelete(id) {
     return this._http.delete(`api/tasks/${id}`, httpOptions)

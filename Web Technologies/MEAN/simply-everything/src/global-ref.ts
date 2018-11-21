@@ -13,3 +13,5 @@ export class BrowserGlobalRef extends GlobalRef {
 export class NodeGlobalRef extends GlobalRef {
     get nativeGlobal(): MyGlobal { return global as MyGlobal; }
 }
+
+https://brianflove.com/2018/01/11/angular-window-provider/
