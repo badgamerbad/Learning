@@ -14,4 +14,8 @@ module.exports = app => {
         const object =  await tasksSchema.insertMany(query)
         res.json(object)
     })
+    app.delete('/api/tasks/:id', async(req, res) => {
+        const object = await tasksSchema.deleteOne({"_id": mongoose.Types.ObjectId(req.params.id)})
+        res.json(object)
+    })
 }

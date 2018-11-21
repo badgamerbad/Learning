@@ -7,10 +7,14 @@ import { AppComponent } from './app.component';
 import { appService } from './app.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './auth/auth.component';
+
+import { GlobalRef } from 'src/global-ref';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

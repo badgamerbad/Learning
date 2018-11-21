@@ -1,8 +1,11 @@
 <input type="button" (click)="getTasks()" value="Get Tasks">
-<form #postTask="ngForm" (ngSubmit)="postTask()">
-  <label for="name">Name:</label><input type="text">
-  <label for="desc">Description:</label><input type="text">
+<li *ngFor="let task of tasks">{{task._id}} <input type="button" (click)="deleteTask(task._id)"></li>
+<form #postTask="ngForm" (ngSubmit)="postTasks()">
+  <label for="name">Name:</label><input type="text" [(ngModel)]="taskForm.name" [ngModelOptions]="{standalone: true}">
+  <label for="desc">Type:</label><input type="text" [(ngModel)]="taskForm.type" [ngModelOptions]="{standalone: true}">
   <input type="submit" value="Submit">
 </form>
 
 <router-outlet></router-outlet>
+
+<app-auth></app-auth>
