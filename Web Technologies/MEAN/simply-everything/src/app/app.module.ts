@@ -12,7 +12,7 @@ import { AuthComponent } from './auth/auth.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
