@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
+  foo;
   constructor() {
-    
+    this.foo = window["foo"];
+    console.log('-----------------------------------------foo--------------------------------')
+    console.log(this.foo);
   }
   ngOnInit() {
+  }
+  getFoo(){
+    console.log('--------------------------------------get-foo--------------------------------')
+    console.log(window["foo"]);
   }
 }

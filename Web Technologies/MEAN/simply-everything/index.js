@@ -1,4 +1,5 @@
 const express = require('express')
+const session = require('express-session')
 const bodyparser = require('body-parser')
 const path = require('path')
 const http = require('http')
@@ -6,7 +7,9 @@ const mongoose = require('mongoose')
 
 const app = express()
 
-mongoose.connect('mongodb://127.0.0.1:27017/app')
+app.use(session({secret: 'ssshh'}));
+
+mongoose.connect('mongodb://127.0.0.1:27017/app', { useNewUrlParser: true })
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended: false}))
 
