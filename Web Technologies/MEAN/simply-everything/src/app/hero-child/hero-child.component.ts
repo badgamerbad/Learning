@@ -8,8 +8,9 @@ import { Hero } from './hero'
 export class HeroChildComponent implements OnInit {
 
   constructor() {
-    this.hero = new Hero(1, "222");
-   }
+    this.hero = new Hero(1, "Default Hero");
+    this.masterName = "Default Master"
+  }
 
   ngOnInit() {
   }

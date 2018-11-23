@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { appService } from './app.service';
 
 import { Meta } from '@angular/platform-browser';
+import { promise } from 'protractor';
 
 @Component({
   selector: 'app-root',
@@ -41,5 +42,14 @@ export class AppComponent {
       res => this.task = res,
       err => this.err = err
     )
+  }
+  foo() {
+    new Promise((resolve, reject) => {
+      this._appService.sychronousGet().subscribe(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+    
   }
 }
