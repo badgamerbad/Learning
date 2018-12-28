@@ -23,6 +23,12 @@ function draw() {
     ball.draw();
     ball.x += ball.vx;
     ball.y += ball.vy;
+    if (ball.y + ball.vy > canvas.height || ball.y + ball.vy < 0) {
+        ball.vy = -ball.vy;
+    }
+    if (ball.x + ball.vx > canvas.width || ball.x + ball.vx < 0) {
+        ball.vx = -ball.vx;
+    }
     raf = window.requestAnimationFrame(draw);
 }
 
