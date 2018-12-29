@@ -17,6 +17,9 @@ import { VoteTakerComponent } from './hero-child/votetaker.component';
 import { VoterComponent } from './hero-child/voter.component';
 import { CountdownLocalVarParentComponent } from './hero-child/parent-child/countdown-parent.component';
 import { CountDownTimerComponent } from './hero-child/parent-child/countdown-timer.component';
+import { AstronautComponent } from './hero-child/observables/astronaut.component';
+import { MissionControlComponent } from './hero-child/observables/missioncontrol.component';
+import { MissionService } from './hero-child/observables/mission.service';
 
 const routes: Routes = [
   { path: 'r1', component: Route1Component },
@@ -27,6 +30,7 @@ const routes: Routes = [
   { path: 'version-parent', component: VersionParentComponent },
   { path: 'vote-Taker', component: VoteTakerComponent },
   { path: 'countdown-parent', component: CountdownLocalVarParentComponent },
+  { path: 'mission-control', component: MissionControlComponent },
 ];
 
 @NgModule({
@@ -44,8 +48,11 @@ const routes: Routes = [
     VoterComponent,
     CountdownLocalVarParentComponent,
     CountDownTimerComponent,
+    AstronautComponent,
+    MissionControlComponent,
   ],
   imports: [CommonModule, BrowserModule, RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [MissionService]
 })
 export class AppRoutingModule { }
