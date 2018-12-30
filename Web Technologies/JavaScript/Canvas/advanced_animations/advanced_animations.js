@@ -23,6 +23,8 @@ function draw() {
     ball.draw();
     ball.x += ball.vx;
     ball.y += ball.vy;
+    ball.vy *= .99;
+    ball.vy += .25;
     if (ball.y + ball.vy > canvas.height || ball.y + ball.vy < 0) {
         ball.vy = -ball.vy;
     }
