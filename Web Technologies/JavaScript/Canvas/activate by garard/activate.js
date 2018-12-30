@@ -117,6 +117,7 @@
 				if (p.q > kRendering) {
 					ctx.moveTo(this.x, this.y);
 					ctx.lineTo(p.n.x, p.n.y);
+					// ctx.stroke();
 				}
 			}
 		}
@@ -211,7 +212,7 @@
 			const w = canvas.width;
 			const h = canvas.height;
 			const s = this.scale;
-			const angle = Math.sin((this.ai += pointer.isDown ? 0 : 0.05)) * s * Math.min(1.0, h / w);
+			const angle = 0 & Math.sin((this.ai += pointer.isDown ? 0 : 0.05)) * s * Math.min(1.0, h / w);
 			const cos = Math.cos(angle);
 			const sin = Math.sin(angle);
 			this.borders[0].update(-sin, cos, -h * s);
@@ -314,7 +315,7 @@
 	let sun;
 	let kRadius;
 	const particles = [];
-	const grid = new Grid(100);
+	const grid = new Grid(100); // max number of particles inside a grid
 	const ctx = canvas.init();
 	pointer.init(canvas);
 	container.init(0.35);
