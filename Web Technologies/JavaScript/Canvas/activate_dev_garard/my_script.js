@@ -10,7 +10,7 @@
 		}
         fill(particles) {
 			for (let p of particles) {
-				const index = ((1 + p.y / kRadius) | 0) * 10 + ((1 + p.x / kRadius) | 0)
+				const index = ((1 + p.y / kRadius) | 0) * this.width + ((1 + p.x / kRadius) | 0)
 				if (this.cellsSize[index] < this.max) {
 					const cellPos = this.cellsSize[index]++
 					this.cells[index * this.max + cellPos] = p
