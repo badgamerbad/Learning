@@ -2,20 +2,15 @@
 {
     class Grid {
         constructor(){
-            this.max = 100
-		}
-		initSize(width, height) {
-			this.width = (2 + width / kRadius) | 0;
-			this.height = (2 + height / kRadius) | 0;
-			this.width = 10;
-			this.height = 10;
-			this.size = kRadius;
-			this.cells = new Array(this.width * this.height * this.max);
-			this.cellsSize = new Uint8Array(this.width * this.height);
+			this.max = 100
+			this.width = (2 + canvas.width / kRadius) | 0
+			this.height = (2 + canvas.height / kRadius) | 0
+			this.cells = new Array(this.width * this.height * this.max)
+			this.cellsSize = new Uint8Array(this.width * this.height)
 		}
         fill(particles) {
 			for (let p of particles) {
-				const index = ((1 + p.y / this.size) | 0) * this.width + ((1 + p.x / this.size) | 0)
+				const index = ((1 + p.y / kRadius) | 0) * 10 + ((1 + p.x / kRadius) | 0)
 				if (this.cellsSize[index] < this.max) {
 					const cellPos = this.cellsSize[index]++
 					this.cells[index * this.max + cellPos] = p
@@ -25,18 +20,18 @@
     }
     class Particle {
         constructor(x, y) {
-			this.x = x;
-			this.y = y;
-			this.px = x;
-			this.py = y;
+			this.x = x
+			this.y = y
+			this.px = x
+			this.py = y
 		}
         fluid() {
 			// Ref Grant Kot Material Point Method http://grantkot.com/
 			let pressure = 0;
 			let presnear = 0;
 			const neighbors = [];
-			const xc = (1 + this.x / grid.size) | 0;
-			const yc = (1 + this.y / grid.size) | 0;
+			const xc = (1 + this.x / kRadius) | 0;
+			const yc = (1 + this.y / kRadius) | 0;
 			for (let x = xc - 1; x < xc + 2; ++x) {
 				for (let y = yc - 1; y < yc + 2; ++y) {
 					const index = y * grid.width + x;
@@ -87,16 +82,10 @@
 	}
 	const canvas = {
 		init() {
-			this.elem = document.querySelector('canvas');
-			this.resize();
-			window.addEventListener("resize", () => canvas.resize(), false);
-			return this.elem.getContext("2d", { alpha: false });
-		},
-		resize() {
-			this.width = this.elem.width = this.elem.offsetWidth;
-			this.height = this.elem.height = this.elem.offsetHeight;
-			kRadius = Math.round(0.04 * Math.sqrt(this.width * this.height));
-			grid.initSize(this.width, this.height);
+			this.elem = document.querySelector('canvas')
+			this.width = this.elem.width = this.elem.offsetWidth
+			this.height = this.elem.height = this.elem.offsetHeight
+			return this.elem.getContext("2d", { alpha: false })
 		}
 	}
 	const initParticles = num => {
@@ -113,10 +102,10 @@
 		}
 		grid.fill(particles);
     }
-	let kRadius
 	const particles = []
+	const ctx = canvas.init()
+	const kRadius = Math.round(0.04 * Math.sqrt(canvas.width * canvas.height))
 	const grid = new Grid()
-    const ctx = canvas.init()
     initParticles(1200)
     const kDensity = 3
 	const kRendering = 0.45
