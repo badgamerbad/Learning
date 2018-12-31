@@ -3,12 +3,16 @@
     class Grid {
         constructor(){
             this.max = 100
-            this.size = kRadius
-            this.width = (2 + canvas.width / kRadius) | 0
-			this.height = (2 + canvas.height / kRadius) | 0
-            this.cells = new Array(this.width * this.height * this.max)
-			this.cellsSize = new Uint8Array(this.width * this.height)
-        }
+		}
+		initSize(width, height) {
+			this.width = (2 + width / kRadius) | 0;
+			this.height = (2 + height / kRadius) | 0;
+			this.width = 10;
+			this.height = 10;
+			this.size = kRadius;
+			this.cells = new Array(this.width * this.height * this.max);
+			this.cellsSize = new Uint8Array(this.width * this.height);
+		}
         fill(particles) {
 			for (let p of particles) {
 				const index = ((1 + p.y / this.size) | 0) * this.width + ((1 + p.x / this.size) | 0)
@@ -81,10 +85,21 @@
 			this.vy = vy;
 		}
 	}
-    const canvas = document.querySelector('canvas')
-    const ctx = canvas.getContext('2d')
-    const particles = []
-    const initParticles = num => {
+	const canvas = {
+		init() {
+			this.elem = document.querySelector('canvas');
+			this.resize();
+			window.addEventListener("resize", () => canvas.resize(), false);
+			return this.elem.getContext("2d", { alpha: false });
+		},
+		resize() {
+			this.width = this.elem.width = this.elem.offsetWidth;
+			this.height = this.elem.height = this.elem.offsetHeight;
+			kRadius = Math.round(0.04 * Math.sqrt(this.width * this.height));
+			grid.initSize(this.width, this.height);
+		}
+	}
+	const initParticles = num => {
 		const s = 0.35;
 		let x = canvas.width * s * 0.5;
 		let y = canvas.height * s * 0.5;
@@ -98,12 +113,17 @@
 		}
 		grid.fill(particles);
     }
-    let kRadius = Math.round(0.04 * Math.sqrt(canvas.width * canvas.height))
-    const kDensity = 3;
-	const kRendering = 0.45;
-    const grid = new Grid()
-    initParticles(100)
+	let kRadius
+	const particles = []
+	const grid = new Grid()
+    const ctx = canvas.init()
+    initParticles(1200)
+    const kDensity = 3
+	const kRendering = 0.45
     const run = () => {
+		requestAnimationFrame(run)
+		ctx.fillStyle = "#bebebf";
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.beginPath();
 		ctx.strokeStyle = "#556";
         for (let p of particles) p.fluid();

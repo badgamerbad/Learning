@@ -4,10 +4,10 @@
 		constructor(maxParticlesPerCell) {
 			this.max = maxParticlesPerCell;
 		}
-		initSize(width, height, size) {
-			this.width = (2 + width / size) | 0;
-			this.height = (2 + height / size) | 0;
-			this.size = size;
+		initSize(width, height) {
+			this.width = (2 + width / kRadius) | 0;
+			this.height = (2 + height / kRadius) | 0;
+			this.size = kRadius;
 			this.cells = new Array(this.width * this.height * this.max);
 			this.cellsSize = new Uint8Array(this.width * this.height);
 		}
@@ -247,7 +247,7 @@
 			this.width = this.elem.width = this.elem.offsetWidth;
 			this.height = this.elem.height = this.elem.offsetHeight;
 			kRadius = Math.round(0.04 * Math.sqrt(this.width * this.height));
-			grid.initSize(this.width, this.height, kRadius);
+			grid.initSize(this.width, this.height);
 			grid.fill(particles);
 			if (sun) sun.r = 1.5 * kRadius;
 		}
