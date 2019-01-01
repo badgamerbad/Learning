@@ -5,8 +5,8 @@
 			this.max = maxParticlesPerCell;
 		}
 		initSize(width, height) {
-			this.width = (2 + width / kRadius) | 0;
-			this.height = (2 + height / kRadius) | 0;
+			this.width = (1 + width / kRadius) | 0;
+			this.height = (1 + height / kRadius) | 0;
 			this.size = kRadius;
 			this.cells = new Array(this.width * this.height * this.max);
 			this.cellsSize = new Uint8Array(this.width * this.height);

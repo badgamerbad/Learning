@@ -2,18 +2,18 @@
 {
     class Grid {
         constructor(){
-			this.max = 100
-			this.width = (2 + canvas.width / kRadius) | 0
-			this.height = (2 + canvas.height / kRadius) | 0
-			this.cells = new Array(this.width * this.height * this.max)
+			this.maxGridCellSize = 2
+			this.width = (1 + canvas.width / kRadius) | 0
+			this.height = (1 + canvas.height / kRadius) | 0
+			this.cells = new Array(this.width * this.height * this.maxGridCellSize)
 			this.cellsSize = new Uint8Array(this.width * this.height)
 		}
         fill(particles) {
 			for (let p of particles) {
 				const index = ((1 + p.y / kRadius) | 0) * this.width + ((1 + p.x / kRadius) | 0)
-				if (this.cellsSize[index] < this.max) {
+				if (this.cellsSize[index] < this.maxGridCellSize) {
 					const cellPos = this.cellsSize[index]++
-					this.cells[index * this.max + cellPos] = p
+					this.cells[index * this.maxGridCellSize + cellPos] = p
 				}
 			}
 		}
@@ -36,7 +36,7 @@
 				for (let y = yc - 1; y < yc + 2; ++y) {
 					const index = y * grid.width + x;
 					for (
-						let k = grid.max * index, end = k + grid.cellsSize[index];
+						let k = grid.maxGridCellSize * index, end = k + grid.cellsSize[index];
 						k < end;
 						++k
 					) {
@@ -67,6 +67,10 @@
 				this.y -= dy;
 				if (p.q > kRendering) {
 					ctx.moveTo(this.x, this.y);
+					// ctx.arc(this.x, this.y, 10, 0, 2 * Math.PI);
+					ctx.font = '20px serif';
+					const index = ((1 + this.y / kRadius) | 0) * grid.width + ((1 + this.x / kRadius) | 0)
+					ctx.strokeText(`${index} ${this.x | 0} ${this.y | 0}`, this.x, this.y);
 					ctx.lineTo(p.n.x, p.n.y);
 				}
 			}
@@ -85,6 +89,8 @@
 			this.elem = document.querySelector('canvas')
 			this.width = this.elem.width = this.elem.offsetWidth
 			this.height = this.elem.height = this.elem.offsetHeight
+			this.width = this.elem.width = 1000
+			this.height = this.elem.height = 500
 			return this.elem.getContext("2d", { alpha: false })
 		}
 	}
@@ -104,9 +110,10 @@
     }
 	const particles = []
 	const ctx = canvas.init()
-	const kRadius = Math.round(0.04 * Math.sqrt(canvas.width * canvas.height))
+	let kRadius = Math.round(0.04 * Math.sqrt(canvas.width * canvas.height))
+	kRadius = 500
 	const grid = new Grid()
-    initParticles(1200)
+    initParticles(5)
     const kDensity = 3
 	const kRendering = 0.45
     const run = () => {
