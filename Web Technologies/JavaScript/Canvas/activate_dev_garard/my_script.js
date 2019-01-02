@@ -2,7 +2,7 @@
 {
     class Grid {
         constructor(){
-			this.maxGridCellSize = 2
+			this.maxGridCellSize = 3
 			this.width = (1 + canvas.width / kRadius) | 0
 			this.height = (1 + canvas.height / kRadius) | 0
 			this.cells = new Array(this.width * this.height * this.maxGridCellSize)
@@ -14,6 +14,21 @@
 				if (this.cellsSize[index] < this.maxGridCellSize) {
 					const cellPos = this.cellsSize[index]++
 					this.cells[index * this.maxGridCellSize + cellPos] = p
+				}
+			}
+		}
+		update() {
+			for (let i = 0; i < this.width * this.height; ++i) {
+				for (let j = 0; j < this.cellsSize[i]; ++j) {
+					const p = this.cells[i * this.maxGridCellSize + j];
+					const index =
+						((1 + p.y / this.size) | 0) * this.width + ((1 + p.x / this.size) | 0);
+					if (index !== i && this.cellsSize[index] < this.maxGridCellSize) {
+						this.cells[index * this.maxGridCellSize + this.cellsSize[index]++] = p;
+						this.cells[i * this.maxGridCellSize + j] = this.cells[
+							i * this.maxGridCellSize + --this.cellsSize[i]
+						];
+					}
 				}
 			}
 		}
@@ -56,7 +71,7 @@
 				}
 			}
 			pressure = (pressure - kDensity) * 1.0;
-			presnear *= 0.5;
+			// presnear *= 0.5;
 			for (let p of neighbors) {
 				const pr = pressure + presnear * p.q;
 				const dx = p.vx * pr;
@@ -91,7 +106,34 @@
 			this.height = this.elem.height = this.elem.offsetHeight
 			this.width = this.elem.width = 1000
 			this.height = this.elem.height = 500
+			this.addEventListener()
 			return this.elem.getContext("2d", { alpha: false })
+		},
+		addEventListener(){
+			this.elem.addEventListener('click', function(event){
+				const xc = (1 + event.clientX / grid.size) | 0
+				const yc = (1 + event.clientY / grid.size) | 0
+				let near = {}, smallestDistance = kRadius
+				for(let x = xc - 1; x < xc + 2; ++x){
+					for(let y = yc - 1; y < yc + 2; ++y){
+						const index = y * grid.width + x
+						for(let k = index * grid.maxGridCellSize, end = k + grid.cellsSize[index];
+							k < end;
+							++k
+							){
+								const pn = grid.cells[k]
+								const vx = pn.x - event.clientX
+								const vy = pn.y - event.clientY
+								const slen = Math.sqrt(vx * vx + vy * vy)
+								if(slen < smallestDistance){
+									smallestDistance = slen
+									near = grid.cells[k] 
+								}
+						}
+					}
+				}
+				console.log(`near - ${near.x} and smallestDistance - ${smallestDistance}`)
+			})
 		}
 	}
 	const initParticles = num => {
@@ -120,6 +162,7 @@
 		requestAnimationFrame(run)
 		ctx.fillStyle = "#bebebf";
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
+		grid.update();
         ctx.beginPath();
 		ctx.strokeStyle = "#556";
         for (let p of particles) p.fluid();
