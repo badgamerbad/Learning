@@ -111,41 +111,56 @@
 			return this.elem.getContext("2d", { alpha: false })
 		},
 		addEventListener(){
-			let foo = false
-			this.elem.addEventListener('mousedown', function(event){
-				foo = true
-			})
-			this.elem.addEventListener('mouseup', function(event){
-				foo = false
-			})
-			this.elem.addEventListener('mousemove', function(event){
-				if(foo){
-					const xc = (1 + event.clientX / kRadius) | 0
-					const yc = (1 + event.clientY / kRadius) | 0
-					let near = {}, smallestDistance = kRadius
-					for(let x = xc - 1; x < xc + 2; ++x){
-						for(let y = yc - 1; y < yc + 2; ++y){
-							const index = y * grid.width + x
-							for(let k = index * grid.maxGridCellSize, end = k + grid.cellsSize[index];
-								k < end;
-								++k
-								){
-									const pn = grid.cells[k]
-									const vx = pn.x - event.clientX
-									const vy = pn.y - event.clientY
-									const slen = Math.sqrt(vx * vx + vy * vy)
-									if(slen < smallestDistance){
-										smallestDistance = slen
-										near = grid.cells[k] 
-									}
-							}
+			this.isMouseDown = false
+			this.elem.addEventListener('mousedown', e => this.setMouseDown(e, false))
+			this.elem.addEventListener('mouseup', e => this.resetMouseDown(e, false))
+			this.elem.addEventListener('mousemove', e => this.moveParticle(e, false))
+			this.elem.addEventListener('touchstart', e => this.setMouseDown(e, true))
+			this.elem.addEventListener('touchend', e => this.resetMouseDown(e, true))
+			this.elem.addEventListener('touchmove', e => this.moveParticle(e, true))
+		},
+		moveParticle(event, touch) {
+			let xe = "", ye = ""
+			if (touch) {
+				event.preventDefault();
+				xe = event.targetTouches[0].clientX;
+				ye = event.targetTouches[0].clientY;
+			} else {
+				xe = event.clientX;
+				ye = event.clientY;
+			}
+			if(this.isMouseDown){
+				const xc = (1 + xe / kRadius) | 0
+				const yc = (1 + ye / kRadius) | 0
+				let near = {}, smallestDistance = kRadius
+				for(let x = xc - 1; x < xc + 2; ++x){
+					for(let y = yc - 1; y < yc + 2; ++y){
+						const index = y * grid.width + x
+						for(let k = index * grid.maxGridCellSize, end = k + grid.cellsSize[index];
+							k < end;
+							++k
+							){
+								const pn = grid.cells[k]
+								const vx = pn.x - xe
+								const vy = pn.y - ye
+								const slen = Math.sqrt(vx * vx + vy * vy)
+								if(slen < smallestDistance){
+									smallestDistance = slen
+									near = grid.cells[k] 
+								}
 						}
 					}
-					console.log(`near - ${near.x} and smallestDistance - ${smallestDistance}`)
-					near.x = event.clientX
-					near.y = event.clientY
 				}
-			})
+				console.log(`near - ${near.x} and smallestDistance - ${smallestDistance}`)
+				near.x = xe
+				near.y = ye
+			}
+		},
+		setMouseDown(event){
+			this.isMouseDown = true
+		},
+		resetMouseDown(event){
+			this.isMouseDown = false
 		}
 	}
 	const initParticles = num => {
