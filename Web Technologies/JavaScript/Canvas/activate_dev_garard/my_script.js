@@ -2,7 +2,7 @@
 {
     class Grid {
         constructor(){
-			this.maxGridCellSize = 3
+			this.maxGridCellSize = 4
 			this.width = (1 + canvas.width / kRadius) | 0
 			this.height = (1 + canvas.height / kRadius) | 0
 			this.cells = new Array(this.width * this.height * this.maxGridCellSize)
@@ -41,6 +41,11 @@
 			this.py = y
 		}
         fluid() {
+			ctx.moveTo(this.x, this.y)
+			ctx.arc(this.x, this.y, 10, 0, 2*Math.PI);
+			ctx.font = '20px serif';
+			let index = ((1 + this.y / kRadius) | 0) * grid.width + ((1 + this.x / kRadius) | 0)
+			ctx.strokeText(`${index} ${this.x | 0} ${this.y | 0}`, this.x, this.y);
 			// Ref Grant Kot Material Point Method http://grantkot.com/
 			let pressure = 0;
 			let presnear = 0;
@@ -49,7 +54,7 @@
 			const yc = (1 + this.y / kRadius) | 0;
 			for (let x = xc - 1; x < xc + 2; ++x) {
 				for (let y = yc - 1; y < yc + 2; ++y) {
-					const index = y * grid.width + x;
+					index = y * grid.width + x;
 					for (
 						let k = grid.maxGridCellSize * index, end = k + grid.cellsSize[index];
 						k < end;
@@ -82,10 +87,6 @@
 				this.y -= dy;
 				if (p.q > kRendering) {
 					ctx.moveTo(this.x, this.y);
-					// ctx.arc(this.x, this.y, 10, 0, 2 * Math.PI);
-					ctx.font = '20px serif';
-					const index = ((1 + this.y / kRadius) | 0) * grid.width + ((1 + this.x / kRadius) | 0)
-					ctx.strokeText(`${index} ${this.x | 0} ${this.y | 0}`, this.x, this.y);
 					ctx.lineTo(p.n.x, p.n.y);
 				}
 			}
@@ -110,29 +111,40 @@
 			return this.elem.getContext("2d", { alpha: false })
 		},
 		addEventListener(){
-			this.elem.addEventListener('click', function(event){
-				const xc = (1 + event.clientX / grid.size) | 0
-				const yc = (1 + event.clientY / grid.size) | 0
-				let near = {}, smallestDistance = kRadius
-				for(let x = xc - 1; x < xc + 2; ++x){
-					for(let y = yc - 1; y < yc + 2; ++y){
-						const index = y * grid.width + x
-						for(let k = index * grid.maxGridCellSize, end = k + grid.cellsSize[index];
-							k < end;
-							++k
-							){
-								const pn = grid.cells[k]
-								const vx = pn.x - event.clientX
-								const vy = pn.y - event.clientY
-								const slen = Math.sqrt(vx * vx + vy * vy)
-								if(slen < smallestDistance){
-									smallestDistance = slen
-									near = grid.cells[k] 
-								}
+			let foo = false
+			this.elem.addEventListener('mousedown', function(event){
+				foo = true
+			})
+			this.elem.addEventListener('mouseup', function(event){
+				foo = false
+			})
+			this.elem.addEventListener('mousemove', function(event){
+				if(foo){
+					const xc = (1 + event.clientX / kRadius) | 0
+					const yc = (1 + event.clientY / kRadius) | 0
+					let near = {}, smallestDistance = kRadius
+					for(let x = xc - 1; x < xc + 2; ++x){
+						for(let y = yc - 1; y < yc + 2; ++y){
+							const index = y * grid.width + x
+							for(let k = index * grid.maxGridCellSize, end = k + grid.cellsSize[index];
+								k < end;
+								++k
+								){
+									const pn = grid.cells[k]
+									const vx = pn.x - event.clientX
+									const vy = pn.y - event.clientY
+									const slen = Math.sqrt(vx * vx + vy * vy)
+									if(slen < smallestDistance){
+										smallestDistance = slen
+										near = grid.cells[k] 
+									}
+							}
 						}
 					}
+					console.log(`near - ${near.x} and smallestDistance - ${smallestDistance}`)
+					near.x = event.clientX
+					near.y = event.clientY
 				}
-				console.log(`near - ${near.x} and smallestDistance - ${smallestDistance}`)
 			})
 		}
 	}
@@ -162,7 +174,7 @@
 		requestAnimationFrame(run)
 		ctx.fillStyle = "#bebebf";
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
-		grid.update();
+		// grid.update();
         ctx.beginPath();
 		ctx.strokeStyle = "#556";
         for (let p of particles) p.fluid();
