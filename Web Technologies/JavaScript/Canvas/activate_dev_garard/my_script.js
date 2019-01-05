@@ -76,7 +76,6 @@
 				}
 			}
 			pressure = (pressure - kDensity) * 1.0;
-			// presnear *= 0.5;
 			for (let p of neighbors) {
 				const pr = pressure + presnear * p.q;
 				const dx = p.vx * pr;
@@ -151,7 +150,7 @@
 						}
 					}
 				}
-				console.log(`near - ${near.x} and smallestDistance - ${smallestDistance}`)
+				console.log(`near - ${near.x} ${near.y} and smallestDistance - ${smallestDistance}`)
 				near.x = xe
 				near.y = ye
 			}

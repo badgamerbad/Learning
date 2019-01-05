@@ -332,13 +332,13 @@
 		requestAnimationFrame(run);
 		ctx.fillStyle = "#bebebf";
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
-		pointer.ease(0.25);
+		// pointer.ease(0.25);
 		container.rotate();
-		for (let p of particles) p.integrate();
-		grid.update(particles);
+		// for (let p of particles) p.integrate();
+		// grid.update(particles);
 		ctx.beginPath();
 		ctx.strokeStyle = "#556";
-		for (let p of particles) p.fluid();
+		// for (let p of particles) p.fluid();
 		ctx.stroke();
 		sun.anim();
 	};
