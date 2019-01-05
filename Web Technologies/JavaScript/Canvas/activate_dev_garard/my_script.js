@@ -2,7 +2,7 @@
 {
     class Grid {
         constructor(){
-			this.maxGridCellSize = 4
+			this.maxGridCellSize = 3
 			this.width = (1 + canvas.width / kRadius) | 0
 			this.height = (1 + canvas.height / kRadius) | 0
 			this.cells = new Array(this.width * this.height * this.maxGridCellSize)
@@ -104,8 +104,8 @@
 			this.elem = document.querySelector('canvas')
 			this.width = this.elem.width = this.elem.offsetWidth
 			this.height = this.elem.height = this.elem.offsetHeight
-			this.width = this.elem.width = 1000
-			this.height = this.elem.height = 500
+			// this.width = this.elem.width = 1000
+			// this.height = this.elem.height = 500
 			this.addEventListener()
 			return this.elem.getContext("2d", { alpha: false })
 		},
@@ -178,8 +178,8 @@
     }
 	const particles = []
 	const ctx = canvas.init()
-	let kRadius = Math.round(0.04 * Math.sqrt(canvas.width * canvas.height))
-	kRadius = 500
+	let kRadius = Math.round(0.6 * Math.sqrt(canvas.width * canvas.height))
+	// kRadius = 500
 	const grid = new Grid()
     initParticles(5)
     const kDensity = 3
