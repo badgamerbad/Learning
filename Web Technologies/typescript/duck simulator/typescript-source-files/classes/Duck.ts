@@ -1,6 +1,9 @@
-import { Quack } from './../interfaces/Quack';
-import { Fly } from './../interfaces/Fly';
-export default abstract class Duck {
+/* Duck.ts */
+
+/// <reference path="../interfaces/Fly.ts" />
+/// <reference path="../interfaces/Quack.ts" />
+
+abstract class Duck {
     private flyBehavior: Fly.FlyBehavior;
     private quackBehavior: Quack.QuackBehavior;
 

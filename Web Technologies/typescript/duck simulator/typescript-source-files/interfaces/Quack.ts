@@ -1,4 +1,4 @@
-export module Quack {
+module Quack {
     export interface QuackBehavior {
         quack(): void;
     }

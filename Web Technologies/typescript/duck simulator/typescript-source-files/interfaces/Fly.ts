@@ -1,4 +1,4 @@
-export module Fly {
+module Fly {
     export interface FlyBehavior {
         fly(): void;
     }

@@ -1,6 +1,9 @@
-import { Quack } from './interfaces/Quack';
-import { Decoy } from './classes/subclasses/Decoy';
-import { Fly } from './interfaces/Fly';
+/* Main.ts */
+
+/// <reference path="classes/subclasses/Decoy.ts" />
+/// <reference path="classes/subclasses/Mallard.ts" />
+/// <reference path="classes/subclasses/Redhead.ts" />
+/// <reference path="classes/subclasses/Rubber.ts" />
 
 let joey = new Decoy( new Fly.NoFly(), new Quack.MuteQuack(), "Joey" );
 joey.display();
