@@ -12,4 +12,9 @@ module Fly {
             return console.log("I can't fly!!");
         }
     }
+    export class FlyRocketPowered implements FlyBehavior {
+        public fly(): void {
+            return console.log("I'm flying with a rocket!!")
+        }
+    }
 }

@@ -31,6 +31,15 @@ var Fly;
         return NoFly;
     }());
     Fly.NoFly = NoFly;
+    var FlyRocketPowered = /** @class */ (function () {
+        function FlyRocketPowered() {
+        }
+        FlyRocketPowered.prototype.fly = function () {
+            return console.log("I'm flying with a rocket!!");
+        };
+        return FlyRocketPowered;
+    }());
+    Fly.FlyRocketPowered = FlyRocketPowered;
 })(Fly || (Fly = {}));
 var Quack;
 (function (Quack_1) {
@@ -72,6 +81,14 @@ var Duck = /** @class */ (function () {
         this.flyBehavior = flybehavior;
         this.quackBehavior = quackbehavior;
     }
+    // setter
+    Duck.prototype.setFlyBehavior = function (flybehavior) {
+        this.flyBehavior = flybehavior;
+    };
+    Duck.prototype.setQuackBehavior = function (quackbehavior) {
+        this.quackBehavior = quackbehavior;
+    };
+    // getter
     Duck.prototype.performFly = function () {
         this.flyBehavior.fly();
     };
@@ -131,13 +148,34 @@ var Rubber = /** @class */ (function (_super) {
     };
     return Rubber;
 }(Duck));
+// import { FlyBehavior } from './../../interfaces/Fly';
+/* Super Duck */
+/// <reference path="../Duck.ts" />
+var SuperDuck = /** @class */ (function (_super) {
+    __extends(SuperDuck, _super);
+    function SuperDuck() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SuperDuck.prototype.display = function () {
+        console.log("My name is " + this.name + ". I'am a Super Duck!!!");
+    };
+    return SuperDuck;
+}(Duck));
 /* Main.ts */
 /// <reference path="classes/subclasses/Decoy.ts" />
 /// <reference path="classes/subclasses/Mallard.ts" />
 /// <reference path="classes/subclasses/Redhead.ts" />
 /// <reference path="classes/subclasses/Rubber.ts" />
+/// <reference path="classes/subclasses/SuperDuck.ts" />
 var joey = new Decoy(new Fly.NoFly(), new Quack.MuteQuack(), "Joey");
 joey.display();
 joey.performFly();
 joey.performQuack();
 joey.swim();
+var rocky = new SuperDuck(new Fly.NoFly, new Quack.MuteQuack(), "Zero Duck");
+rocky.display();
+rocky.performFly();
+rocky.performQuack();
+rocky.swim();
+rocky.setFlyBehavior(new Fly.FlyRocketPowered);
+rocky.performFly();
