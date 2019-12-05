@@ -26,7 +26,8 @@ class Logo {
         this.ctx.arc(this.x2, this.y2, this.r2, this.startAngle2, this.endAngle2, this.antiClockwise2);
         this.ctx.closePath();
 
-        this.showCoordinates();
+        // show point on the canvas
+        // this.showCoordinates();
 
         this.ctx.stroke();
     }
@@ -45,38 +46,27 @@ class Logo {
     }
 }
 
-class Canvas {
-    constructor(id) {
-        this.canvasElement = document.getElementById(id);
-        this.width = this.canvasElement.width;
-        this.height = this.canvasElement.height;
-    }
-    getCanvasTexture = () => {
-        return this.canvasElement.getContext('2d');
-    }
-}
-
-let canvas = new Canvas("logo");
-let _ctx = canvas.getCanvasTexture();
+let canvas = document.getElementById("logo");
+let _ctx = canvas.getContext("2d");
 
 class LogoMesh {
     constructor(number) {
         this.node = [];
         for (let i = 0; i < number; ++i) {
             let initialLogoValues = {
-                vx1: i,
-                vy1: i,
-                x1: 200,
-                y1: 200,
-                r1: 50,
+                vx1: i / 5,
+                vy1: i / 5,
+                x1: 240,
+                y1: 240,
+                r1: 10,
                 startAngle1: 0,
                 endAngle1: Math.PI / 2,
                 antiClockwise1: true,
-                vx2: i,
-                vy2: i,
-                x2: 300,
-                y2: 300,
-                r2: 50,
+                vx2: i / 5,
+                vy2: i / 5,
+                x2: 260,
+                y2: 260,
+                r2: 10,
                 startAngle2: 3 * Math.PI / 2,
                 endAngle2: Math.PI,
                 antiClockwise2: false,
@@ -90,15 +80,42 @@ class LogoMesh {
 // init the number of logo threads
 let logoMesh = new LogoMesh(5);
 
+let fissionLogoMesh = true;
 function draw() {
     _ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     // fetch the individual logo node from logo mesh array
     for (let node of logoMesh.node) {
-        node.x1 += node.vx1;
-        node.y1 += node.vy1;
-        node.x2 += node.vx2;
-        node.y2 += node.vy2;
+        if(node.vx1 != 0) {
+            if(fissionLogoMesh) {
+                if(Math.round(node.r1) == 100)
+                    fissionLogoMesh = false;
+            }
+            else {
+                if(Math.round(node.r1) == 10)
+                    fissionLogoMesh = true;
+            }
+
+            if(fissionLogoMesh) {
+                node.r1 += node.vx1;
+                node.x1 -= node.vx1;
+                node.y1 -= node.vy1;
+
+                node.r2 += node.vx2;
+                node.x2 += node.vx2;
+                node.y2 += node.vy2;
+            }
+            else {
+                node.r1 -= node.vx1;
+                node.x1 += node.vx1;
+                node.y1 += node.vy1;
+
+                node.r2 -= node.vx2;
+                node.x2 -= node.vx2;
+                node.y2 -= node.vy2;
+            }
+            
+        }
 
         node.drawShape();
     }
