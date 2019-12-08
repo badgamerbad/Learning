@@ -1,4 +1,11 @@
 
+const _firstNodeIndex = 1, _nodeCount = 10;
+
+// velocity = speed / time => vx || vy = speed / time
+const _time = 20;
+const _minRadius = 60, _maxRadius = 100;
+const _x1 = 180, _y1 = 180, _x2 = 310, _y2 = 310;
+
 class Logo {
     constructor (logoValues, ctx) {
         this.vx1 = logoValues.vx1;
@@ -50,23 +57,23 @@ let canvas = document.getElementById("logo");
 let _ctx = canvas.getContext("2d");
 
 class LogoMesh {
-    constructor(number) {
+    constructor(firstNodeIndex, nodeCount) {
         this.node = [];
-        for (let i = 0; i < number; ++i) {
+        for (let i = firstNodeIndex; i < nodeCount; ++i) {
             let initialLogoValues = {
-                vx1: i / 5,
-                vy1: i / 5,
-                x1: 240,
-                y1: 240,
-                r1: 10,
+                vx1: i / _time,
+                vy1: i / _time,
+                x1: _x1,
+                y1: _y1,
+                r1: _minRadius,
                 startAngle1: 0,
                 endAngle1: Math.PI / 2,
                 antiClockwise1: true,
-                vx2: i / 5,
-                vy2: i / 5,
-                x2: 260,
-                y2: 260,
-                r2: 10,
+                vx2: i / _time,
+                vy2: i / _time,
+                x2: _x2,
+                y2: _y2,
+                r2: _minRadius,
                 startAngle2: 3 * Math.PI / 2,
                 endAngle2: Math.PI,
                 antiClockwise2: false,
@@ -78,7 +85,7 @@ class LogoMesh {
 }
 
 // init the number of logo threads
-let logoMesh = new LogoMesh(5);
+let logoMesh = new LogoMesh(_firstNodeIndex, _nodeCount);
 
 let fissionLogoMesh = true;
 function draw() {
@@ -88,11 +95,11 @@ function draw() {
     for (let node of logoMesh.node) {
         if(node.vx1 != 0) {
             if(fissionLogoMesh) {
-                if(Math.round(node.r1) == 100)
+                if(Math.round(node.r1) == _maxRadius)
                     fissionLogoMesh = false;
             }
             else {
-                if(Math.round(node.r1) == 10)
+                if(Math.round(node.r1) == _minRadius)
                     fissionLogoMesh = true;
             }
 
@@ -104,6 +111,14 @@ function draw() {
                 node.r2 += node.vx2;
                 node.x2 += node.vx2;
                 node.y2 += node.vy2;
+
+                // translate the logo on X axis
+                node.x1 -= node.vx1;
+                node.x2 -= node.vx2;
+
+                // translate the logo on Y axis
+                node.y1 += node.vy1;
+                node.y2 += node.vy2;
             }
             else {
                 node.r1 -= node.vx1;
@@ -112,6 +127,14 @@ function draw() {
 
                 node.r2 -= node.vx2;
                 node.x2 -= node.vx2;
+                node.y2 -= node.vy2;
+
+                // translate the logo on X axis
+                node.x1 += node.vx1;
+                node.x2 += node.vx2;
+
+                // translate the logo on Y axis
+                node.y1 -= node.vy1;
                 node.y2 -= node.vy2;
             }
             
