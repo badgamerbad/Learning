@@ -1,8 +1,8 @@
 
-const _firstNodeIndex = 1, _nodeCount = 10;
+const _firstNodeIndex = 0, _nodeCount = 10;
 
 // velocity = speed / time => vx || vy = speed / time
-const _time = 20;
+const _time = 40;
 const _minRadius = 60, _maxRadius = 100;
 const _x1 = 180, _y1 = 180, _x2 = 310, _y2 = 310;
 
@@ -34,22 +34,26 @@ class Logo {
         this.ctx.closePath();
 
         // show point on the canvas
-        // this.showCoordinates();
+        this.showCoordinates();
 
         this.ctx.stroke();
     }
     showCoordinates = () => {
-        this.ctx.moveTo(this.x1, this.y1);
-        this.ctx.strokeText(` 1 ${this.x1}, ${this.y1}`, this.x1, this.y1);
-        this.ctx.arc(this.x1, this.y1, 1, 0, 2 * Math.PI);
+        // this.ctx.moveTo(this.x1, this.y1);
+        // this.ctx.strokeText(` 1 ${this.x1}, ${this.y1}`, this.x1, this.y1);
+        // this.ctx.arc(this.x1, this.y1, 1, 0, 2 * Math.PI);
+
+        // this.ctx.moveTo(this.x2, this.y2);
+        // this.ctx.strokeText(` 2 ${this.x2}, ${this.y2}`, this.x2, this.y2);
+        // this.ctx.arc(this.x2, this.y2, 1, 0, 2 * Math.PI);
+
+        // this.ctx.moveTo((this.x1 + this.x2) / 2, (this.y1 + this.y2) / 2);
+        // this.ctx.strokeText(` 3 ${(this.x1 + this.x2) / 2}, ${(this.y1 + this.y2) / 2}`, (this.x1 + this.x2) / 2, (this.y1 + this.y2) / 2);
+        // this.ctx.arc((this.x1 + this.x2) / 2, (this.y1 + this.y2) / 2, 1, 0, 2 * Math.PI);
 
         this.ctx.moveTo(this.x2, this.y2);
-        this.ctx.strokeText(` 2 ${this.x2}, ${this.y2}`, this.x2, this.y2);
+        this.ctx.strokeText(`${this.vx1}`, this.x2, this.y2);
         this.ctx.arc(this.x2, this.y2, 1, 0, 2 * Math.PI);
-
-        this.ctx.moveTo((this.x1 + this.x2) / 2, (this.y1 + this.y2) / 2);
-        this.ctx.strokeText(` 3 ${(this.x1 + this.x2) / 2}, ${(this.y1 + this.y2) / 2}`, (this.x1 + this.x2) / 2, (this.y1 + this.y2) / 2);
-        this.ctx.arc((this.x1 + this.x2) / 2, (this.y1 + this.y2) / 2, 1, 0, 2 * Math.PI);
     }
 }
 
@@ -59,18 +63,18 @@ let _ctx = canvas.getContext("2d");
 class LogoMesh {
     constructor(firstNodeIndex, nodeCount) {
         this.node = [];
-        for (let i = firstNodeIndex; i < nodeCount; ++i) {
+        for (let i = firstNodeIndex; i < nodeCount / 2; ++i) {
             let initialLogoValues = {
-                vx1: i / _time,
-                vy1: i / _time,
+                vx1: (((nodeCount / 2) - i) * 2) / _time,
+                vy1: (((nodeCount / 2) - i) * 2) / _time,
                 x1: _x1,
                 y1: _y1,
                 r1: _minRadius,
                 startAngle1: 0,
                 endAngle1: Math.PI / 2,
                 antiClockwise1: true,
-                vx2: i / _time,
-                vy2: i / _time,
+                vx2: (((nodeCount / 2) - i) * 2) / _time,
+                vy2: (((nodeCount / 2) - i) * 2) / _time,
                 x2: _x2,
                 y2: _y2,
                 r2: _minRadius,
@@ -80,6 +84,33 @@ class LogoMesh {
             }
             let logo = new Logo(initialLogoValues, _ctx);
             this.node.push(logo);
+        }
+
+        for (let i = nodeCount / 2; i < nodeCount; ++i) {
+            let initialLogoValues = {
+                vx1: ( i * 3 ) / _time,
+                vy1: ( i * 3 ) / _time,
+                x1: _x1,
+                y1: _y1,
+                r1: _minRadius,
+                startAngle1: 0,
+                endAngle1: Math.PI / 2,
+                antiClockwise1: true,
+                vx2: ( i * 3 ) / _time,
+                vy2: ( i * 3 ) / _time,
+                x2: _x2,
+                y2: _y2,
+                r2: _minRadius,
+                startAngle2: 3 * Math.PI / 2,
+                endAngle2: Math.PI,
+                antiClockwise2: false,
+            }
+            let logo = new Logo(initialLogoValues, _ctx);
+            this.node.push(logo);
+        }
+
+        for (let i = firstNodeIndex; i < nodeCount; ++i) {
+            console.log(this.node[i].vx1);
         }
     }
 }
@@ -112,34 +143,34 @@ function draw() {
                 node.x2 += node.vx2;
                 node.y2 += node.vy2;
 
-                // translate the logo on X axis
-                node.x1 -= node.vx1;
-                node.x2 -= node.vx2;
+                // // translate the logo on X axis
+                // node.x1 -= node.vx1;
+                // node.x2 -= node.vx2;
 
-                // translate the logo on Y axis
-                node.y1 += node.vy1;
-                node.y2 += node.vy2;
+                // // translate the logo on Y axis
+                // node.y1 += node.vy1;
+                // node.y2 += node.vy2;
             }
-            else {
-                node.r1 -= node.vx1;
-                node.x1 += node.vx1;
-                node.y1 += node.vy1;
+            // else {
+            //     node.r1 -= node.vx1;
+            //     node.x1 += node.vx1;
+            //     node.y1 += node.vy1;
 
-                node.r2 -= node.vx2;
-                node.x2 -= node.vx2;
-                node.y2 -= node.vy2;
+            //     node.r2 -= node.vx2;
+            //     node.x2 -= node.vx2;
+            //     node.y2 -= node.vy2;
 
-                // translate the logo on X axis
-                node.x1 += node.vx1;
-                node.x2 += node.vx2;
+            //     // translate the logo on X axis
+            //     node.x1 += node.vx1;
+            //     node.x2 += node.vx2;
 
-                // translate the logo on Y axis
-                node.y1 -= node.vy1;
-                node.y2 -= node.vy2;
-            }
+            //     // translate the logo on Y axis
+            //     node.y1 -= node.vy1;
+            //     node.y2 -= node.vy2;
+            // }
             
         }
-
+        
         node.drawShape();
     }
     
