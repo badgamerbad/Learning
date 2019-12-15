@@ -1,0 +1,1 @@
+- Using jQuery AJAX to download a binary file - https://stackoverflow.com/questions/33902299/using-jquery-ajax-to-download-a-binary-file
