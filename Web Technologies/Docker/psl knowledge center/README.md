@@ -111,11 +111,60 @@ its like git hub
 official repo provied by the docker to store container images created by official community members
 
 ```
+// to get the IP of docker vm
+docker-machine ip default
+
 docker pull mysql:8
 docker pull mysql:latest
 
 docker images // provide list of images locally
 docker image pull <name> // fetch from hub
-docker rm <image Id> // rm from local
+docker image rm <image Id> // rm from local
 docker image inspect <image id> // view details of image
+```
+- `-P` for random port
+- `-p` and specify the port as `8085:80`
+```
+docker container run -d -P --name <container-name> <image-name>
+
+// delete multiple container in one go
+docker rm <container id 1> <container id 2> <container id ...>
+
+// show live resource usage by the container
+docker stats <container id>
+
+// shows details about container created
+docker inspect <container id>
+
+// gives the process ids 
+docker top <container id>
+```
+
+## Custom Images
+<img src="custom-images-setup.PNG" alt="why containers" width="400px;">
+
+while creating images from container the docker will use the same images from which the container was created and will manage them efficiently
+
+<img src="image-to-container.PNG" alt="why containers" width="400px;">
+
+### Dockerfile
+helps in creating a custom image
+```dockerfile
+FROM node:6
+EXPOSE 3000
+COPY server.js .
+CMD node server.js
+```
+
+<b>Note:</b> compose will help in creating multiple images
+
+```
+// to tag the image
+docker image build -t <docker account userName>/<image name> .
+
+// create the container
+docker container run -d -p 3000:3000 --name <container name> <docker account userName>/<image name>
+
+// push to docker hub
+docker push <docker account userName>/<image name>
 ```
