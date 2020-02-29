@@ -19,7 +19,8 @@ fewer instances can be created on a server | many on server
 Defination - Containers are an `application-centric` way to deliver high performing, scalable applications on the infrastructure of your choice
 
     self contained enviornment build using one or more images (created from docker image)
-- 1 process per container
+
+- should be 1 process per container
 - on windows we create windows containers
 - on linux we create linux containers
 - create images from the container
@@ -122,10 +123,44 @@ docker image pull <name> // fetch from hub
 docker image rm <image Id> // rm from local
 docker image inspect <image id> // view details of image
 ```
-- `-P` for random port
-- `-p` and specify the port as `8085:80`
+
+## Working with a container
+- download the image
 ```
-docker container run -d -P --name <container-name> <image-name>
+docker image pull ubuntu
+```
+
+- run - start a new container based on the image name
+- -it - start interactive terminal to configure the container
+- --name - name of the container to select it ex. ubuntu-os
+- ubuntu - image name used for pull
+- /bin/bash - command to run inside the container
+```
+docker container run -it --name ubuntu-os ubuntu /bin/bash
+```
+
+<b>Note:</b> do not specify the image name before the run 
+
+```
+// display the container in all the states
+docker container ls -a
+
+// old commands for listing
+docker container ps -a
+
+// pause the execution
+docker container pause <part of container id text>
+docker container unpause <part of container id text>
+
+// status becomes stoped
+docker stop <part of container id text>
+docker start <part of container id text>
+
+// go to the container terminal
+docker container attach <part of container id text>
+
+// delete the container
+docker rm -f <part of container id text>
 
 // delete multiple container in one go
 docker rm <container id 1> <container id 2> <container id ...>
@@ -138,6 +173,21 @@ docker inspect <container id>
 
 // gives the process ids 
 docker top <container id>
+```
+
+<b>Note:</b> we cannot rm a paused container, we need to forcefully with `-f`
+
+- 8085 - provide port at which the server must run
+- 80 - is a container port
+- -d - detach the terminal i.e. do not go into the terminal like an `OS`
+```
+docker container run -d -p 8085:80 --name webserver nginx
+```
+
+- `-P` for random port
+- `-p` and specify the port as `8085:80`
+```
+docker container run -d -P --name <container-name> <image-name>
 ```
 
 ## Custom Images
