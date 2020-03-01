@@ -36,10 +36,10 @@ Defination - Containers are an `application-centric` way to deliver high perform
 - Reasons why we need docker
     - host a website
     - start mongo db with different version
-    - host an ansible server
+    - host an ansible (devices with 0 delay) server
     - test my application
     - Host LDAP server
-- orchestrating
+- orchestrating (automating the resource mangement)
     - <img src="orchestrating-containers.PNG" alt="why containers" width="450px;">
 
 ### Contains
@@ -70,7 +70,7 @@ Defination - Containers are an `application-centric` way to deliver high perform
 
 ### Host
 - computer running docker engine
-- windows OS cannot be a host - docker creates a linux VM (known as mobi) and that is the HOST
+- windows OS cannot be a host - docker creates a linux VM (known as MOBY) and that is the HOST
 - linux can be directly a HOST
 - has the docker deamon (application to run, pull container)
     - used to build run and distribute containers
