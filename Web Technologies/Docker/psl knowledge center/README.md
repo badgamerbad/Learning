@@ -24,10 +24,13 @@ Defination - Containers are an `application-centric` way to deliver high perform
 - on windows we create windows containers
 - on linux we create linux containers
 - create images from the container
+- the container uses linux kernel sercurely (without exploiting it)
 - concept `Volume` is used to pertain the data when the containers are deleted
 
 ### Why Container
 <img src="why_containers.PNG" alt="why containers" width="500px;">
+
+<img src="container_benefits.PNG" alt="why containers" width="500px;">
 
 - Works accross all env
 - provides a clarity of env 
@@ -39,6 +42,7 @@ Defination - Containers are an `application-centric` way to deliver high perform
     - host an ansible (devices with 0 delay) server
     - test my application
     - Host LDAP server
+- provides flexibility with speed and security, which a VM is not good at
 - orchestrating (automating the resource mangement)
     - <img src="orchestrating-containers.PNG" alt="why containers" width="450px;">
 
