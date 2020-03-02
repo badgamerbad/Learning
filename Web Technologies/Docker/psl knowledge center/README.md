@@ -1,7 +1,7 @@
 # Pledge to Docker
 Docker helps to create a container which looks like VMs but it is different
 
-    Mobi is the name of the aqua Whale in docker icon
+    Moby is the name of the aqua Whale in docker icon
 
 - just similar to real world application - we pack all the goods in a shipping `big container` and send it across (via railway, airways etc)
 - in programming we have local, stage, prod enviorments and our code should work in all.
