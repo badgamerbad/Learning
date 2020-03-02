@@ -15,6 +15,12 @@ more resources | less resources
 long time to boot up | just in time
 fewer instances can be created on a server | many on server
 
+### Why we want VM or Docker
+- we create a VM to create a isolated env like old version of software
+- but they are heavyweight - relies on OS package manager
+- for VMs we have to select OS, while container share the OS kernel
+- but container are lightweight - uses `OS level virtualization`
+
 ## Container
 Defination - Containers are an `application-centric` way to deliver high performing, scalable applications on the infrastructure of your choice
 
@@ -24,7 +30,7 @@ Defination - Containers are an `application-centric` way to deliver high perform
 - on windows we create windows containers
 - on linux we create linux containers
 - create images from the container
-- the container uses linux kernel sercurely (without exploiting it)
+- the container uses `linux kernel` sercurely (without exploiting it)
 - concept `Volume` is used to pertain the data when the containers are deleted
 
 ### Why Container
@@ -52,11 +58,16 @@ Defination - Containers are an `application-centric` way to deliver high perform
 - libraries
 - application code
 
-### Provides Isolation
-- we create a VM to create a isolated env like old version of software
-- but they are heavyweight - relies on OS package manager
-- for VMs we have to select OS
-- but container are lightweight - uses `OS level virtualization`
+### Types
+#### OS Containers (Like VM)
+ - has its OS such as ubuntu, we install other apps like node js, mongo and our code, and then we run the application
+ - no layered file systems by default
+ - built on cgroups, namespaces
+ - ex can be a ubuntu container, with our code and other modules installed in it
+
+#### App Containers
+- get a OS container and install just 1 application (1 process) and then have multiple such containers running parellely
+- Layered File system 
 
 ## Installation and config
     inside windows and mac docker creates linux VM called `MOBY`
@@ -78,6 +89,7 @@ Defination - Containers are an `application-centric` way to deliver high perform
 - linux can be directly a HOST
 - has the docker deamon (application to run, pull container)
     - used to build run and distribute containers
+    - manages the containers
 - creates the container with images
 - use redis for caching
 
