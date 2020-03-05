@@ -21,7 +21,27 @@ fewer instances can be created on a server | many on server
 - for VMs we have to select OS, while container share the OS kernel
 - but container are lightweight - uses `OS level virtualization`
 
-## Container
+## Docker (anologous to the hypervisor which helps creating containers)
+- open source
+- automates deployment of the software using containers
+- guarantees it will always run the same regardless of the env (from `dev` to `ops`)
+- configure just once
+    - eliminates inconsistencies between env
+    - improves the speed of CI/CD jobs
+
+### Why
+- portable
+- isolation
+- automation (build, deploy, integration)
+- Dependency management
+
+### Usage
+- Sandbox env
+- CI/CD
+- scaling apps
+- PaaS, SaaS
+
+## Container (run time instance)
 Defination - Containers are an `application-centric` way to deliver high performing, scalable applications on the infrastructure of your choice
 
     self contained enviornment build using one or more images (created from docker image)
@@ -63,7 +83,7 @@ Defination - Containers are an `application-centric` way to deliver high perform
  - has its OS such as ubuntu, we install other apps like node js, mongo and our code, and then we run the application
  - no layered file systems by default
  - built on cgroups, namespaces
- - ex can be a ubuntu container, with our code and other modules installed in it
+ - an example can be a ubuntu container, with our code and other modules installed in it
 
 #### App Containers
 - get a OS container and install just 1 application (1 process) and then have multiple such containers running parellely
@@ -75,10 +95,16 @@ Defination - Containers are an `application-centric` way to deliver high perform
 - Windows
     - we need `hypervisor (Hyper V) software` to create windows VMs
 
+```
+// to check the docker installation
+docker run hello-world
+```
+
 ## Architecture
 <img src="architecture.PNG" alt="why containers" width="500px;">
 
 ### client
+- user uses this client which has RESTful API or sockets to interact with daemon
 - ask the host to build or create the containers
 - specify which container need how much resources (RAM, HDD, CPU), default is shared
 - dynamically specify whether caching (redis) is to be enabled or after the container is created then enable it
@@ -87,7 +113,7 @@ Defination - Containers are an `application-centric` way to deliver high perform
 - computer running docker engine
 - windows OS cannot be a host - docker creates a linux VM (known as MOBY) and that is the HOST
 - linux can be directly a HOST
-- has the docker deamon (application to run, pull container)
+- has the docker daemon (application to run, pull container)
     - used to build run and distribute containers
     - manages the containers
 - creates the container with images
@@ -103,10 +129,13 @@ Defination - Containers are an `application-centric` way to deliver high perform
 ### Registry
 - server for docker daemon to fetch repositories and images
 - official is docker hub
+- public, private repositories
 
 ### images
+- they are like classes while containers are objects
 - they are not `templates` as of VMs
 - read only layer of the file system that never changes (blue print of the running container)
+- images are based on another images
 - we can modify the image and create or recreate the container(s)
 - we cannot delete it if there is a container running on it
 
@@ -140,29 +169,103 @@ docker image rm <image Id> // rm from local
 docker image inspect <image id> // view details of image
 ```
 
+<img src="docker-architecture-2.PNG" alt="why containers" width="500px;">
+
+### Docker base stack
+- Namespaces
+    - pid namespace - process isolation
+    - net namespace - network interfaces
+    - ipc namespace - inter-process communication
+    - mnt namespace - mount points
+    - uts namespace - unix time sharing
+- control groups
+    - resource isolation (allocate cpu, memory)
+    - multi tenency (all containers in isolation)
+    - setting limits and container (give a visauliztion like a VM)
+
 ## Working with a container
+- search images in CLI
+```
+docker search <image name: tag>
+```
 - download the image
 ```
 docker image pull ubuntu
+
+// list images
+// here the image id is unique accross the docker hub
+// same image ids will be seen on every local machine
+docker images
 ```
 
-- run - start a new container based on the image name
-- -it - start interactive terminal to configure the container
-- --name - name of the container to select it ex. ubuntu-os
-- ubuntu - image name used for pull
-- /bin/bash - command to run inside the container
+- inspect the image
+    - show layers
+        - layers depends on the action performed on the images
+        - layers are shared accross the images as they are read only and so that they can provide unique file systems to the images
+        ```
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:f2cb0ecef392f2a630fa1205b874ab2e2aedf96de04d0b8838e4e728e28142da",
+                "sha256:fe08d5d042ab93bee05f9cda17f1c57066e146b0704be2ff755d14c25e6aa5e8",
+                "sha256:318be7aea8fc62d5910cca0d49311fa8d95502c90e2a91b7a4d78032a670b644"
+            ]
+        },
+        ```
+
+Save the images (if we dont have access to docker hub i.e `registry`), the traditional way
 ```
-docker container run -it --name ubuntu-os ubuntu /bin/bash
+docker save <image id> -o <name>.tar
+
+// load its layers back
+docker load -i <name>.tar
 ```
 
-<b>Note:</b> do not specify the image name before the run 
+Now after loading it back, it wont have repo name and tag, since they are `user defined` at the `registry level` ie. the `docker hub` </br>
+however we can add them back with
+```
+docker tag <image id> <name>:<tag>
+```
+
+pushing the images onto the registry i.e docker hub
+```
+docker tag <current image name>:<tag> <docker hub url or our user name>/<the name we want for the image>
+
+// example
+docker tag nginx:1.17 badgamerbad/nginx:1.18
+```
+<b>Note:</b> if we create a image from another image than if we go into docker VM where it saves the image layers, we will find only one layer, `docker efficiency`.
+
+History
+```
+$ docker history <image id>
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+470671670cac        6 weeks ago         /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B
+<missing>           6 weeks ago         /bin/sh -c #(nop)  LABEL org.label-schema.sc…   0B
+<missing>           7 weeks ago         /bin/sh -c #(nop) ADD file:aa54047c80ba30064…   237MB
+```
+shows the layers and metadata
+    - metadata - 0B example a enviorment added to it
+    - layers are big in size
 
 ```
+// Create a container
+docker create <image name>:<tag>
+
 // display the container in all the states
 docker container ls -a
 
-// old commands for listing
-docker container ps -a
+// OR
+docker ps -a
+
+// start a container
+docker start <part of container id text>
+```
+<b>Note:</b> the container will exit immediately since there is `no process` given to the container, i.e we need a daemon process running inside the container
+
+```
+// encapsulates both docker create and start
+docker run <image id>:<tag>
 
 // pause the execution
 docker container pause <part of container id text>
@@ -170,7 +273,6 @@ docker container unpause <part of container id text>
 
 // status becomes stoped
 docker stop <part of container id text>
-docker start <part of container id text>
 
 // go to the container terminal
 docker container attach <part of container id text>
@@ -193,6 +295,8 @@ docker top <container id>
 
 <b>Note:</b> we cannot rm a paused container, we need to forcefully with `-f`
 
+Starting a container directly from images
+
 - 8085 - provide port at which the server must run
 - 80 - is a container port
 - -d - detach the terminal i.e. do not go into the terminal like an `OS`
@@ -205,6 +309,22 @@ docker container run -d -p 8085:80 --name webserver nginx
 ```
 docker container run -d -P --name <container-name> <image-name>
 ```
+
+- run - start a new container based on the image name
+- -it - start interactive terminal to configure the container
+- --name - name of the container to select it ex. ubuntu-os
+- ubuntu - image name used for pull
+- /bin/bash - command to run inside the container
+```
+docker container run -it --name ubuntu-os ubuntu /bin/bash
+```
+
+Saving the state of container as image
+```
+docker commit -m "message" <container id> <give a image name><give a tag number>
+```
+
+<b>Note:</b> do not specify the image name before the run 
 
 ## Custom Images
 <img src="custom-images-setup.PNG" alt="why containers" width="400px;">
