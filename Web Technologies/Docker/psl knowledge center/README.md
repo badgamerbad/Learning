@@ -221,6 +221,8 @@ docker save <image id> -o <name>.tar
 docker load -i <name>.tar
 ```
 
+<b>Note:</b> we can also use `import` command
+
 Now after loading it back, it wont have repo name and tag, since they are `user defined` at the `registry level` ie. the `docker hub` </br>
 however we can add them back with
 ```
@@ -276,6 +278,8 @@ docker stop <part of container id text>
 
 // go to the container terminal
 docker container attach <part of container id text>
+// OR
+docker exec -it <part of container id text> bash
 
 // delete the container
 docker rm -f <part of container id text>
@@ -319,12 +323,19 @@ docker container run -d -P --name <container-name> <image-name>
 docker container run -it --name ubuntu-os ubuntu /bin/bash
 ```
 
-Saving the state of container as image
+Saving the state of container as image and creating a snapshot of a `stopped` container
 ```
 docker commit -m "message" <container id> <give a image name><give a tag number>
 ```
 
 <b>Note:</b> do not specify the image name before the run 
+
+Starting a container with set ENV
+```
+docker run -it -h my-centos -e JAVA_HOME=/opt/java -w /opt --name my-centos centos bash
+```
+<b>Note:</b> on windows /opt wont be present
+
 
 ## Custom Images
 <img src="custom-images-setup.PNG" alt="why containers" width="400px;">
@@ -354,3 +365,13 @@ docker container run -d -p 3000:3000 --name <container name> <docker account use
 // push to docker hub
 docker push <docker account userName>/<image name>
 ```
+
+### Legends
+Key | Value
+-|-
+From | from what type or which image you to create new image
+Run | install softwares or run OS commands (combination of instructions)
+CMD | run commands to start some script </br> ex. `node server.js`
+ADD/COPY | Copy files or directories from host to conatianer in given path
+EXPOSE | exposes the specified port to the host machine </br> kind of `METADATA`
+ENTRYPOINT | specify the script/program to run when container starts </br> which gives a process to the container and keeps the container running </br> So container will exit when these are over
