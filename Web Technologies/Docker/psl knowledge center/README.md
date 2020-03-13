@@ -358,7 +358,20 @@ CMD node server.js
 ```
 // to tag the image
 docker image build -t <docker account userName>/<image name> .
+```
+<b>Note:</b> This way we wont have to use `commit` to create layers manually, `Dockerfile` will automatically create it 
 
+```
+Step 2/6 : WORKDIR /code
+ ---> Using cache
+ ---> efd2bb4b569d
+Step 3/6 : ENV FLASK_APP app.py
+ ---> Using cache
+ ---> 6111a4412a22
+```
+<b>Note:</b> The Command is smart so that if we add more instructions, it runs only new instructions
+
+```
 // create the container
 docker container run -d -p 3000:3000 --name <container name> <docker account userName>/<image name>
 
@@ -366,7 +379,7 @@ docker container run -d -p 3000:3000 --name <container name> <docker account use
 docker push <docker account userName>/<image name>
 ```
 
-### Legends
+#### Legends
 Key | Value
 -|-
 From | from what type or which image you to create new image
@@ -374,4 +387,25 @@ Run | install softwares or run OS commands (combination of instructions)
 CMD | run commands to start some script </br> ex. `node server.js`
 ADD/COPY | Copy files or directories from host to conatianer in given path
 EXPOSE | exposes the specified port to the host machine </br> kind of `METADATA`
-ENTRYPOINT | specify the script/program to run when container starts </br> which gives a process to the container and keeps the container running </br> So container will exit when these are over
+ENTRYPOINT | specify the script/program to run when container starts </br> which gives a process to the container and keeps the container running </br> So container will exit when these are over <br> Usaully OS Container does not have an Entrypoint, because they provide building blocks for other applications </br> nginx has entry point, centos doesnt
+
+## Network
+- Port Mapping - to expose container to HOST
+- Bridge - between containers
+```
+$ docker network ls
+```
+
+After inspecting the container we get its ip, which can be used by other container to access this contianer
+
+ex. if `172.17.0.3` is ip of `container-1`, then we can login into `contianer-2` and use this ip `172.17.0.3` to connect to `container-1`
+
+To expose the container ports to host
+```
+// publish
+docker run -d -p <localhost port>:<container port> <image-name>
+```
+Ex. - to start nginx and access it on localhost:8085 of the `HOST` machine
+```
+docker run -d -p 8085:80 nginx
+```
