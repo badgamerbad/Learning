@@ -95,8 +95,8 @@ Defination - Containers are an `application-centric` way to deliver high perform
 - Windows
     - we need `hypervisor (Hyper V) software` to create windows VMs
 
-```
-// to check the docker installation
+```docker
+# to check the docker installation
 docker run hello-world
 ```
 
@@ -156,17 +156,17 @@ its like git hub
 
 official repo provied by the docker to store container images created by official community members
 
-```
-// to get the IP of docker vm
+```docker
+# to get the IP of docker vm
 docker-machine ip default
 
 docker pull mysql:8
 docker pull mysql:latest
 
-docker images // provide list of images locally
-docker image pull <name> // fetch from hub
-docker image rm <image Id> // rm from local
-docker image inspect <image id> // view details of image
+docker images # provide list of images locally
+docker image pull <name> # fetch from hub
+docker image rm <image Id> # rm from local
+docker image inspect <image id> # view details of image
 ```
 
 <img src="docker-architecture-2.PNG" alt="why containers" width="500px;">
@@ -185,16 +185,16 @@ docker image inspect <image id> // view details of image
 
 ## Working with a container
 - search images in CLI
-```
+```docker
 docker search <image name: tag>
 ```
 - download the image
-```
+```docker
 docker image pull ubuntu
 
-// list images
-// here the image id is unique accross the docker hub
-// same image ids will be seen on every local machine
+# list images
+# here the image id is unique accross the docker hub
+# same image ids will be seen on every local machine
 docker images
 ```
 
@@ -214,10 +214,10 @@ docker images
         ```
 
 Save the images (if we dont have access to docker hub i.e `registry`), the traditional way
-```
+```docker
 docker save <image id> -o <name>.tar
 
-// load its layers back
+# load its layers back
 docker load -i <name>.tar
 ```
 
@@ -225,15 +225,15 @@ docker load -i <name>.tar
 
 Now after loading it back, it wont have repo name and tag, since they are `user defined` at the `registry level` ie. the `docker hub` </br>
 however we can add them back with
-```
+```docker
 docker tag <image id> <name>:<tag>
 ```
 
 pushing the images onto the registry i.e docker hub
-```
+```docker
 docker tag <current image name>:<tag> <docker hub url or our user name>/<the name we want for the image>
 
-// example
+# example
 docker tag nginx:1.17 badgamerbad/nginx:1.18
 ```
 <b>Note:</b> if we create a image from another image than if we go into docker VM where it saves the image layers, we will find only one layer, `docker efficiency`.
@@ -250,50 +250,50 @@ shows the layers and metadata
     - metadata - 0B example a enviorment added to it
     - layers are big in size
 
-```
-// Create a container
+```docker
+# Create a container
 docker create <image name>:<tag>
 
-// display the container in all the states
+# display the container in all the states
 docker container ls -a
 
-// OR
+# OR
 docker ps -a
 
-// start a container
+# start a container
 docker start <part of container id text>
 ```
 <b>Note:</b> the container will exit immediately since there is `no process` given to the container, i.e we need a daemon process running inside the container
 
-```
-// encapsulates both docker create and start
+```docker
+# encapsulates both docker create and start
 docker run <image id>:<tag>
 
-// pause the execution
+# pause the execution
 docker container pause <part of container id text>
 docker container unpause <part of container id text>
 
-// status becomes stoped
+# status becomes stoped
 docker stop <part of container id text>
 
-// go to the container terminal
+# go to the container terminal
 docker container attach <part of container id text>
-// OR
+# OR
 docker exec -it <part of container id text> bash
 
-// delete the container
+# delete the container
 docker rm -f <part of container id text>
 
-// delete multiple container in one go
+# delete multiple container in one go
 docker rm <container id 1> <container id 2> <container id ...>
 
-// show live resource usage by the container
+# show live resource usage by the container
 docker stats <container id>
 
-// shows details about container created
+# shows details about container created
 docker inspect <container id>
 
-// gives the process ids 
+# gives the process ids 
 docker top <container id>
 ```
 
@@ -304,13 +304,13 @@ Starting a container directly from images
 - 8085 - provide port at which the server must run
 - 80 - is a container port
 - -d - detach the terminal i.e. do not go into the terminal like an `OS`
-```
+```docker
 docker container run -d -p 8085:80 --name webserver nginx
 ```
 
 - `-P` for random port
 - `-p` and specify the port as `8085:80`
-```
+```docker
 docker container run -d -P --name <container-name> <image-name>
 ```
 
@@ -319,19 +319,19 @@ docker container run -d -P --name <container-name> <image-name>
 - --name - name of the container to select it ex. ubuntu-os
 - ubuntu - image name used for pull
 - /bin/bash - command to run inside the container
-```
+```docker
 docker container run -it --name ubuntu-os ubuntu /bin/bash
 ```
 
 Saving the state of container as image and creating a snapshot of a `stopped` container
-```
+```docker
 docker commit -m "message" <container id> <give a image name><give a tag number>
 ```
 
 <b>Note:</b> do not specify the image name before the run 
 
 Starting a container with set ENV
-```
+```docker
 docker run -it -h my-centos -e JAVA_HOME=/opt/java -w /opt --name my-centos centos bash
 ```
 <b>Note:</b> on windows /opt wont be present
@@ -355,13 +355,13 @@ CMD node server.js
 
 <b>Note:</b> compose will help in creating multiple images
 
-```
-// to tag the image
+```docker
+# to tag the image
 docker image build -t <docker account userName>/<image name> .
 ```
 <b>Note:</b> This way we wont have to use `commit` to create layers manually, `Dockerfile` will automatically create it 
 
-```
+```docker
 Step 2/6 : WORKDIR /code
  ---> Using cache
  ---> efd2bb4b569d
@@ -371,11 +371,11 @@ Step 3/6 : ENV FLASK_APP app.py
 ```
 <b>Note:</b> The Command is smart so that if we add more instructions, it runs only new instructions
 
-```
-// create the container
+```docker
+# create the container
 docker container run -d -p 3000:3000 --name <container name> <docker account userName>/<image name>
 
-// push to docker hub
+# push to docker hub
 docker push <docker account userName>/<image name>
 ```
 
@@ -392,7 +392,7 @@ ENTRYPOINT | specify the script/program to run when container starts </br> which
 ## Network
 - Port Mapping - to expose container to HOST
 - Bridge - between containers
-```
+```docker
 $ docker network ls
 ```
 
@@ -401,11 +401,43 @@ After inspecting the container we get its ip, which can be used by other contain
 ex. if `172.17.0.3` is ip of `container-1`, then we can login into `contianer-2` and use this ip `172.17.0.3` to connect to `container-1`
 
 To expose the container ports to host
-```
-// publish
+```docker
+# publish
 docker run -d -p <localhost port>:<container port> <image-name>
 ```
 Ex. - to start nginx and access it on localhost:8085 of the `HOST` machine
-```
+```docker
 docker run -d -p 8085:80 nginx
+```
+
+## Volumes
+Store the persistent data to migrate to new container.
+
+- mounts
+- volumes
+
+<img src="volumes.PNG" alt="volumes" width="400px">
+
+`bind` mount
+- for persistence data
+
+`tmpfs` mount
+- no advantage of persistency
+- simple temperary
+```docker
+docker volume create
+docker volume inspect
+docker volume ls
+docker volume rm
+```
+### How to use volume
+```docker
+# naive way
+docker run -it -v /<host folder location>/:/<container folder location>/ centos bash
+
+# create volume and use it many containers
+docker volume create <volume name>
+
+# use it with other containers
+docker run -it -v <volume name>:<container folder location> <image name>
 ```
