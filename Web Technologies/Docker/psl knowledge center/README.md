@@ -109,7 +109,8 @@ docker run hello-world
 - specify which container need how much resources (RAM, HDD, CPU), default is shared
 - dynamically specify whether caching (redis) is to be enabled or after the container is created then enable it
 
-### Host
+### Host 
+- default ip is `192.168.99.100`
 - computer running docker engine
 - windows OS cannot be a host - docker creates a linux VM (known as MOBY) and that is the HOST
 - linux can be directly a HOST
@@ -354,6 +355,7 @@ CMD node server.js
 ```
 
 <b>Note:</b> compose will help in creating multiple images
+</br>is a tool for defining and running multi-container Docker applications
 
 ```docker
 # to tag the image
@@ -388,6 +390,9 @@ CMD | run commands to start some script </br> ex. `node server.js`
 ADD/COPY | Copy files or directories from host to conatianer in given path
 EXPOSE | exposes the specified port to the host machine </br> kind of `METADATA`
 ENTRYPOINT | specify the script/program to run when container starts </br> which gives a process to the container and keeps the container running </br> So container will exit when these are over <br> Usaully OS Container does not have an Entrypoint, because they provide building blocks for other applications </br> nginx has entry point, centos doesnt
+
+## Swarm 
+A Docker Swarm is a group of either physical or virtual machines that are running the Docker application and that have been configured to join together in a cluster.
 
 ## Network
 - Port Mapping - to expose container to HOST
