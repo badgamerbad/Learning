@@ -1,0 +1,16 @@
+[DEBUG] 2020-05-02 20:20:19.994 [main] Log4JDemo - lets find some bugs.... ...
+[INFO ] 2020-05-02 20:20:19.997 [main] Log4JDemo - this is demo!!!
+[ERROR] 2020-05-02 20:20:19.998 [main] Log4JDemo - omg error
+[WARN ] 2020-05-02 20:20:19.998 [main] Log4JDemo - phew a warning
+[FATAL] 2020-05-02 20:20:19.998 [main] Log4JDemo - omg omg fatal error
+[DEBUG] 2020-05-02 20:21:12.328 [main] Log4JDemo - lets find some bugs.... ...
+[INFO ] 2020-05-02 20:21:12.330 [main] Log4JDemo - this is demo!!!
+[ERROR] 2020-05-02 20:21:12.331 [main] Log4JDemo - omg error
+[WARN ] 2020-05-02 20:21:12.331 [main] Log4JDemo - phew a warning
+[FATAL] 2020-05-02 20:21:12.331 [main] Log4JDemo - omg omg fatal error
+[DEBUG] 2020-05-02 20:22:01.740 [main] Log4JDemo - lets find some bugs.... ...
+[INFO ] 2020-05-02 20:22:01.743 [main] Log4JDemo - this is demo!!!
+[ERROR] 2020-05-02 20:22:01.743 [main] Log4JDemo - omg error
+[WARN ] 2020-05-02 20:22:01.743 [main] Log4JDemo - phew a warning
+[FATAL] 2020-05-02 20:22:01.743 [main] Log4JDemo - omg omg fatal error
+[TRACE] 2020-05-02 20:22:01.743 [main] Log4JDemo - tracing...

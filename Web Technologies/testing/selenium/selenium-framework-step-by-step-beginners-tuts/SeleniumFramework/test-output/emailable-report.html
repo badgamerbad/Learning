@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.result,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.result td,table.result th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.result th {vertical-align:bottom}
+tr.param th {padding-left:1em;padding-right:1em}
+tr.param td {padding-left:.5em;padding-right:2em}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.result td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.result tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">4</td><td class="numi">4</td><td class="numi_attn">1</td><td class="numi_attn">1</td><td class="numi">5.1 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="passed" id="summary">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">Test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="1">listeners.TestTheTestNgListenterPrev</td><td><a href="#m1"><b>testNumber2</b>  </a></td><td class="numi">1</td><td>1588446620232</td><td class="numi">5057</td></tr>
+<tr><th colspan="4">Test &#8212; skipped</th></tr>
+<tr class="skippedodd"><td rowspan="1">listeners.TestTheTestNgListenterPrev</td><td><a href="#m2"><b>testNumber3</b>  </a></td><td class="numi">1</td><td>1588446625291</td><td class="numi">1</td></tr>
+<tr><th colspan="4">Test &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="3">listeners.TestTheTestNgListenterNext</td><td><a href="#m3"><b>testNumber4</b>  </a></td><td class="numi">1</td><td>1588446620219</td><td class="numi">7</td></tr><tr class="passedodd"><td><a href="#m4"><b>testNumber5</b>  </a></td><td class="numi">1</td><td>1588446620227</td><td class="numi">1</td></tr><tr class="passedodd"><td><a href="#m5"><b>testNumber6</b>  </a></td><td class="numi">1</td><td>1588446620229</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">listeners.TestTheTestNgListenterPrev</td><td><a href="#m6"><b>testNumber1</b>  </a></td><td class="numi">1</td><td>1588446620230</td><td class="numi">1</td></tr>
+</table>
+<h1>Test</h1>
+<h2 id="m1">listeners.TestTheTestNgListenterPrev:testNumber2</h2>
+<div style="padding-left:3em">
+<p>element not interactable
+  (Session info: chrome=81.0.4044.129)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OMGM4HM&apos;, ip: &apos;192.168.43.230&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_242&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.129, chrome: {chromedriverVersion: 81.0.4044.69 (6813546031a4b..., userDataDir: C:\Users\badga\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:49496}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 01edece02aa6c1ddc9b4b3a5ca8fe945</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+<br/>at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+<br/>at pages.GoogleSearchPage.clickOnSearchButton(GoogleSearchPage.java:18)
+<br/>at listeners.TestTheTestNgListenterPrev.testNumber2(TestTheTestNgListenterPrev.java:30)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">listeners.TestTheTestNgListenterPrev:testNumber3</h2>
+<div style="padding-left:3em">
+<p>This is skipped</p>
+listeners.TestTheTestNgListenterPrev.testNumber3(TestTheTestNgListenterPrev.java:36)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">listeners.TestTheTestNgListenterPrev:testNumber1</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">listeners.TestTheTestNgListenterNext:testNumber5</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">listeners.TestTheTestNgListenterNext:testNumber6</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m6">listeners.TestTheTestNgListenterNext:testNumber4</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>
