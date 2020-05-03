@@ -344,3 +344,7 @@ $ mvn test -D test-file=test-ng-parameters.xml
 	</includes>
 </configuration>
 ```
+
+# Auto IT
+- For automating GUI OS task 
+	- such as file uploader window
