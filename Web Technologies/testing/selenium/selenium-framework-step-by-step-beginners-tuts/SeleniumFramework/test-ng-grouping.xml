@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test name="Test NG Grouping - TEST">
+		<groups>
+			<define name="full regression">
+				<include name="regression"></include>
+				<include name="smoke"></include>
+			</define>
+			<run>
+				<include name="smoke"></include>
+				<include name="regression"></include>
+				<!-- using regular expressions -->
+				<include name="windows.*"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="grouping.GroupingTests" />
+		</classes>
+	</test>
+	<!-- Test -->
+</suite>
+<!-- Suite -->

@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" parallel="none">
-  <listeners>
-    <listener class-name="listeners.TestNgListener"/>
-  </listeners>
-  <test name="Test(failed)" parallel="none">
+  <test name="test ng parameters(failed)" parallel="none">
     <classes>
-      <class name="listeners.TestTheTestNgListenterPrev">
+      <class name="parameters.ParametersTestNg">
         <methods>
-          <include name="testNumber2"/>
-          <include name="tearDown"/>
-          <include name="testNumber3"/>
+          <include name="testName"/>
+          <include name="testFullName"/>
+          <include name="testNameWithBrackets"/>
         </methods>
-      </class> <!-- listeners.TestTheTestNgListenterPrev -->
+      </class> <!-- parameters.ParametersTestNg -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- test ng parameters(failed) -->
 </suite> <!-- Failed suite [Suite] -->

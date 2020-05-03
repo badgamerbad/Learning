@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" parallel="none">
   <test name="Default test(failed)" parallel="none">
     <classes>
-      <class name="listeners.TestTheTestNgListenter">
+      <class name="katalonRecorder.LoginLogout">
         <methods>
-          <include name="testNumber3"/>
-          <include name="testNumber2"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testLoginLogout"/>
         </methods>
-      </class> <!-- listeners.TestTheTestNgListenter -->
+      </class> <!-- katalonRecorder.LoginLogout -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
