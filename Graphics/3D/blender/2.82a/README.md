@@ -65,7 +65,7 @@ Drops the new objects over the 3d cursor when they are added in the viewport
 - In physics panel click "Bake Data" and wait... (progress in status bar on the bottom)
 - After it 's finished play the animation.
 
-# Toggle X Ray
+## Toggle X Ray
 - <img src="toggle-x-ray.jpg" alt="toggle-x-ray" width="800" />
 
 ## Proportional editing
@@ -150,20 +150,11 @@ We can smooth the surfaces with these
 - After Joining
 - <img src="after-joining-the-objects.jpg" alt="after-joining-the-objects" width="600" />
 
-# Sculpting
-
-## Brush
-- To adjust the brush press <kbd>F</kbd>
-- To adjust the brush strenth press <kbd>F</kbd> + <kbd>F</kbd>
-
-# Texture
-
 ## Adding Material
 - <img src="add-surface-material.jpg" alt="add-surface-material" width="600" />
 - <img src="add-color-to-surface.jpg" alt="add-color-to-surface.jpg" width="600" />
 
-## Material Properties
-### Common
+### Material Properties
 - Color
 - Roughness (glossy to rough)
 - Subsurface
@@ -206,14 +197,58 @@ The origin is the point which will be attached to the surface of the object on w
 ### set priority
 - <img src="set-priority-to-the-particles-in-collection.jpg" alt="set-priority-to-the-particles-in-collection" width="500" />
 
-## Shading
+# Sculpting
+
+## Brush
+- To adjust the brush press <kbd>F</kbd>
+- To adjust the brush strenth press <kbd>F</kbd> + <kbd>F</kbd>
+
+# Shading
 - Select new object
 - Add material
 - <img src="shading-new-material.jpg" alt="shading-new-material" width="900" />
 
-### Add new node
+## Add new node
 - <kbd>SHIFT</kbd> + <kbd>A</kbd>
 
-### Common nodes
+## Common nodes
 - input -> object info
 - converter -> color ramp
+- texture -> image texture
+
+## Procedural Texturing
+- Texture -> Noise texture
+- <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>Left Click</kbd> on the noise menu panel
+
+<b>Note:</b> Also in the preferences enable add on - noise wrangler
+
+- add vecter -> displacement
+- <img src="procedural-texturing-layer-1.jpg" alt="procedural-texturing-layer-1" width="900" />
+- <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>Left Click</kbd> on the panel `principled BSDF` (main layer)
+- View in the render mode
+
+### 2 layers of Procedural Texturing
+- add 2 noise texture
+- pass one through colorRamp - to darken the 2<sup>nd</sup> noise
+- Add them
+- Overlay the texture with noise and set the displacement scale very low
+- <img src="procedural-texturing-layer-2.jpg" alt="procedural-texturing-layer-2" width="900" />
+
+# Texture Paint
+- Add new texture
+- save the new texture on the hard drive or <kbd>ALT</kbd> + <kbd>S</kbd> for quick save
+- Go to shading and add `texture -> image texture`
+- select the neew texture in the node
+
+## Choose Color
+- Press <kbd>N</kbd>
+- pick the new color
+- Press <kbd>X</kbd> to select
+
+## Texture Mask
+- Go to texture mask
+- New
+- <img src="texture-masking.jpg" alt="texture-masking.jpg" width="500" />
+
+### Brush Overlay (darken with same color)
+- <img src="texture-overlay-bake.jpg" alt="texture-overlay-bake.jpg" width="500" />
