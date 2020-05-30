@@ -12,6 +12,10 @@
 - Numpad keys
 - <kbd>ALT</kbd> + <kbd>Middle Mouse</kbd> + move mouse
 
+### Split the viewport
+- <kbd>Right Click</kbd> on the red marking
+- <img src="right-click-and-spilt-the-view.jpg" alt="right-click-and-spilt-the-view" width="700" />
+
 ### Rendered 
 To see the light on the object
 - <img src="view-rendered-object.jpg" alt="view-rendered-object" width="800" />
@@ -19,6 +23,9 @@ To see the light on the object
 
 ### Light
 - <img src="enable-lighting.jpg" alt="enable-lighting" width="900" />
+
+### Light settings
+- <img src="light-settings.jpg" alt="light-settings" width="900" />
 
 ### 3D cursor
 Drops the new objects over the 3d cursor when they are added in the viewport
@@ -120,6 +127,12 @@ We can smooth the surfaces with these
 - Select the vertices
 - Press <kbd>E</kbd>
 
+### Create a loop on the mesh
+- <img src="create-a-loop-on-a-model.jpg" alt="create-a-loop-on-a-model.jpg" width="250" />
+- Select the model
+- <kbd>CTRL</kbd> + <kbd>R</kbd>
+- scroll up and down to add more loops or reduce
+
 ## Subdivide
 <b>Note:</b> Edit mode should be on
 - <kbd>Right Click</kbd> on the object
@@ -148,3 +161,59 @@ We can smooth the surfaces with these
 ## Adding Material
 - <img src="add-surface-material.jpg" alt="add-surface-material" width="600" />
 - <img src="add-color-to-surface.jpg" alt="add-color-to-surface.jpg" width="600" />
+
+## Material Properties
+### Common
+- Color
+- Roughness (glossy to rough)
+- Subsurface
+  - Radius - R, G, B
+  - Color 
+    - give similar to object color
+    - this is when the light goes into the object
+    - like the thin layer of skin becomes red as we see it on the bright light
+
+## Weight Paint
+- <img src="weight-paint-add-delete.jpg" alt="weight-paint-add-delete" width="500" />
+- reduce weight to have blue
+- more weight gives red
+
+### More weight paint layers on object
+- <img src="add-vertex-group-for-weight-paint.jpg" alt="add-vertex-group-for-weight-paint.jpg" width="500" />
+
+## Adding Particles 
+- Select the object on which you want to add particles
+- <img src="add-particles.jpg" alt="add-particles" width="600" />
+- Option Emmission -> seed - emits a different pattern in the way partcles are added
+
+### Select the object to duplicate on top of previously selected object
+- <img src="pick-the-object-for-duplicating.jpg" alt="pick-the-object-for-duplicating" width="500" />
+- Select the object
+
+### Rotating
+- <img src="randomize-rotations-of-the-particles.jpg" alt="randomize-rotations-of-the-particles" width="500" />
+
+### selecting the vertex group (weight painter group)
+- Particle property -> Vertex Group
+- <img src="select-vertex-group-of-weight-paint.jpg" alt="select-vertex-group-of-weight-paint" width="500" />
+
+### set origin
+The origin is the point which will be attached to the surface of the object on which the particles are added
+- Select the objects
+- <kbd>Right Click</kbd> 
+- set origin -> origin to geometry
+
+### set priority
+- <img src="set-priority-to-the-particles-in-collection.jpg" alt="set-priority-to-the-particles-in-collection" width="500" />
+
+## Shading
+- Select new object
+- Add material
+- <img src="shading-new-material.jpg" alt="shading-new-material" width="900" />
+
+### Add new node
+- <kbd>SHIFT</kbd> + <kbd>A</kbd>
+
+### Common nodes
+- input -> object info
+- converter -> color ramp
