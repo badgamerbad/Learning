@@ -6,7 +6,19 @@
 - <kbd>Left Click</kbd> on the object and tranform it
 - <kbd>Right Click</kbd> to reset the tranform
 
+### Select inverse degrees
+- hit <kbd>SHIFT</kbd> + axis key
+
+### Rotate
+- <kbd>R</kbd>
+- type the degrees
+- or press <kbd>CTRL</kbd> while moving to have 5 degree change
+
 ## viewport
+
+### Menu
+- Press <kbd>N</kbd>
+
 ### Change the  axis
 - <kbd>`</kbd> to open the menu
 - Numpad keys
@@ -33,6 +45,9 @@ Drops the new objects over the 3d cursor when they are added in the viewport
 - <kbd>SHIFT</kbd> + <kbd>Right Click</kbd> - to move it
 - <kbd>SHIFT</kbd> + <kbd>C</kbd> - to centre the cursor
 
+- <kbd>SHIFT</kbd> + <kbd>S</kbd> to get menu
+- Select `cursor to selected`
+
 ### Change View for the mode (Layout, sculpting, etc)
 - Press <kbd>N</kbd>
 - <img src="change-view-zoom.jpg" alt="change-view-zoom" width="600" />
@@ -49,26 +64,45 @@ Drops the new objects over the 3d cursor when they are added in the viewport
 ### View through the camera
 - <img src="view-through-camera.jpg" alt="view-through-camera" width="400" />
 
-## Add
-- <kbd>SHIFT</kbd> + <kbd>A</kbd> to add mesh
+### Face orientation
+See which face is viewable
+- <img src="face-orientations.jpg" alt="face-orientations" width="400" />
 
-## Start Search
+### Start Search
 - <kbd>F3</kbd>
 
-## Set Monkey head on Fire
-- Add monkey
-- select monkey in object mode
-- F3 -> add Quick Smoke
-- (different from the video) select monkey
-- choose Physics->Setting->Flow Type : "FIre + Smoke"
-- (different from the video) select "Smoke Domain" object (the box around the monkey)
-- In physics panel click "Bake Data" and wait... (progress in status bar on the bottom)
-- After it 's finished play the animation.
-
-## Toggle X Ray
+### Toggle X Ray
 - <img src="toggle-x-ray.jpg" alt="toggle-x-ray" width="800" />
 
-## Proportional editing
+## Editing the object
+
+### Add
+- <kbd>SHIFT</kbd> + <kbd>A</kbd> to add mesh
+
+### Smooth the object
+- select the object by clicking on the object
+- <img src="smooth-or-flat-the-object.jpg" alt="smooth-or-flat-the-object" width="600" />
+
+### delete face
+- select the face
+- press <kbd>X</kbd>
+- <img src="delete-faces.jpg" alt="delete-faces" width="600" />
+
+### Select faces
+- <img src="select-faces-of-object.jpg" alt="select-faces-of-object" width="600" />
+- then click on the middle of the faces
+
+#### Flip Normals
+- Select all vertices
+- <kbd>SHIFT</kbd> + <kbd>N</kbd>
+- or search for normal recalculations
+
+### Edges
+- <img src="select-edge-of-the-object.jpg" alt="select-edge-of-the-object" width="300" />
+- To open up the Edge menu
+- <kbd>CTRL</kbd> + <kbd>E</kbd>
+
+### Proportional editing
 For editing the vertices near by
 - <img src="proportional-editing.jpg" alt="proportional-editing" width="400" />
 - Enable it
@@ -77,13 +111,22 @@ For editing the vertices near by
 - <img src="edit-the-vertice-proportionallly.jpg" alt="edit-the-vertice-proportionallly" width="400" />
 - Scroll mouse up or down to get the lumpiness
 
+### Extrude face
+- select vertices
+- Press <kbd>E</kbd>
+
+#### Pull the surrounding of face (Crease)
+- select vertices
+- Press <kbd>SHIFT</kbd> + <kbd>E</kbd>
+
+### Creating a bridge between cut faces
+- <img src="select-cut-faces-of-object.jpg" alt="select-cut-faces-of-object" width="400" />
+- Select cut faces
+- press <kbd>F3</kbd> and search for Bridge
+
 ### Moving the vertices
 To stick the dragging object on the surface, instead of going inside the surface of other selections
 - <img src="snap-to-face-of-the-object.jpg" alt="snap-to-face-of-the-object" width="600" />
-
-## Smooth the object
-- select the object by clicking on the object
-- <img src="smooth-or-flat-the-object.jpg" alt="smooth-or-flat-the-object" width="600" />
 
 ## Add Modifiers
 - <img src="modifier-properties.jpg" alt="modifier-properties" width="200" />
@@ -96,10 +139,16 @@ We can smooth the surfaces with these
 - <img src="modifier-subdivision.jpg" alt="modifier-subdivision" width="600" />
 
 ### Solidyfy
-- <img src="modifier-solidify.jpg" alt="modifier-solidify.jpg" width="600" />
+- <img src="modifier-solidify.jpg" alt="modifier-solidify" width="600" />
 
 ## Selection
 <b>Note:</b> Edit mode should be on
+
+### enable brush selection
+- Press <kbd>C</kbd> and 
+- Scroll for scaling
+- <kbd>Middle Mouse</kbd> to Undo
+- <kbd>Right Click</kbd> to disable
 
 ### Select the duplicates on the object 
 - <kbd>SHIFT</kbd> + <kbd>D</kbd> to duplicate the selection
@@ -116,7 +165,7 @@ We can smooth the surfaces with these
 
 ### loops
 - <kbd>ALT</kbd> + <kbd>Left Click</kbd> the vertex for vertical or horizontal selection of the lines running through the vertex
-- <img src="select-loop.jpg" alt="select-loop.jpg" width="600" />
+- <img src="select-loop.jpg" alt="select-loop" width="600" />
 - <kbd>CTRL</kbd> + <kbd>I</kbd> to invert the selection
 
 ### Hide the selection
@@ -128,10 +177,14 @@ We can smooth the surfaces with these
 - Press <kbd>E</kbd>
 
 ### Create a loop on the mesh
-- <img src="create-a-loop-on-a-model.jpg" alt="create-a-loop-on-a-model.jpg" width="250" />
+- <img src="create-a-loop-on-a-model.jpg" alt="create-a-loop-on-a-model" width="250" />
 - Select the model
 - <kbd>CTRL</kbd> + <kbd>R</kbd>
 - scroll up and down to add more loops or reduce
+
+### Create loop inside a circle
+- Select a circle
+- Press <kbd>I</kbd> and Drag
 
 ## Subdivide
 <b>Note:</b> Edit mode should be on
@@ -139,7 +192,7 @@ We can smooth the surfaces with these
 - Select `Subdivide`
 
 ### Increase the smoothness
-- <img src="subdivide-smoothness.jpg" alt="subdivide-smoothness.jpg" width="600" />
+- <img src="subdivide-smoothness.jpg" alt="subdivide-smoothness" width="600" />
 
 ## Join object
 - Aefore joining
@@ -152,7 +205,7 @@ We can smooth the surfaces with these
 
 ## Adding Material
 - <img src="add-surface-material.jpg" alt="add-surface-material" width="600" />
-- <img src="add-color-to-surface.jpg" alt="add-color-to-surface.jpg" width="600" />
+- <img src="add-color-to-surface.jpg" alt="add-color-to-surface" width="600" />
 
 ### Material Properties
 - Color
@@ -163,6 +216,20 @@ We can smooth the surfaces with these
     - give similar to object color
     - this is when the light goes into the object
     - like the thin layer of skin becomes red as we see it on the bright light
+- Transmission - make it 1 for glass
+  - to remove the tint the base color should vue should be 1
+
+### Copying material
+- Select the object which you want to apply material to
+- Select the object which you want to apply material from
+- <kbd>CTRL</kbd> + <kbd>P</kbd> and select Materials
+
+### water like depth and color
+- <img src="water-depth-material.jpg" alt="water-depth-material" width="600" />
+
+### Adding another material
+- select the parts or faces of the object
+- <img src="assign-second-material-to-same-object.jpg" alt="assign-second-material-to-same-object" width="600" />
 
 ## Weight Paint
 - <img src="weight-paint-add-delete.jpg" alt="weight-paint-add-delete" width="500" />
@@ -170,7 +237,7 @@ We can smooth the surfaces with these
 - more weight gives red
 
 ### More weight paint layers on object
-- <img src="add-vertex-group-for-weight-paint.jpg" alt="add-vertex-group-for-weight-paint.jpg" width="500" />
+- <img src="add-vertex-group-for-weight-paint.jpg" alt="add-vertex-group-for-weight-paint" width="500" />
 
 ## Adding Particles 
 - Select the object on which you want to add particles
@@ -181,7 +248,7 @@ We can smooth the surfaces with these
 - <img src="pick-the-object-for-duplicating.jpg" alt="pick-the-object-for-duplicating" width="500" />
 - Select the object
 
-### Rotating
+### Rotate
 - <img src="randomize-rotations-of-the-particles.jpg" alt="randomize-rotations-of-the-particles" width="500" />
 
 ### selecting the vertex group (weight painter group)
@@ -248,7 +315,32 @@ The origin is the point which will be attached to the surface of the object on w
 ## Texture Mask
 - Go to texture mask
 - New
-- <img src="texture-masking.jpg" alt="texture-masking.jpg" width="500" />
+- <img src="texture-masking.jpg" alt="texture-masking" width="500" />
 
 ### Brush Overlay (darken with same color)
-- <img src="texture-overlay-bake.jpg" alt="texture-overlay-bake.jpg" width="500" />
+- <img src="texture-overlay-bake.jpg" alt="texture-overlay-bake" width="500" />
+
+# UV Editing
+- select the lines on the object and <kbd>Right Click</kbd> and Mark Seam
+- Press <kbd>U</kbd> for UV editing menu
+
+## Menu
+- <img src="uv-editing-viewport-menu.jpg" alt="uv-editing-viewport-menu" width="500" />
+
+## Reset UV unwrap
+- Select the object you want to reset the UV
+- Press <kbd>U</kbd> for UV editing menu
+- Reset
+
+## Error while UV unwrap
+### Object has non uniform scale 
+We get the error because the scales are different </br>
+<img src="why-non-uniform-object-err.jpg" alt="why-non-uniform-object-err" width="500" />
+
+- Select the Object
+- Go to object mode
+- <kbd>CTRL</kbd> + <kbd>A</kbd>
+- Scale
+
+### if UV Square doesnt work
+If the addon doesn't work when you load it and select "to grid by shape", duplicate the mesh with Shift+D in object mode and try on the new mesh. It'll work. It's a bug.
