@@ -93,6 +93,7 @@ See which face is viewable
 - then click on the middle of the faces
 
 #### Flip Normals
+- <img src="when-to-recalc-normals.jpg" alt="when-to-recalc-normals" width="600" />
 - Select all vertices
 - <kbd>SHIFT</kbd> + <kbd>N</kbd>
 - or search for normal recalculations
@@ -101,6 +102,13 @@ See which face is viewable
 - <img src="select-edge-of-the-object.jpg" alt="select-edge-of-the-object" width="300" />
 - To open up the Edge menu
 - <kbd>CTRL</kbd> + <kbd>E</kbd>
+
+#### Edge Filling
+- select the edge and press <kbd>F</kbd> to add a face to part shown in image
+- <img src="fill-in-face-using-edge.jpg" alt="fill-in-face-using-edge" width="300" />
+
+#### Expand edge
+- <kbd>CTRL</kbd> + <kbd>B</kbd>
 
 ### Proportional editing
 For editing the vertices near by
@@ -128,18 +136,42 @@ For editing the vertices near by
 To stick the dragging object on the surface, instead of going inside the surface of other selections
 - <img src="snap-to-face-of-the-object.jpg" alt="snap-to-face-of-the-object" width="600" />
 
+### move vertex along the edge
+- <img src="move-vertex-along-the-edge.jpg" alt="move-vertex-along-the-edge" width="600" />
+
+### Follow another object
+- Aefore joining
+- <img src="before-joining-the-objects.jpg" alt="before-joining-the-objects" width="600" />
+- Select the parent object
+- Then select the child object
+- <kbd>CTRL</kbd> + <kbd>P</kbd> and select the `Object (Keep Transform)`
+- After Joining
+- <img src="after-joining-the-objects.jpg" alt="after-joining-the-objects" width="600" />
+
+### Merge or join object
+- <kbd>CTRL</kbd> + <kbd>J</kbd>
+
 ## Add Modifiers
 - <img src="modifier-properties.jpg" alt="modifier-properties" width="200" />
 - <img src="select-modifier.jpg" alt="select-modifier" width="800" />
 
 <b>Note:</b> The order of modifiers is important
 
-### Subdivision
+### Subdivision Surface
 We can smooth the surfaces with these
 - <img src="modifier-subdivision.jpg" alt="modifier-subdivision" width="600" />
 
+#### Bulid up
+- <img src="how-to-get-rid-of-buildup.jpg" alt="how-to-get-rid-of-buildup" width="300" />
+- <img src="subdivision-surface-enable-realtime.jpg" alt="subdivision-surface-enable-realtime" width="400" />
+- <img src="after-enable-subdivision-surface-realtime.jpg" alt="after-enable-subdivision-surface-realtime" width="300" />
+
 ### Solidyfy
 - <img src="modifier-solidify.jpg" alt="modifier-solidify" width="600" />
+
+### Shrink wrap
+- add the target object, select project mode if required
+- <img src="view saved cart on stock ui.jpg" alt="view saved cart on stock ui" width="500" />
 
 ## Selection
 <b>Note:</b> Edit mode should be on
@@ -193,15 +225,6 @@ We can smooth the surfaces with these
 
 ### Increase the smoothness
 - <img src="subdivide-smoothness.jpg" alt="subdivide-smoothness" width="600" />
-
-## Join object
-- Aefore joining
-- <img src="before-joining-the-objects.jpg" alt="before-joining-the-objects" width="600" />
-- Select the parent object
-- Then select the child object
-- <kbd>CTRL</kbd> + <kbd>P</kbd> and select the `Object (Keep Transform)`
-- After Joining
-- <img src="after-joining-the-objects.jpg" alt="after-joining-the-objects" width="600" />
 
 ## Adding Material
 - <img src="add-surface-material.jpg" alt="add-surface-material" width="600" />
