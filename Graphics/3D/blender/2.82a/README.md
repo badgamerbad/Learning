@@ -137,6 +137,7 @@ To stick the dragging object on the surface, instead of going inside the surface
 - <img src="snap-to-face-of-the-object.jpg" alt="snap-to-face-of-the-object" width="600" />
 
 ### move vertex along the edge
+- Select the vertex and double press <kbd>G</kbd>
 - <img src="move-vertex-along-the-edge.jpg" alt="move-vertex-along-the-edge" width="600" />
 
 ### Follow another object
