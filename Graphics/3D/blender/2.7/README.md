@@ -28,7 +28,7 @@
 - <img src="weight-transfer-select-both-mesh.jpg" alt="weight-transfer-select-both-mesh" width="400" />
 - Also select group as active
 - <img src="weight-transfer-select-active-group.jpg" alt="weight-transfer-select-active-group.jpg" width="400" />
-  - if this setting is not available just select any mesh and click on `transfer weight`
+<b>Note: </b> if this setting is not available just select any mesh and click on `transfer weight`
 - go to tools -> weight tools -> transfer weight
 - <img src="weight-transfer-and-transfer-weight.jpg" alt="weight-transfer-and-transfer-weight.jpg" width="400" />
 
