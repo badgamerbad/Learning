@@ -1,6 +1,7 @@
 # Avastar
 
-## Bind
+## Bind the mesh to armature (Avatar)
+So that the mesh (cloths) move with the armature (avatar)
 - Select the Mesh and the avatar mesh
 - <img src="bind-the-clothing-to-armature.jpg" alt="bind-the-clothing-to-armature" width="350" />
 
@@ -12,7 +13,7 @@
 ## Reset Bones pose
 - Click on Pose under `Bone Display Style`
 
-## change the Bone Display Style
+## Change the Bone Display Style
 - Go to Avastar tab
   - <img src="avastar-bone-display-style.jpg" alt="avastar bone display style">
 - Select the style
