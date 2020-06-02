@@ -32,8 +32,6 @@
 - go to tools -> weight tools -> transfer weight
 - <img src="weight-transfer-and-transfer-weight.jpg" alt="weight-transfer-and-transfer-weight.jpg" width="400" />
 
-Note
-
 ## To remove the sticky sides
 - Select te cloth
   - <img src="select-the-cloth.jpg" alt="select the cloth">
