@@ -8,6 +8,22 @@
 - Select trasnfer weight
   - <img src="where-is-transfer-weights.jpg" alt="where is transfer weights">
 
+## If the weight paint is not getting applied
+- <img src="weight-paint-option-to-paint.jpg" alt="weight-paint-option-to-paint">
+
+## Transfer the weight between mesh
+- place the mesh over the target mesh
+- <img src="place-weight-mesh-over-target-mesh.jpg" alt="place-weight-mesh-over-target-mesh" width="400" />
+- select both the mesh
+- <img src="weight-transfer-select-both-mesh.jpg" alt="weight-transfer-select-both-mesh" width="400" />
+- Also select group as active
+- <img src="weight-transfer-select-active-group.jpg" alt="weight-transfer-select-active-group.jpg" width="400" />
+  - if this setting is not available just select any mesh and click on `transfer weight`
+- go to tools -> weight tools -> transfer weight
+- <img src="weight-transfer-and-transfer-weight.jpg" alt="weight-transfer-and-transfer-weight.jpg" width="400" />
+
+Note
+
 ## To remove the sticky sides
 - Select te cloth
   - <img src="select-the-cloth.jpg" alt="select the cloth">
