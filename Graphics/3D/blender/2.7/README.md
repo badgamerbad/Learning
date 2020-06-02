@@ -1,3 +1,13 @@
+# UI
+
+## Viewport
+- select viewport button (info is the default)
+- <img src="select-viewport.jpg" alt="select-viewport">
+- new view port button
+- <img src="close-viewport.jpg" alt="close-viewport">
+- <kbd>Left Click</kbd> on the three diagonal lines and drag the mouse into the other window
+- or drag the three diagonal line at the bottom to split screen
+
 # Weight paint and weight transfer
 - Select the imported cloth
 - Select the clothing layer (<kbd>shift</kbd> + <kbd>right click</kbd>)
