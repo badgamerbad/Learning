@@ -54,8 +54,3 @@
   - Press <kbd>p</kbd> 
   - <img src="seperation-imported-cloth.jpg" alt="seperation imported cloth">
   - Select `Selection`
-
-# change the Bone Display Style
-- Go to Avastar tab
-  - <img src="avastar-bone-display-style.jpg" alt="avastar bone display style">
-- Select the style

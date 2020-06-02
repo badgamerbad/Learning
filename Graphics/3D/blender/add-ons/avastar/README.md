@@ -11,3 +11,8 @@
 
 ## Reset Bones pose
 - Click on Pose under `Bone Display Style`
+
+## change the Bone Display Style
+- Go to Avastar tab
+  - <img src="avastar-bone-display-style.jpg" alt="avastar bone display style">
+- Select the style
