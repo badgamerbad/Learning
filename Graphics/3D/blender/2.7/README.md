@@ -87,3 +87,10 @@
 - Click on bake
 - <img src="after-full-render-bake.jpg" alt="after-full-render-bake">
 - after bake will get this
+
+#### Importing the texture
+- <img src="texture-mode-selected.jpg" alt="texture-mode-selected">
+- make sure the texture mode is on
+- <img src="texture-import-button.jpg" alt="texture-import-button">
+- Go to edit mode and select the texture
+- <img src="select-the-imported-texture.jpg" alt="select-the-imported-texture">
