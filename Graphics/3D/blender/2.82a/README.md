@@ -152,11 +152,30 @@ To stick the dragging object on the surface, instead of going inside the surface
 ### Merge or join object
 - <kbd>CTRL</kbd> + <kbd>J</kbd>
 
-## Add Modifiers
+## Armature (Bones)
+- <img src="armature-bones-tools.jpg" alt="armature-bones-tools.jpg" width="500" />
+
+### create groups of bones
+- Go to edit mode
+- <img src="armature-bones-select-head.jpg" alt="armature-bones-select-head" width="300" />
+- select top head of the bone
+- press <kbd>E</kbd> and drag
+
+### Add to a mesh
+- select the mesh first and then the bones
+- Press <kbd>CTRL</kbd> + <kbd>P</kbd>
+- <img src="armature-bones-add-to-mesh.jpg" alt="armature-bones-add-to-mesh" width="600" />
+- <img src="armature-bones-after-bone-added-to-mesh.jpg" alt="armature-bones-after-bone-added-to-mesh.jpg" width="500" />
+
+### adding the bones we get the modifiers
 - <img src="modifier-properties.jpg" alt="modifier-properties" width="200" />
 - <img src="select-modifier.jpg" alt="select-modifier" width="800" />
+- after adding bones to the mesh
 
 <b>Note:</b> The order of modifiers is important
+
+### select bones
+- <img src="armature-bones-select-bones.jpg" alt="armature-bones-select-bones.jpg" width="200" />
 
 ### Subdivision Surface
 We can smooth the surfaces with these
