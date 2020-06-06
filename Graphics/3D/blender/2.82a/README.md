@@ -178,6 +178,10 @@ To stick the dragging object on the surface, instead of going inside the surface
 
 <b>Note:</b> The order of modifiers is important
 
+### Removing bones from mesh
+- select the mesh and then the bones
+- <kbd>ALT</kbd> + <kbd>P</kbd>
+
 ### select bones
 - <img src="armature-bones-select-bones.jpg" alt="armature-bones-select-bones.jpg" width="200" />
 
@@ -285,6 +289,17 @@ We can smooth the surfaces with these
 
 ### More weight paint layers on object
 - <img src="add-vertex-group-for-weight-paint.jpg" alt="add-vertex-group-for-weight-paint" width="500" />
+
+### Select bones while painting
+- Go to `object mode`
+- Select the bones
+- select the mesh
+- Go to `weight paint mode`
+- <kbd>SHIFT</kbd> + <kbd>Left Click</kbd> on bone to select
+- <kbd>SHIFT</kbd> + <kbd>ALT</kbd> + <kbd>Left Click</kbd> on bone to unselect
+
+### weird weight paint
+- in the brush stroke - check if `Stabilize stroke` is ON
 
 ## Adding Particles 
 - Select the object on which you want to add particles
