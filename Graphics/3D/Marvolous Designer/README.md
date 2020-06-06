@@ -35,9 +35,15 @@
 - <img src="x-ray-the-cloth.jpg" alt="x-ray-the-cloth" width="400" />
 
 ### Simulation property
+
+#### Particle
 - Select the garment in the `3D pattern window`
 - <img src="particle-property.jpg" alt="particle-property" width="500" />
-- Reduce the particle distance
+- Reduce the particle distance for higher quality
+
+#### Layers
+- if we want one object to be placed above other
+- higher layer value the outermost element it will be
 
 ## Pattern
 
@@ -89,3 +95,7 @@ control whether the sewing should be inward or outward
 ### Create shirring (elastic property)
 - <img src="image-sample-of-shirring.jpg" alt="image-sample-of-shirring" width="400" />
 - <img src="adjust-the-elastic-ratio-n-strength.jpg" alt="adjust-the-elastic-ratio-n-strength" width="800" />
+
+### rotate internal divided lines
+- <img src="rotate-lines-in-garment.jpg" alt="rotate-lines-in-garment" width="400" />
+- select the tool and then select the line
