@@ -16,6 +16,10 @@
 
 ## viewport
 
+### Toggle visibility
+- if while importing some mesh from old version are looking as if they are disabled
+- <img src="toggle-viewport-visibility.jpg" alt="toggle-viewport-visibility.jpg" width="200" />
+
 ### Menu
 - Press <kbd>N</kbd>
 
