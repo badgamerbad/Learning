@@ -9,7 +9,7 @@
 - <img src="import-the-selection.jpg" alt="import-the-selection" width="400" />
 
 ## Export from MD
-- <img src="export-the-selection-from-md.jpg" alt="export-the-selection-from-md" width="400" />
+- <img src="export-the-selection-from-md.jpg" alt="export-the-selection-from-md" width="700" />
 
 ## Tools
 
