@@ -6,6 +6,9 @@
 - <kbd>Left Click</kbd> on the object and tranform it
 - <kbd>Right Click</kbd> to reset the tranform
 
+### Menu
+<kbd>SHIFT</kbd> + <kbd>Space</kbd>
+
 ### Select inverse degrees
 - hit <kbd>SHIFT</kbd> + axis key
 
@@ -300,6 +303,17 @@ We can smooth the surfaces with these
 
 ### weird weight paint
 - in the brush stroke - check if `Stabilize stroke` is ON
+
+### Weight trasfer using data transfer modifier
+- <img src="weight-transfer-data-transfer.jpg" alt="weight-transfer-data-transfer.jpg" width="500" />
+
+### Tranfer weight 
+- select the bones
+- select the mesh
+- go to weight paint
+- select the envelop
+- <img src="weight-paint-transfer-weight.jpg" alt="weight-paint-transfer-weight" width="500" />
+- vertex will be added for that bone
 
 ## Adding Particles 
 - Select the object on which you want to add particles

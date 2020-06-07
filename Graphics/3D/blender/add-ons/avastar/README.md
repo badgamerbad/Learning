@@ -15,5 +15,5 @@ So that the mesh (cloths) move with the armature (avatar)
 
 ## Change the Bone Display Style
 - Go to Avastar tab
-  - <img src="avastar-bone-display-style.jpg" alt="avastar bone display style">
+  - <img src="avastar-bone-display-style.jpg" alt="avastar bone display style" />
 - Select the style
