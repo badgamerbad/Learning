@@ -21,7 +21,8 @@
 
 ### Toggle visibility
 - if while importing some mesh from old version are looking as if they are disabled
-- <img src="toggle-viewport-visibility.jpg" alt="toggle-viewport-visibility.jpg" width="200" />
+- <img src="toggle-viewport-visibility.jpg" alt="toggle-viewport-visibility.jpg" width="600" />
+- also enable the selection and viewport option in filter menu
 
 ### Menu
 - Press <kbd>N</kbd>
@@ -186,7 +187,7 @@ To stick the dragging object on the surface, instead of going inside the surface
 - <kbd>ALT</kbd> + <kbd>P</kbd>
 
 ### select bones
-- <img src="armature-bones-select-bones.jpg" alt="armature-bones-select-bones.jpg" width="200" />
+- <img src="armature-bones-select-bones.jpg" alt="armature-bones-select-bones.jpg" width="500" />
 
 ### Subdivision Surface
 We can smooth the surfaces with these
