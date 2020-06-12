@@ -398,8 +398,29 @@ The origin is the point which will be attached to the surface of the object on w
 - <img src="texture-overlay-bake.jpg" alt="texture-overlay-bake" width="500" />
 
 # UV Editing
+
+## Enable UV editor
+- <img src="select-uv-editor.jpg" alt="select-uv-editor" width="900" />
+
+## Perform UV editing
 - select the lines on the object and <kbd>Right Click</kbd> and Mark Seam
-- Press <kbd>U</kbd> for UV editing menu
+- Press <kbd>U</kbd> for UV editing menu and select `Unwrap`
+- also we can use the <kbd>CTRL</kbd> + <kbd>E</kbd> edge menu to mark seam
+
+### brush select
+- Press <kbd>C</kbd> 
+  - <kbd>Right Click</kbd> to exit
+  - Scroll up / down for brush size
+
+## keep the UV without mesh selection
+- <img src="uv-keep-selection-without-select-all-on-mesh.jpg" alt="uv-keep-selection-without-select-all-on-mesh" width="400" />
+
+## Create an image
+This gives us the UV Map
+- Once the unwrap is done
+- go to camera tool
+- <img src="create-uv-map-by-baking.jpg" alt="create-uv-map-by-baking" width="400" />
+- Bake it to write maps in the file
 
 ## Menu
 - <img src="uv-editing-viewport-menu.jpg" alt="uv-editing-viewport-menu" width="500" />
