@@ -26,8 +26,8 @@
 
 ## Weight paint
 ### and weight transfer
-- Select the imported cloth
 - Select the clothing layer (<kbd>SHIFT</kbd> + <kbd>right click</kbd>)
+- Select the imported cloth
 - Change the object mode to weight paint mode
   - <img src="object-integration-mode-weight-paint.jpg" alt="object integration mode weight paint">
 - Go to tools 

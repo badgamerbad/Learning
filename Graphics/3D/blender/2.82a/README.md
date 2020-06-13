@@ -149,7 +149,7 @@ To stick the dragging object on the surface, instead of going inside the surface
 - <img src="move-vertex-along-the-edge.jpg" alt="move-vertex-along-the-edge" width="600" />
 
 ### Follow another object
-- Aefore joining
+- Atfore joining
 - <img src="before-joining-the-objects.jpg" alt="before-joining-the-objects" width="600" />
 - Select the parent object
 - Then select the child object
@@ -161,7 +161,7 @@ To stick the dragging object on the surface, instead of going inside the surface
 - <kbd>CTRL</kbd> + <kbd>J</kbd>
 
 ## Armature (Bones)
-- <img src="armature-bones-tools.jpg" alt="armature-bones-tools.jpg" width="500" />
+- <img src="armature-bones-tools.jpg" alt="armature-bones-tools" width="500" />
 
 ### create groups of bones
 - Go to edit mode
@@ -416,7 +416,7 @@ The origin is the point which will be attached to the surface of the object on w
 - <img src="uv-keep-selection-without-select-all-on-mesh.jpg" alt="uv-keep-selection-without-select-all-on-mesh" width="400" />
 
 ## Create an image
-This gives us the UV Map
+This gives us the UV Map - only after the uv are baked and saved in image file we can edit the UV mesh  
 - Once the unwrap is done
 - go to camera tool
 - <img src="create-uv-map-by-baking.jpg" alt="create-uv-map-by-baking" width="400" />
