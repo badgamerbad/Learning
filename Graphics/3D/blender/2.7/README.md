@@ -2,6 +2,10 @@
 
 ## Viewport
 
+### Render Engine
+- for viewing the `Material` view
+- <img src="blender-render-engine.jpg" alt="blender-render-engine">
+
 ### Split screen and join screen
 - Select viewport button (info is the default)
 - <img src="select-viewport.jpg" alt="select-viewport">
@@ -94,3 +98,20 @@
 - <img src="texture-import-button.jpg" alt="texture-import-button">
 - Go to edit mode and select the texture
 - <img src="select-the-imported-texture.jpg" alt="select-the-imported-texture">
+
+## UV Editor
+- select the editor type as `UV Editor`
+- select the mesh
+- go to edit mode
+- select the mesh parts
+  - now you will get the UV maps
+- <img src="select-new-uv-or-open-uv.jpg" alt="select-new-uv-or-open-uv">
+
+## Node Editor
+<b>Note: </b> change the method to display ed view from rendered to solid in order to reflect the chnages of nodes
+- <img src="view-method-option.jpg" alt="view-method-option">
+
+## Add normal map
+- add material and then select `image texture` 
+- <img src="add-new-blender-material.jpg" alt="add-new-blender-material">
+- <img src="add-normals-to-material.jpg" alt="add-normals-to-material">
