@@ -341,6 +341,13 @@ The origin is the point which will be attached to the surface of the object on w
 ### set priority
 - <img src="set-priority-to-the-particles-in-collection.jpg" alt="set-priority-to-the-particles-in-collection" width="500" />
 
+### New rest pose
+- <img src="new-rest-pose-copy-armature-modifier.jpg" alt="new-rest-pose-copy-armature-modifier" width="500" />
+- select the mesh you want in new pose
+- copy the armature modifier and apply
+- select the armature and go to pose mode
+- <img src="pose-apply-new-rest-pose.jpg" alt="pose-apply-new-rest-pose" width="700" />
+
 # Sculpting
 
 ## Brush

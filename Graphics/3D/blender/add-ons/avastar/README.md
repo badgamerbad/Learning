@@ -3,7 +3,7 @@
 ## Bind the mesh to armature (Avatar)
 So that the mesh (cloths) move with the armature (avatar)
 - Select the Mesh and the avatar mesh
-- <img src="bind-the-clothing-to-armature.jpg" alt="bind-the-clothing-to-armature" width="350" />
+- <img src="bind-to-armature.jpg" alt="bind-to-armature" width="350" />
 
 ## Turn On Bones
 - make sure the avatar is visible

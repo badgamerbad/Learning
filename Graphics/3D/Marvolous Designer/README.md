@@ -60,6 +60,10 @@
 - Select the edges
 - Press <kbd>SHIFT</kbd> to only stretch the selected width of edges
 
+### Symetric pattern
+- select the shape with edit points tool
+- <kbd>Right Click</kbd> and select `Symmetric Pattern`
+
 ## Sewing
 
 ### Smooth the stiches 
