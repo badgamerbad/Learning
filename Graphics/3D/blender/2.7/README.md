@@ -29,7 +29,9 @@
   - Select `Selection`
 
 ## Edit Mode
-- make sure the shape keys basis is selected and the 'Apply Shape keys in edit mode' is off
+- make sure the shape keys basis is selected
+- the 'Apply Shape keys in edit mode' is off
+- and weights are reset to 0
 - <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
 
 ## Weight paint
