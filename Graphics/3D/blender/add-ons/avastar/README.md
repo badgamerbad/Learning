@@ -17,3 +17,7 @@ So that the mesh (cloths) move with the armature (avatar)
 - Go to Avastar tab
   - <img src="avastar-bone-display-style.jpg" alt="avastar bone display style" />
 - Select the style
+
+## Edit Mode
+- make sure the shape keys basis is selected
+- <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">

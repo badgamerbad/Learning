@@ -28,6 +28,10 @@
   - <img src="seperation-imported-cloth.jpg" alt="seperation imported cloth">
   - Select `Selection`
 
+## Edit Mode
+- make sure the shape keys basis is selected
+- <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
+
 ## Weight paint
 ### and weight transfer
 - Select the clothing layer (<kbd>SHIFT</kbd> + <kbd>right click</kbd>)
