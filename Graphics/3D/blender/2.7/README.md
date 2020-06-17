@@ -29,7 +29,7 @@
   - Select `Selection`
 
 ## Edit Mode
-- make sure the shape keys basis is selected
+- make sure the shape keys basis is selected and the 'Apply Shape keys in edit mode' is off
 - <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
 
 ## Weight paint

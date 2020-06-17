@@ -118,8 +118,8 @@ See which face is viewable
 #### Expand edge
 - <kbd>CTRL</kbd> + <kbd>B</kbd>
 
-### Edit Mode
-- make sure the shape keys basis is selected
+## Edit Mode
+- make sure the shape keys basis is selected and the 'Apply Shape keys in edit mode' is off
 - <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
 
 ### Proportional editing
