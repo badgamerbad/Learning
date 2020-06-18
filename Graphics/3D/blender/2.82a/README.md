@@ -91,6 +91,10 @@ See which face is viewable
 - select the object by clicking on the object
 - <img src="smooth-or-flat-the-object.jpg" alt="smooth-or-flat-the-object" width="600" />
 
+### Edit Mode
+- make sure the shape keys basis is selected and the 'Apply Shape keys in edit mode' is off
+- <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
+
 ### delete face
 - select the face
 - press <kbd>X</kbd>
@@ -117,10 +121,6 @@ See which face is viewable
 
 #### Expand edge
 - <kbd>CTRL</kbd> + <kbd>B</kbd>
-
-## Edit Mode
-- make sure the shape keys basis is selected and the 'Apply Shape keys in edit mode' is off
-- <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
 
 ### Proportional editing
 For editing the vertices near by
@@ -164,8 +164,29 @@ To stick the dragging object on the surface, instead of going inside the surface
 ### Merge or join object
 - <kbd>CTRL</kbd> + <kbd>J</kbd>
 
+### Subdivision Surface
+We can smooth the surfaces with these
+- <img src="modifier-subdivision.jpg" alt="modifier-subdivision" width="600" />
+
+#### Bulid up
+- <img src="how-to-get-rid-of-buildup.jpg" alt="how-to-get-rid-of-buildup" width="300" />
+- <img src="subdivision-surface-enable-realtime.jpg" alt="subdivision-surface-enable-realtime" width="400" />
+- <img src="after-enable-subdivision-surface-realtime.jpg" alt="after-enable-subdivision-surface-realtime" width="300" />
+
+### Solidyfy
+- <img src="modifier-solidify.jpg" alt="modifier-solidify" width="600" />
+
+### Shrink wrap
+- add the target object, select project mode if required
+- <img src="view saved cart on stock ui.jpg" alt="view saved cart on stock ui" width="500" />
+
 ## Armature (Bones)
 - <img src="armature-bones-tools.jpg" alt="armature-bones-tools" width="500" />
+
+### Reset the pose 
+- <kbd>ALT</kbd> + <kbd>R</kbd> to reset the rotations
+- <kbd>ALT</kbd> + <kbd>G</kbd> to reset the scale
+- <kbd>ALT</kbd> + <kbd>S</kbd> to reset the moved ones
 
 ### create groups of bones
 - Go to edit mode
@@ -192,22 +213,6 @@ To stick the dragging object on the surface, instead of going inside the surface
 
 ### select bones
 - <img src="armature-bones-select-bones.jpg" alt="armature-bones-select-bones.jpg" width="500" />
-
-### Subdivision Surface
-We can smooth the surfaces with these
-- <img src="modifier-subdivision.jpg" alt="modifier-subdivision" width="600" />
-
-#### Bulid up
-- <img src="how-to-get-rid-of-buildup.jpg" alt="how-to-get-rid-of-buildup" width="300" />
-- <img src="subdivision-surface-enable-realtime.jpg" alt="subdivision-surface-enable-realtime" width="400" />
-- <img src="after-enable-subdivision-surface-realtime.jpg" alt="after-enable-subdivision-surface-realtime" width="300" />
-
-### Solidyfy
-- <img src="modifier-solidify.jpg" alt="modifier-solidify" width="600" />
-
-### Shrink wrap
-- add the target object, select project mode if required
-- <img src="view saved cart on stock ui.jpg" alt="view saved cart on stock ui" width="500" />
 
 ## Selection
 <b>Note:</b> Edit mode should be on
