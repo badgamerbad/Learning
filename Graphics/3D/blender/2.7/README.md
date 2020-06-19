@@ -25,8 +25,20 @@
 - Hover over the imported cloth
   - Press <kbd>L</kbd> to select its inner layer
   - Press <kbd>P</kbd> 
-  - <img src="seperation-imported-cloth.jpg" alt="seperation imported cloth">
+  - <img src="lock-camera-in-the-view.jpg" alt="seperation imported cloth">
   - Select `Selection`
+
+### Camera
+- lock the camera to pan/ move/ rotate it
+- <img src="lock-camera-in-the-view.jpg" alt="seperation imported cloth">
+
+#### Rotate around the object
+<kbd>Middle mouse</kbd> 
+
+## Render view
+
+### Show / hide mesh
+- <img src="show-the-mesh-in-render-view.jpg" alt="show-the-mesh-in-render-view.jpg">
 
 ## Edit Mode
 - make sure the shape keys basis is selected
@@ -79,6 +91,7 @@
 - <img src="create-new-texture-for-mesh.jpg" alt="create-new-texture-for-mesh">
 
 ### Baking (Generating the texture Maps)
+<b>Note: </b> if the exported obj doesnt have the uv layer with texture, then select the render engine - blender render
 
 #### AO (Ambient Occulusion)
 - select the mesh and go into `edit mode`
@@ -105,6 +118,12 @@
 - Go to edit mode and select the texture
 - <img src="select-the-imported-texture.jpg" alt="select-the-imported-texture">
 
+### Rendering
+- sampling
+- <img src="render-the-image-quality.jpg" alt="render-the-image-quality">
+- select new window to render in new `blender window`
+- higher Render and Preview - high quality and higher computer resources will be used
+
 ## UV Editor
 - select the editor type as `UV Editor`
 - select the mesh
@@ -121,3 +140,30 @@
 - add material and then select `image texture` 
 - <img src="add-new-blender-material.jpg" alt="add-new-blender-material">
 - <img src="add-normals-to-material.jpg" alt="add-normals-to-material">
+
+## Lighting
+### defualt world light
+we get this when no light source are added
+- <img src="default-light.jpg" alt="default-light">
+- change color
+- <img src="light-shadow-softness.jpg" alt="light-shadow-softness">
+- light spread
+
+### types of light
+- Sun
+  - only can be rotated
+  - location wont change the shadow
+- point 
+  - projects light on object in a direction
+- area light
+  - can be made rectangular
+  - <img src="area-light.jpg" alt="area-light"> 
+
+### falloff
+- switch to `node editor`
+- <img src="area-light--node-light-falloff-constant.jpg" alt="area-light--node-light-falloff-constant"> 
+
+#### constant
+the light spread will be low or high
+- <img src="area-light--node-light-falloff-constant-strengths.jpg" alt="area-light--node-light-falloff-constant-strengths"> 
+- high(top) vs low (bottom)
