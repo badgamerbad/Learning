@@ -173,6 +173,7 @@ Animate the shape keys on bone movement
 
 ### Bake Node
 - select the node where the blender should save the bake to
+- do not join the node to diffuse BSDF or the output node
 - <img src="node-for-baking.jpg" alt="node-for-baking">
 
 ### baking the normals
