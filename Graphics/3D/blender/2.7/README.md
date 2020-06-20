@@ -6,6 +6,9 @@
 - for viewing the `Material` view
 - <img src="blender-render-engine.jpg" alt="blender-render-engine">
 
+### Toggle rendered and solid mode
+- <kbd>SHIFT</kbd> + <kbd>Z</kbd>
+
 ### Split screen and join screen
 - Select viewport button (info is the default)
 - <img src="select-viewport.jpg" alt="select-viewport">
@@ -25,16 +28,28 @@
 - Hover over the imported cloth
   - Press <kbd>L</kbd> to select its inner layer
   - Press <kbd>P</kbd> 
-  - <img src="lock-camera-in-the-view.jpg" alt="seperation imported cloth">
+  - <img src="seperation-imported-cloth.jpg" alt="seperation imported cloth">
   - Select `Selection`
 
 ### Camera
 - lock the camera to pan/ move/ rotate it
 - press <kbd>Num 0</kbd>
-- <img src="lock-camera-in-the-view.jpg" alt="seperation imported cloth">
+- <img src="lock-camera-in-the-view.jpg" alt="lock-camera-in-the-view">
 
 #### Rotate around the object
 <kbd>Middle mouse</kbd> 
+
+## Object (Mesh)
+
+### Movement
+#### snap to center
+- move the cursor to center
+- in the object mode
+- <img src="object-snapping.jpg" alt="object-snapping">
+
+### Duplicate
+- select the mesh
+- <kbd>SHIFT</kbd> + <kbd>D</kbd>
 
 ## Armature
 
@@ -62,6 +77,11 @@
 - make sure the shape keys value is zero
 - and the `Apply Shape keys in edit mode` is off
 - <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
+
+## Modifiers
+
+### subdivide for sculpting 
+- <img src="sudivide-modifier-for-sculpting.jpg" alt="sudivide-modifier-for-sculpting">
 
 ## Shape keys
 
@@ -151,6 +171,15 @@ Animate the shape keys on bone movement
 ### Baking (Generating the texture Maps)
 <b>Note: </b> if the exported obj doesnt have the uv layer with texture, then select the render engine - blender render
 
+### Bake Node
+- select the node where the blender should save the bake to
+- <img src="node-for-baking.jpg" alt="node-for-baking">
+
+### baking the normals
+- select the mesh u want to have as normal (source mesh)
+- select the destination mesh
+- <img src="baking-normals.jpg" alt="baking-normals">
+
 #### AO (Ambient Occulusion)
 - select the mesh and go into `edit mode`
 - Make sure the ambient texture is on under tools world -> Ambient Occulusion
@@ -191,17 +220,29 @@ Animate the shape keys on bone movement
 - <img src="select-new-uv-or-open-uv.jpg" alt="select-new-uv-or-open-uv">
 
 ## Node Editor
-<b>Note: </b> change the method to display ed view from rendered to solid in order to reflect the chnages of nodes
+<b>Note: </b> change the method to display view from rendered to solid in order to reflect the chnages of nodes
 - <img src="view-method-option.jpg" alt="view-method-option">
 
 ### types of node
 #### for Image texturing
 - <img src="directly-put-image-on-the-mesh.jpg" alt="directly-put-image-on-the-mesh">
 - nodes
-  - shader - glossy BSDF - for shinnyness
-  - color - mix RGB - for creating `Multiply` effect
-  - input - texture coordinate - to select the image maps (UV, normals)
-  - vector - mapping to arrange the texture image on the mesh
+  - shader 
+    - glossy BSDF - for shinnyness
+    - mix shader
+  - color 
+    - mix RGB - for creating `Multiply` effect
+  - input 
+    - texture coordinate 
+      - to select the image maps (UV, normals)
+      - VERY IMPORTANT in case the UV are missing in the normal map
+  - vector 
+    - mapping to arrange the texture image on the mesh
+    - bump - to give height to particles on the surface
+      - for bump maps
+
+#### bump and specular maps
+- <img src="specular-map-with-bumps.jpg" alt="specular-map-with-bumps">
 
 ## Add normal map
 - add material and then select `image texture` 
