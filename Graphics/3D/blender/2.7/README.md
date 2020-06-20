@@ -36,6 +36,14 @@
 #### Rotate around the object
 <kbd>Middle mouse</kbd> 
 
+## Armature
+
+### lock the location of the bones
+- <img src="limit-bone-movement.jpg" alt="limit-bone-movement">
+
+### lock the axis
+- <img src="limit-bone-axis.jpg" alt="limit-bone-axis">
+
 ## Render view
 
 ### Show / hide mesh
@@ -44,13 +52,56 @@
 ## Edit Mode
 
 ### Tools
-- <img src="edit-mode-tools.jpg.jpg" alt="edit-mode-tools">
+- <img src="edit-mode-tools.jpg" alt="edit-mode-tools">
 
-### Shape keys
-- make sure the shape keys basis is selected
-- the 'Apply Shape keys in edit mode' is off
-- and weights are reset to 0
+### Select along the vertex, face, edge
+- <img src="edit-select-along-the-line.jpg" alt="edit-select-along-the-line">
+- <kbd>ALT</kbd> + <kbd>Right Click</kbd>
+
+### Edit mode the drag is lagging
+- make sure the shape keys value is zero
+- and the `Apply Shape keys in edit mode` is off
 - <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
+
+## Shape keys
+
+### Add new
+- the default key is basis - i.e. its like nothing is edited in the mesh
+- add another key (and then rename it)
+  - make sure the value is 0
+- go to edit mode 
+  - edit the vertices, edges or faces
+- go to object mode
+- change the value of the shape key from 0 to 1
+
+### adding another on top of added ones
+- reset the previous ones to value 0
+
+## Drivers
+Animate the shape keys on bone movement
+
+### Add
+- <img src="add-drivers-to-shape-keys.jpg" alt="add-drivers-to-shape-keys">
+- <kbd>Right Click</kbd> on the value numbers and select add drivers
+
+### Graph editor
+- <img src="graph-editor-for-drivers.jpg" alt="graph-editor-for-drivers">
+- once the key is added it will appear in the left panel
+- select the drivers view
+
+### Add animation
+- <img src="add-animation-to-bone.jpg" alt="add-animation-to-bone">
+- select the new key
+- select type
+- select Obj/Bone
+  - select the sub bone (face-brows) of the armature
+- select direction (Y location) and `local space` in which the animation to be made
+- add modifier and select the direction value
+  - this value decides the speed at which the shape key value change with the bone movement
+
+### Proportional editing
+- the parts of the mesh which gets selected by pressing <kbd>L</kbd> are called `Connected`
+- <img src="edit-only-connected-mesh-parts.jpg" alt="edit-only-connected-mesh-parts">
 
 ## Weight paint
 ### and weight transfer
