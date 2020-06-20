@@ -30,6 +30,7 @@
 
 ### Camera
 - lock the camera to pan/ move/ rotate it
+- press <kbd>Num 0</kbd>
 - <img src="lock-camera-in-the-view.jpg" alt="seperation imported cloth">
 
 #### Rotate around the object
@@ -38,9 +39,14 @@
 ## Render view
 
 ### Show / hide mesh
-- <img src="show-the-mesh-in-render-view.jpg" alt="show-the-mesh-in-render-view.jpg">
+- <img src="show-the-mesh-in-render-view.jpg" alt="show-the-mesh-in-render-view">
 
 ## Edit Mode
+
+### Tools
+- <img src="edit-mode-tools.jpg.jpg" alt="edit-mode-tools">
+
+### Shape keys
 - make sure the shape keys basis is selected
 - the 'Apply Shape keys in edit mode' is off
 - and weights are reset to 0
@@ -84,6 +90,7 @@
   - <img src="when-to-heat-it.jpg" alt="when to heat it">
 
 ## Texturing
+<b>Note: </b> look for tiled image for texturing
 
 ### Create
 - Select the mesh
@@ -135,6 +142,15 @@
 ## Node Editor
 <b>Note: </b> change the method to display ed view from rendered to solid in order to reflect the chnages of nodes
 - <img src="view-method-option.jpg" alt="view-method-option">
+
+### types of node
+#### for Image texturing
+- <img src="directly-put-image-on-the-mesh.jpg" alt="directly-put-image-on-the-mesh">
+- nodes
+  - shader - glossy BSDF - for shinnyness
+  - color - mix RGB - for creating `Multiply` effect
+  - input - texture coordinate - to select the image maps (UV, normals)
+  - vector - mapping to arrange the texture image on the mesh
 
 ## Add normal map
 - add material and then select `image texture` 
