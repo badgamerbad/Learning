@@ -51,6 +51,10 @@
 - select the mesh
 - <kbd>SHIFT</kbd> + <kbd>D</kbd>
 
+### bend the object
+- use the empty mesh
+- <img src="bend-the-object-around-the-empty.jpg" alt="bend-the-object-around-the-empty">
+
 ## Armature
 
 ### lock the location of the bones
@@ -93,6 +97,9 @@
   - edit the vertices, edges or faces
 - go to object mode
 - change the value of the shape key from 0 to 1
+
+### last one
+- always edit the last one
 
 ### adding another on top of added ones
 - reset the previous ones to value 0

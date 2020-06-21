@@ -122,6 +122,9 @@ See which face is viewable
 #### Expand edge
 - <kbd>CTRL</kbd> + <kbd>B</kbd>
 
+### vertices
+- select 2 points and press <kbd>F</kbd>
+
 ### Proportional editing
 For editing the vertices near by
 - <img src="proportional-editing.jpg" alt="proportional-editing" width="400" />
