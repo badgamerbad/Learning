@@ -103,3 +103,47 @@ control whether the sewing should be inward or outward
 ### rotate internal divided lines
 - <img src="rotate-lines-in-garment.jpg" alt="rotate-lines-in-garment" width="400" />
 - select the tool and then select the line
+
+## Retopology
+- <img src="retopology-buttons.jpg" alt="retopology-buttons" />
+
+### Edit topology
+- <img src="edit-retopology-buttons.jpg" alt="edit-retopology-buttons" />
+
+#### multiselect
+- <kbd>SHIFT</kbd> and select multiple
+
+#### select and drag
+- <img src="edit-retopology-select-and-drag.jpg" alt="edit-retopology-select-and-drag" />
+
+#### loop selection 
+- double <kbd>Left click</kbd> on the vertices or edges
+
+#### drag box
+- press <kbd>CTRL</kbd> and drag the mouse to select vertices
+
+#### delete
+- <kbd>delete</kbd>
+
+#### merge
+- select multiple vertices
+- <kbd>Right click</kbd> on vertex and select `Merge`
+
+#### sub divide menu
+- <kbd>Right click</kbd> and select the `Add division`
+- <img src="edit-retopology-subdivision-options.jpg" alt="edit-retopology-subdivision-options" />
+
+#### sud divide keys
+- select create topology
+- hover over the topology pattern
+- <kbd>SHIFT</kbd> + <kbd>CTRL</kbd>
+- click to `confirm`
+
+### Extrude
+- enable edit topology
+- <kbd>SHIFT</kbd> + <kbd>Left click</kbd> to select multiple edges
+- <kbd>SHIFT</kbd> + <kbd>CTRL</kbd> and drag the mouse
+
+### remesh
+- to create a low poly mesh
+- after the new `topology` pattern is drawn <kbd>Right click</kbd> and remesh all
