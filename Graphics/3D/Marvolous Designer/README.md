@@ -1,6 +1,8 @@
 # Marvolous Designer
 
-## Import Mesh from Blender
+## import / export
+
+### Import Mesh from Blender
 - Select the Mesh
 - <img src="select-the-mesh-blender.jpg" alt="select-the-mesh-blender" width="400" />
 - Export the selection Only
@@ -8,8 +10,13 @@
 - Import the OBJ file
 - <img src="import-the-selection.jpg" alt="import-the-selection" width="400" />
 
-## Export from MD
+### Export from MD
 - <img src="export-the-selection-from-md.jpg" alt="export-the-selection-from-md" width="700" />
+
+## in built
+- <img src="cloths-selector.jpg" alt="cloths-selector" width="700" />
+- the module configurator is usually on the red line marked in the above image
+- <kbd>Right Click</kbd> and select `Remove Modular relationship` to remove the grey overlay
 
 ## Tools
 
@@ -45,6 +52,11 @@
 - if we want one object to be placed above other
 - higher layer value the outermost element it will be
 
+## Avatar
+
+### move the pattern over `Arrangement points`
+- <img src="points-to-move-the-pattern.jpg" alt="points-to-move-the-pattern" width="500" />
+
 ## Pattern
 
 ### Add point proportionally
@@ -53,16 +65,47 @@
 
 ### add line to polygon
 - Select the internal polygon tool
-- <img src="internal-polygon-and-lines.jpg" alt="internal-polygon-and-lines.jpg" width="400" />
+- <img src="internal-polygon-and-lines.jpg" alt="internal-polygon-and-lines" width="400" />
 - to draw the line double <kbd>Left Click</kbd> on the final point
+
+<b>Note:</b> Pen tool can be also used to create internal pattern by <kbd>Right Click</kbd> and selecting internal shape
+- <img src="pen-tool-for-internal-shape.jpg" alt="pen-tool-for-internal-shape" width="400" />
 
 ### Edit Pattern
 - Select the edges
 - Press <kbd>SHIFT</kbd> to only stretch the selected width of edges
 
+<b>Note: </b> clicking on the lines shows the length
+
 ### Symetric pattern
 - select the shape with edit points tool
 - <kbd>Right Click</kbd> and select `Symmetric Pattern`
+
+### offset lines
+- <img src="draw-offeset-lines-from-other-lines-in-a-pattern.jpg" alt="draw-offeset-lines-from-other-lines-in-a-pattern" />
+- select the line number 1 and <kbd>Right Click</kbd> and select `Offset as internal line`
+
+### buttons
+### add
+- <img src="button-tool.jpg" alt="button-tool" />
+- item 1 is the add button in the pattern
+- item 2 
+  - select the placed button and copy it (<kbd>Right Click</kbd> for menu) and paste it
+  - then right click where u want to paste select the number and distance
+  - <img src="select-move-button.jpg" alt="select-move-button" />
+
+### button hole
+- create symmetric pattern and add button to it
+- with select/ move button tool and <kbd>Right Click</kbd> on the buttons
+- <img src="add-button-hole-to-symmetric-pattern.jpg" alt="add-button-hole-to-symmetric-pattern" />
+
+#### panel
+To modify button hole colors and other property
+- <img src="button-hole-panel.jpg" alt="button-hole-panel" />
+
+### fasten button
+- select the tool
+- select the button and select the holes
 
 ## Sewing
 
@@ -87,6 +130,11 @@ control whether the sewing should be inward or outward
 - Select the garment
 - <img src="strenthen-the-cloth-in-air.jpg" alt="strenthen-the-cloth-in-air" width="600" />
 
+### copy fabric from library
+- drag and drop the fabric from library to fabric panel
+- assign to selected patterns
+- <img src="assign-fabric.jpg" alt="assign-fabric" />
+
 ### Add fabric
 - Select the cloth or part of cloth
 - and press assign
@@ -95,6 +143,8 @@ control whether the sewing should be inward or outward
   - opacity - for translucence
   - type - velvet 
   - color
+
+<b>Note:</b> drag and drop the fabric over pattern
 
 ### Create shirring (elastic property)
 - <img src="image-sample-of-shirring.jpg" alt="image-sample-of-shirring" width="400" />
