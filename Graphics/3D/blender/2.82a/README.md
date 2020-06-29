@@ -6,11 +6,13 @@
 - <kbd>Left Click</kbd> on the object and tranform it
 - <kbd>Right Click</kbd> to reset the tranform
 
+<b>Note: </b> we can switch between the axis while transforming (<kbd>X</kbd>, <kbd>Y</kbd>, <kbd>Z</kbd>)
+
 ### Menu
 <kbd>SHIFT</kbd> + <kbd>Space</kbd>
 
 ### Select inverse degrees
-- hit <kbd>SHIFT</kbd> + axis key
+- hit <kbd>SHIFT</kbd> + axis key (<kbd>X</kbd>, <kbd>Y</kbd>, <kbd>Z</kbd>)
 
 ### Rotate
 - <kbd>R</kbd>
@@ -81,6 +83,14 @@ See which face is viewable
 
 ### Toggle X Ray
 - <img src="toggle-x-ray.jpg" alt="toggle-x-ray" width="800" />
+
+### object view
+- <img src="objects-view-settings.jpg" alt="objects-view-settings" />
+
+### draw marking (annotations)
+- press <kbd>D</kbd> and <kbd>Left Click</kbd> and draw with pencil
+- to clear the marking open up the menu <kbd>N</kbd> and go to annotation and click on `Subtract` button
+- <img src="draw-annotations-with-pencil-tool.jpg.jpg" alt="draw-annotations-with-pencil-tool.jpg" />
 
 ## Editing the object
 
