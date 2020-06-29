@@ -101,7 +101,7 @@ See which face is viewable
 - select the object by clicking on the object
 - <img src="smooth-or-flat-the-object.jpg" alt="smooth-or-flat-the-object" width="600" />
 
-### Edit Mode
+## Edit Mode
 - make sure the shape keys basis is selected and the 'Apply Shape keys in edit mode' is off
 - <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
 
@@ -132,8 +132,16 @@ See which face is viewable
 #### Expand edge
 - <kbd>CTRL</kbd> + <kbd>B</kbd>
 
-### vertices
+### Vertices
 - select 2 points and press <kbd>F</kbd>
+
+#### Merge
+- to get the merge menu
+- <kbd>ALT</kbd> + <kbd>M</kbd>
+
+#### Merge overlapping vertices
+- select the entire mesh or press <kbd>A</kbd> in edit mode
+- <kbd>Right Click</kbd> and `merge vertices -> by distance`
 
 ### Proportional editing
 For editing the vertices near by
@@ -161,7 +169,7 @@ For editing the vertices near by
 To stick the dragging object on the surface, instead of going inside the surface of other selections
 - <img src="snap-to-face-of-the-object.jpg" alt="snap-to-face-of-the-object" width="600" />
 
-### move vertex along the edge
+### move vertex along the edge (also edges)
 - Select the vertex and double press <kbd>G</kbd>
 - <img src="move-vertex-along-the-edge.jpg" alt="move-vertex-along-the-edge" width="600" />
 
@@ -180,6 +188,8 @@ To stick the dragging object on the surface, instead of going inside the surface
 ### Subdivision Surface
 We can smooth the surfaces with these
 - <img src="modifier-subdivision.jpg" alt="modifier-subdivision" width="600" />
+
+<b>Note: </b> The faces should have 4 vertices to have loops otherwise the subsurface modifier wont work correctly
 
 #### Bulid up
 - <img src="how-to-get-rid-of-buildup.jpg" alt="how-to-get-rid-of-buildup" width="300" />
