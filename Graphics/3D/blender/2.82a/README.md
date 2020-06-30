@@ -90,7 +90,7 @@ See which face is viewable
 ### draw marking (annotations)
 - press <kbd>D</kbd> and <kbd>Left Click</kbd> and draw with pencil
 - to clear the marking open up the menu <kbd>N</kbd> and go to annotation and click on `Subtract` button
-- <img src="draw-annotations-with-pencil-tool.jpg.jpg" alt="draw-annotations-with-pencil-tool.jpg" />
+- <img src="draw-annotations-with-pencil-tool.jpg" alt="draw-annotations-with-pencil-tool.jpg" />
 
 ## Editing the object
 
