@@ -156,6 +156,17 @@ For editing the vertices near by
 - select vertices
 - Press <kbd>E</kbd>
 
+### Inset
+- select vertices and press <kbd>I</kbd>
+
+#### Boundary
+- press <kbd>B</kbd>
+- <img src="boundary-dissolve-mirror-inset.jpg" alt="boundary-dissolve-mirror-inset" />
+- so that the edge near the `mirror side` will dissolve
+
+<b>Note: </b> Make sure there are no faces between the mirror or else the boundary wont work, </br> Below image - 0 is no faces where the `boundary` will work perfectly, 1 is where it wont
+- <img src="make-sure-no-faces-between-mirror.jpg" alt="make-sure-no-faces-between-mirror" />
+
 #### Pull the surrounding of face (Crease)
 - select vertices
 - Press <kbd>SHIFT</kbd> + <kbd>E</kbd>
