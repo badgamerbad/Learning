@@ -105,6 +105,11 @@ See which face is viewable
 - make sure the shape keys basis is selected and the 'Apply Shape keys in edit mode' is off
 - <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
 
+### make face
+- <img src="remove-the-edge-in-between.jpg" alt="remove-the-edge-in-between">
+- select the vertices
+- Press <kbd>F</kbd>
+
 ### delete face
 - select the face
 - press <kbd>X</kbd>
@@ -151,6 +156,8 @@ For editing the vertices near by
 - Press <kbd>G</kbd> and move the object
 - <img src="edit-the-vertice-proportionallly.jpg" alt="edit-the-vertice-proportionallly" width="400" />
 - Scroll mouse up or down to get the lumpiness
+
+<b>Note: </b> Hide the vertices to avoid proportional editing on non required vertices
 
 ### Extrude face
 - select vertices
@@ -274,6 +281,11 @@ We can smooth the surfaces with these
 - <kbd>ALT</kbd> + <kbd>Left Click</kbd> the vertex for vertical or horizontal selection of the lines running through the vertex
 - <img src="select-loop.jpg" alt="select-loop" width="600" />
 - <kbd>CTRL</kbd> + <kbd>I</kbd> to invert the selection
+
+<b>Note:</b> add loop cut to make the edges sharp
+- <img src="add-loop-cut-to-make-them-sharp.jpg" alt="add-loop-cut-to-make-them-sharp" />
+- from above to below
+- <img src="adding-loop-cut-for-sharp-edges.jpg" alt="adding-loop-cut-for-sharp-edges" />
 
 ### Hide the selection
 - Press <kbd>H</kbd>
