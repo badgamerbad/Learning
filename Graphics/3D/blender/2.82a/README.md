@@ -1,5 +1,4 @@
 # Blender 2.82a
-# Level 1
 
 ## Tranformation
 - <img src="transform-tools.jpg" alt="transform-tools" width="200" />
@@ -90,7 +89,11 @@ See which face is viewable
 ### draw marking (annotations)
 - press <kbd>D</kbd> and <kbd>Left Click</kbd> and draw with pencil
 - to clear the marking open up the menu <kbd>N</kbd> and go to annotation and click on `Subtract` button
-- <img src="draw-annotations-with-pencil-tool.jpg" alt="draw-annotations-with-pencil-tool.jpg" />
+- <img src="draw-annotations-with-pencil-tool.jpg" alt="draw-annotations-with-pencil-tool" />
+
+### Images
+#### Opacity
+- <img src="image-opacity-using-alpha.jpg" alt="image-opacity-using-alpha" />
 
 ## Editing the object
 
@@ -136,6 +139,10 @@ See which face is viewable
 
 #### Expand edge
 - <kbd>CTRL</kbd> + <kbd>B</kbd>
+
+#### Delete edge loops (without deleting faces)
+- <img src="delete-edge-loops-not-edges.jpg" alt="delete-edge-loops-not-edges" />
+- Press <kbd>X</kbd> and select `Edges Loops`
 
 ### Vertices
 - select 2 points and press <kbd>F</kbd>
@@ -286,6 +293,13 @@ We can smooth the surfaces with these
 - <img src="add-loop-cut-to-make-them-sharp.jpg" alt="add-loop-cut-to-make-them-sharp" />
 - from above to below
 - <img src="adding-loop-cut-for-sharp-edges.jpg" alt="adding-loop-cut-for-sharp-edges" />
+
+#### Elven - Show the edge
+To show the edge its moving along press <kbd>E</kbd>
+- <img src="loop-cut-along-the-edge.jpg" alt="loop-cut-along-the-edge" />
+
+##### Flip
+- Press <kbd>F</kbd> if the shape is weird
 
 ### Hide the selection
 - Press <kbd>H</kbd>
