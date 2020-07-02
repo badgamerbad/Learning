@@ -1,5 +1,6 @@
 # Blender 2.82a
 
+# Tools
 ## Tranformation
 - <img src="transform-tools.jpg" alt="transform-tools" width="200" />
 - <kbd>Left Click</kbd> on the object and tranform it
@@ -95,7 +96,7 @@ See which face is viewable
 #### Opacity
 - <img src="image-opacity-using-alpha.jpg" alt="image-opacity-using-alpha" />
 
-## Editing the object
+## Object Mode
 
 ### Add
 - <kbd>SHIFT</kbd> + <kbd>A</kbd> to add mesh
@@ -474,9 +475,13 @@ The origin is the point which will be attached to the surface of the object on w
 - <img src="texture-overlay-bake.jpg" alt="texture-overlay-bake" width="500" />
 
 # UV Editing
+<img src="select-uv-editor.jpg" alt="select-uv-editor" width="900" />
 
-## Enable UV editor
-- <img src="select-uv-editor.jpg" alt="select-uv-editor" width="900" />
+## UV Menu
+- <img src="uv-editing-viewport-menu.jpg" alt="uv-editing-viewport-menu" width="500" />
+
+### Enable Heat maps (show stretching)
+- <img src="enable-uv-editing-stretch-heat-maps.jpg" alt="enable-uv-editing-stretch-heat-maps" width="500" />
 
 ## Perform UV editing
 - select the lines on the object and <kbd>Right Click</kbd> and Mark Seam
@@ -488,25 +493,26 @@ The origin is the point which will be attached to the surface of the object on w
   - <kbd>Right Click</kbd> to exit
   - Scroll up / down for brush size
 
-## keep the UV without mesh selection
+### Reset UV unwrap
+- Select the object you want to reset the UV
+- Press <kbd>U</kbd> for UV editing menu
+- Reset
+
+### keep the UV without mesh selection
+Enable Uv Sync selection
 - <img src="uv-keep-selection-without-select-all-on-mesh.jpg" alt="uv-keep-selection-without-select-all-on-mesh" width="400" />
 
-## Create an image
+<b>Note:</b> when the sync selection is ON, pressing <kbd>L</kbd> wont work to select connected `UVs`
+
+## Create an image (Baking)
 This gives us the UV Map - only after the uv are baked and saved in image file we can edit the UV mesh  
 - Once the unwrap is done
 - go to camera tool
 - <img src="create-uv-map-by-baking.jpg" alt="create-uv-map-by-baking" width="400" />
 - Bake it to write maps in the file
 
-## Menu
-- <img src="uv-editing-viewport-menu.jpg" alt="uv-editing-viewport-menu" width="500" />
-
-## Reset UV unwrap
-- Select the object you want to reset the UV
-- Press <kbd>U</kbd> for UV editing menu
-- Reset
-
 ## Error while UV unwrap
+
 ### Object has non uniform scale 
 We get the error because the scales are different </br>
 <img src="why-non-uniform-object-err.jpg" alt="why-non-uniform-object-err" width="500" />
