@@ -1,12 +1,14 @@
 # Blender 2.82a
 
 # Tools
+
 ## Tranformation
 - <img src="transform-tools.jpg" alt="transform-tools" width="200" />
 - <kbd>Left Click</kbd> on the object and tranform it
 - <kbd>Right Click</kbd> to reset the tranform
 
 <b>Note: </b> we can switch between the axis while transforming (<kbd>X</kbd>, <kbd>Y</kbd>, <kbd>Z</kbd>)
+<b>Note: </b> Press <kbd>T</kbd> for show/hide the toolbar
 
 ### Menu
 <kbd>SHIFT</kbd> + <kbd>Space</kbd>
@@ -105,9 +107,54 @@ See which face is viewable
 - select the object by clicking on the object
 - <img src="smooth-or-flat-the-object.jpg" alt="smooth-or-flat-the-object" width="600" />
 
-## Edit Mode
+# Edit Mode
 - make sure the shape keys basis is selected and the 'Apply Shape keys in edit mode' is off
 - <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
+
+## Subdivide
+<b>Note:</b> Edit mode should be on
+- <kbd>Right Click</kbd> on the object
+- Select `Subdivide`
+
+### Increase the smoothness
+- <img src="subdivide-smoothness.jpg" alt="subdivide-smoothness" width="600" />
+
+## Edges
+- <img src="select-edge-of-the-object.jpg" alt="select-edge-of-the-object" width="300" />
+- To open up the Edge menu
+- <kbd>CTRL</kbd> + <kbd>E</kbd>
+
+### Edge Filling
+- select the edge and press <kbd>F</kbd> to add a face to part shown in image
+- <img src="fill-in-face-using-edge.jpg" alt="fill-in-face-using-edge" width="300" />
+
+### Expand edge
+- <kbd>CTRL</kbd> + <kbd>B</kbd>
+
+#### Delete edge loops (without deleting faces)
+- <img src="delete-edge-loops-not-edges.jpg" alt="delete-edge-loops-not-edges" />
+- Press <kbd>X</kbd> and select `Edges Loops`
+
+## Vertices
+- select 2 points and press <kbd>F</kbd> to make vertex
+
+### Merge
+- to get the merge menu
+- <kbd>ALT</kbd> + <kbd>M</kbd>
+
+### Merge overlapping vertices
+- select the entire mesh or press <kbd>A</kbd> in edit mode
+- <kbd>Right Click</kbd> and `merge vertices -> by distance`
+
+### Moving the vertices
+To stick the dragging object on the surface, instead of going inside the surface of other selections
+- <img src="snap-to-face-of-the-object.jpg" alt="snap-to-face-of-the-object" width="600" />
+
+### move vertex along the edge (also edges)
+- Select the vertex and double press <kbd>G</kbd>
+- <img src="move-vertex-along-the-edge.jpg" alt="move-vertex-along-the-edge" width="600" />
+
+## faces
 
 ### make face
 - <img src="remove-the-edge-in-between.jpg" alt="remove-the-edge-in-between">
@@ -123,40 +170,37 @@ See which face is viewable
 - <img src="select-faces-of-object.jpg" alt="select-faces-of-object" width="600" />
 - then click on the middle of the faces
 
-#### Flip Normals
+## Extrude
+- select vertices
+- Press <kbd>E</kbd>
+
+## Inset
+- select vertices and press <kbd>I</kbd>
+
+### Boundary
+- press <kbd>B</kbd>
+- <img src="boundary-dissolve-mirror-inset.jpg" alt="boundary-dissolve-mirror-inset" />
+- so that the edge near the `mirror side` will dissolve
+
+<b>Note: </b> Make sure there are no faces between the mirror or else the boundary wont work, </br> Below image - 0 is no faces where the `boundary` will work perfectly, 1 is where it wont
+- <img src="make-sure-no-faces-between-mirror.jpg" alt="make-sure-no-faces-between-mirror" />
+
+## Flip Normals
 - <img src="when-to-recalc-normals.jpg" alt="when-to-recalc-normals" width="600" />
 - Select all vertices
 - <kbd>SHIFT</kbd> + <kbd>N</kbd>
 - or search for normal recalculations
 
-### Edges
-- <img src="select-edge-of-the-object.jpg" alt="select-edge-of-the-object" width="300" />
-- To open up the Edge menu
-- <kbd>CTRL</kbd> + <kbd>E</kbd>
+## Pull the surrounding of face (Crease)
+- select vertices
+- Press <kbd>SHIFT</kbd> + <kbd>E</kbd>
 
-#### Edge Filling
-- select the edge and press <kbd>F</kbd> to add a face to part shown in image
-- <img src="fill-in-face-using-edge.jpg" alt="fill-in-face-using-edge" width="300" />
+## Creating a bridge between cut faces
+- <img src="select-cut-faces-of-object.jpg" alt="select-cut-faces-of-object" width="400" />
+- Select cut faces
+- press <kbd>F3</kbd> and search for Bridge
 
-#### Expand edge
-- <kbd>CTRL</kbd> + <kbd>B</kbd>
-
-#### Delete edge loops (without deleting faces)
-- <img src="delete-edge-loops-not-edges.jpg" alt="delete-edge-loops-not-edges" />
-- Press <kbd>X</kbd> and select `Edges Loops`
-
-### Vertices
-- select 2 points and press <kbd>F</kbd>
-
-#### Merge
-- to get the merge menu
-- <kbd>ALT</kbd> + <kbd>M</kbd>
-
-#### Merge overlapping vertices
-- select the entire mesh or press <kbd>A</kbd> in edit mode
-- <kbd>Right Click</kbd> and `merge vertices -> by distance`
-
-### Proportional editing
+## Proportional editing
 For editing the vertices near by
 - <img src="proportional-editing.jpg" alt="proportional-editing" width="400" />
 - Enable it
@@ -166,38 +210,6 @@ For editing the vertices near by
 - Scroll mouse up or down to get the lumpiness
 
 <b>Note: </b> Hide the vertices to avoid proportional editing on non required vertices
-
-### Extrude face
-- select vertices
-- Press <kbd>E</kbd>
-
-### Inset
-- select vertices and press <kbd>I</kbd>
-
-#### Boundary
-- press <kbd>B</kbd>
-- <img src="boundary-dissolve-mirror-inset.jpg" alt="boundary-dissolve-mirror-inset" />
-- so that the edge near the `mirror side` will dissolve
-
-<b>Note: </b> Make sure there are no faces between the mirror or else the boundary wont work, </br> Below image - 0 is no faces where the `boundary` will work perfectly, 1 is where it wont
-- <img src="make-sure-no-faces-between-mirror.jpg" alt="make-sure-no-faces-between-mirror" />
-
-#### Pull the surrounding of face (Crease)
-- select vertices
-- Press <kbd>SHIFT</kbd> + <kbd>E</kbd>
-
-### Creating a bridge between cut faces
-- <img src="select-cut-faces-of-object.jpg" alt="select-cut-faces-of-object" width="400" />
-- Select cut faces
-- press <kbd>F3</kbd> and search for Bridge
-
-### Moving the vertices
-To stick the dragging object on the surface, instead of going inside the surface of other selections
-- <img src="snap-to-face-of-the-object.jpg" alt="snap-to-face-of-the-object" width="600" />
-
-### move vertex along the edge (also edges)
-- Select the vertex and double press <kbd>G</kbd>
-- <img src="move-vertex-along-the-edge.jpg" alt="move-vertex-along-the-edge" width="600" />
 
 ### Follow another object
 - Atfore joining
@@ -210,58 +222,6 @@ To stick the dragging object on the surface, instead of going inside the surface
 
 ### Merge or join object
 - <kbd>CTRL</kbd> + <kbd>J</kbd>
-
-### Subdivision Surface
-We can smooth the surfaces with these
-- <img src="modifier-subdivision.jpg" alt="modifier-subdivision" width="600" />
-
-<b>Note: </b> The faces should have 4 vertices to have loops otherwise the subsurface modifier wont work correctly
-
-#### Bulid up
-- <img src="how-to-get-rid-of-buildup.jpg" alt="how-to-get-rid-of-buildup" width="300" />
-- <img src="subdivision-surface-enable-realtime.jpg" alt="subdivision-surface-enable-realtime" width="400" />
-- <img src="after-enable-subdivision-surface-realtime.jpg" alt="after-enable-subdivision-surface-realtime" width="300" />
-
-### Solidyfy
-- <img src="modifier-solidify.jpg" alt="modifier-solidify" width="600" />
-
-### Shrink wrap
-- add the target object, select project mode if required
-- <img src="view saved cart on stock ui.jpg" alt="view saved cart on stock ui" width="500" />
-
-## Armature (Bones)
-- <img src="armature-bones-tools.jpg" alt="armature-bones-tools" width="500" />
-
-### Reset the pose 
-- <kbd>ALT</kbd> + <kbd>R</kbd> to reset the rotations
-- <kbd>ALT</kbd> + <kbd>G</kbd> to reset the scale
-- <kbd>ALT</kbd> + <kbd>S</kbd> to reset the moved ones
-
-### create groups of bones
-- Go to edit mode
-- <img src="armature-bones-select-head.jpg" alt="armature-bones-select-head" width="300" />
-- select top head of the bone
-- press <kbd>E</kbd> and drag
-
-### Add to a mesh
-- select the mesh first and then the bones
-- Press <kbd>CTRL</kbd> + <kbd>P</kbd>
-- <img src="armature-bones-add-to-mesh.jpg" alt="armature-bones-add-to-mesh" width="600" />
-- <img src="armature-bones-after-bone-added-to-mesh.jpg" alt="armature-bones-after-bone-added-to-mesh.jpg" width="500" />
-
-### adding the bones we get the modifiers
-- <img src="modifier-properties.jpg" alt="modifier-properties" width="200" />
-- <img src="select-modifier.jpg" alt="select-modifier" width="800" />
-- after adding bones to the mesh
-
-<b>Note:</b> The order of modifiers is important
-
-### Removing bones from mesh
-- select the mesh and then the bones
-- <kbd>ALT</kbd> + <kbd>P</kbd>
-
-### select bones
-- <img src="armature-bones-select-bones.jpg" alt="armature-bones-select-bones.jpg" width="500" />
 
 ## Selection
 <b>Note:</b> Edit mode should be on
@@ -295,11 +255,11 @@ We can smooth the surfaces with these
 - from above to below
 - <img src="adding-loop-cut-for-sharp-edges.jpg" alt="adding-loop-cut-for-sharp-edges" />
 
-#### Elven - Show the edge
+### Elven - Show the edge
 To show the edge its moving along press <kbd>E</kbd>
 - <img src="loop-cut-along-the-edge.jpg" alt="loop-cut-along-the-edge" />
 
-##### Flip
+#### Flip
 - Press <kbd>F</kbd> if the shape is weird
 
 ### Hide the selection
@@ -320,15 +280,7 @@ To show the edge its moving along press <kbd>E</kbd>
 - Select a circle
 - Press <kbd>I</kbd> and Drag
 
-## Subdivide
-<b>Note:</b> Edit mode should be on
-- <kbd>Right Click</kbd> on the object
-- Select `Subdivide`
-
-### Increase the smoothness
-- <img src="subdivide-smoothness.jpg" alt="subdivide-smoothness" width="600" />
-
-## Adding Material
+# Adding Material
 - <img src="add-surface-material.jpg" alt="add-surface-material" width="600" />
 - <img src="add-color-to-surface.jpg" alt="add-color-to-surface" width="600" />
 
@@ -356,15 +308,15 @@ To show the edge its moving along press <kbd>E</kbd>
 - select the parts or faces of the object
 - <img src="assign-second-material-to-same-object.jpg" alt="assign-second-material-to-same-object" width="600" />
 
-## Weight Paint
+# Weight Paint
 - <img src="weight-paint-add-delete.jpg" alt="weight-paint-add-delete" width="500" />
 - reduce weight to have blue
 - more weight gives red
 
-### More weight paint layers on object
+## More weight paint layers on object
 - <img src="add-vertex-group-for-weight-paint.jpg" alt="add-vertex-group-for-weight-paint" width="500" />
 
-### Select bones while painting
+## Select bones while painting
 - Go to `object mode`
 - Select the bones
 - select the mesh
@@ -372,13 +324,13 @@ To show the edge its moving along press <kbd>E</kbd>
 - <kbd>SHIFT</kbd> + <kbd>Left Click</kbd> on bone to select
 - <kbd>SHIFT</kbd> + <kbd>ALT</kbd> + <kbd>Left Click</kbd> on bone to unselect
 
-### weird weight paint
+## weird weight paint
 - in the brush stroke - check if `Stabilize stroke` is ON
 
-### Weight trasfer using data transfer modifier
+## Weight trasfer using data transfer modifier
 - <img src="weight-transfer-data-transfer.jpg" alt="weight-transfer-data-transfer.jpg" width="500" />
 
-### Tranfer weight 
+## Tranfer weight 
 - select the bones
 - select the mesh
 - go to weight paint
@@ -411,12 +363,74 @@ The origin is the point which will be attached to the surface of the object on w
 ### set priority
 - <img src="set-priority-to-the-particles-in-collection.jpg" alt="set-priority-to-the-particles-in-collection" width="500" />
 
-### New rest pose
+# Armature (Bones)
+- <img src="armature-bones-tools.jpg" alt="armature-bones-tools" width="500" />
+
+## Reset the pose 
+- <kbd>ALT</kbd> + <kbd>R</kbd> to reset the rotations
+- <kbd>ALT</kbd> + <kbd>G</kbd> to reset the scale
+- <kbd>ALT</kbd> + <kbd>S</kbd> to reset the moved ones
+
+## create groups of bones
+- Go to edit mode
+- <img src="armature-bones-select-head.jpg" alt="armature-bones-select-head" width="300" />
+- select top head of the bone
+- press <kbd>E</kbd> and drag
+
+## Add to a mesh
+- select the mesh first and then the bones
+- Press <kbd>CTRL</kbd> + <kbd>P</kbd>
+- <img src="armature-bones-add-to-mesh.jpg" alt="armature-bones-add-to-mesh" width="600" />
+- <img src="armature-bones-after-bone-added-to-mesh.jpg" alt="armature-bones-after-bone-added-to-mesh.jpg" width="500" />
+
+## adding the bones we get the modifiers
+- <img src="modifier-properties.jpg" alt="modifier-properties" width="200" />
+- <img src="select-modifier.jpg" alt="select-modifier" width="800" />
+- after adding bones to the mesh
+
+<b>Note:</b> The order of modifiers is important
+
+## Removing bones from mesh
+- select the mesh and then the bones
+- <kbd>ALT</kbd> + <kbd>P</kbd>
+
+## select bones
+- <img src="armature-bones-select-bones.jpg" alt="armature-bones-select-bones.jpg" width="500" />
+
+## New rest pose
 - <img src="new-rest-pose-copy-armature-modifier.jpg" alt="new-rest-pose-copy-armature-modifier" width="500" />
 - select the mesh you want in new pose
 - copy the armature modifier and apply
 - select the armature and go to pose mode
 - <img src="pose-apply-new-rest-pose.jpg" alt="pose-apply-new-rest-pose" width="700" />
+
+# Modifiers
+
+## Solidyfy
+- <img src="modifier-solidify.jpg" alt="modifier-solidify" width="600" />
+
+## Subdivision Surface
+We can smooth the surfaces with these
+- <img src="modifier-subdivision.jpg" alt="modifier-subdivision" width="600" />
+
+<b>Note: </b> The faces should have 4 vertices to have loops otherwise the subsurface modifier wont work correctly
+
+### Bulid up
+- <img src="how-to-get-rid-of-buildup.jpg" alt="how-to-get-rid-of-buildup" width="300" />
+- <img src="subdivision-surface-enable-realtime.jpg" alt="subdivision-surface-enable-realtime" width="400" />
+- <img src="after-enable-subdivision-surface-realtime.jpg" alt="after-enable-subdivision-surface-realtime" width="300" />
+
+## Shrink wrap
+- add the target object, select project mode if required
+- <img src="shrink-wrap-modifier.jpg" alt="shrink-wrap-modifier" width="500" />
+
+## displace
+Create uneven paterns on the mesh
+- <img src="what-is-displace-modifier.jpg" alt="what-is-displace-modifier" />
+- <img src="modifier-displace-add-texture.jpg" alt="modifier-displace-add-texture" width="500" />
+- add the texture and go into texture tools
+- <img src="in-texture-select-clouds.jpg" alt="in-texture-select-clouds" />
+- select the clouds
 
 # Sculpting
 
