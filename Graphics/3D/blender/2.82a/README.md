@@ -98,12 +98,12 @@ See which face is viewable
 #### Opacity
 - <img src="image-opacity-using-alpha.jpg" alt="image-opacity-using-alpha" />
 
-## Object Mode
+# Object Mode
 
-### Add
+## Add
 - <kbd>SHIFT</kbd> + <kbd>A</kbd> to add mesh
 
-### Smooth the object
+## Smooth the object
 - select the object by clicking on the object
 - <img src="smooth-or-flat-the-object.jpg" alt="smooth-or-flat-the-object" width="600" />
 
@@ -437,6 +437,26 @@ Create uneven paterns on the mesh
 ## Brush
 - To adjust the brush press <kbd>F</kbd>
 - To adjust the brush strenth press <kbd>F</kbd> + <kbd>F</kbd>
+
+### Smooth brush
+- hold <kbd>SHIFT</kbd> and tap
+
+### Subtract brush
+- hold <kbd>CTRL</kbd> and tap
+
+### Texture
+- <img src="add-texture-to-sculpt-brush.jpg" alt="add-texture-to-sculpt-brush" />
+
+## Dynamic topology
+- <img src="dynamic-topology-for-sculpting.jpg" alt="dynamic-topology-for-sculpting" />
+
+# Texture
+
+## Texture tool
+Change its texture pattern
+- rename the newly created brush
+- <img src="texture-tool-for-sculpt-brush.jpg" alt="texture-tool-for-sculpt-brush" />
+- <img src="change-the-texture-pattern.jpg" alt="change-the-texture-pattern" />
 
 # Shading
 - Select new object
