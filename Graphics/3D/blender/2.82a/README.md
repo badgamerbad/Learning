@@ -107,6 +107,9 @@ See which face is viewable
 - select the object by clicking on the object
 - <img src="smooth-or-flat-the-object.jpg" alt="smooth-or-flat-the-object" width="600" />
 
+## Snap or reset the objects at the center
+- press <kbd>ALT</kbd> + <kbd>G</kbd>
+
 # Edit Mode
 - make sure the shape keys basis is selected and the 'Apply Shape keys in edit mode' is off
 - <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
@@ -446,17 +449,20 @@ Create uneven paterns on the mesh
 
 ### Texture
 - <img src="add-texture-to-sculpt-brush.jpg" alt="add-texture-to-sculpt-brush" />
+- add the new texture
+- select mapping as `Random`
 
 ## Dynamic topology
 - <img src="dynamic-topology-for-sculpting.jpg" alt="dynamic-topology-for-sculpting" />
 
-# Texture
+# Texturing
 
 ## Texture tool
 Change its texture pattern
 - rename the newly created brush
 - <img src="texture-tool-for-sculpt-brush.jpg" alt="texture-tool-for-sculpt-brush" />
 - <img src="change-the-texture-pattern.jpg" alt="change-the-texture-pattern" />
+- change the color ramp slider (observe the bumpiness in the preview)
 
 # Shading
 - Select new object
@@ -544,6 +550,23 @@ This gives us the UV Map - only after the uv are baked and saved in image file w
 - go to camera tool
 - <img src="create-uv-map-by-baking.jpg" alt="create-uv-map-by-baking" width="400" />
 - Bake it to write maps in the file
+
+## Create normal map
+
+### Open `shader editor`
+- <img src="select-the-shader-editor.jpg" alt="select-the-shader-editor" />
+
+### Baking nodes
+- select the node where the blender should save the bake to
+- do not join the node to diffuse BSDF or the output node
+- <img src="baking-nodes.jpg" alt="baking-nodes" />
+
+### bake settings
+settings for the creating the normal map from high poly mesh to low poly mesh
+- select the mesh u want to have as normal (source mesh)
+- select the destination mesh
+- <img src="baking-normal-map-ray-distance.jpg" alt="baking-normal-map-ray-distance" width="400" />
+- keep the `ray distance` as low but slightyly higher than 0
 
 ## Error while UV unwrap
 
