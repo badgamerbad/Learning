@@ -7,7 +7,7 @@
 - <kbd>Left Click</kbd> on the object and tranform it
 - <kbd>Right Click</kbd> to reset the tranform
 
-<b>Note: </b> we can switch between the axis while transforming (<kbd>X</kbd>, <kbd>Y</kbd>, <kbd>Z</kbd>)
+<b>Note: </b> we can switch between the axis while transforming (<kbd>X</kbd>, <kbd>Y</kbd>, <kbd>Z</kbd>) </br>
 <b>Note: </b> Press <kbd>T</kbd> for show/hide the toolbar
 
 ### Menu
