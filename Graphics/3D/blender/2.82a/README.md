@@ -427,6 +427,10 @@ We can smooth the surfaces with these
 
 <b>Note: </b> The faces should have 4 vertices to have loops otherwise the subsurface modifier wont work correctly
 
+### Simple mode
+Preserves the corners
+- <img src="subsurface-modifier-modes.jpg" alt="subsurface-modifier-modes" />
+
 ### Bulid up
 - <img src="how-to-get-rid-of-buildup.jpg" alt="how-to-get-rid-of-buildup" width="300" />
 - <img src="subdivision-surface-enable-realtime.jpg" alt="subdivision-surface-enable-realtime" width="400" />
@@ -473,8 +477,14 @@ Change its texture pattern
 - <img src="change-the-texture-pattern.jpg" alt="change-the-texture-pattern" />
 - change the color ramp slider (observe the bumpiness in the preview)
 
+## brush texture
+- <img src="texture-brush-texture.jpg" alt="texture-brush-texture" />
+
 # Shading
 - <img src="select-the-shader-editor.jpg" alt="select-the-shader-editor" />
+
+## minimize/expand node
+- <kbd>CTRL</kbd> + <kbd>H</kbd>
 
 ## node wrangler 
 node wrangler add on lets you see the rendering of the node
@@ -612,3 +622,17 @@ We get the error because the scales are different </br>
 
 ### if UV Square doesnt work
 If the addon doesn't work when you load it and select "to grid by shape", duplicate the mesh with Shift+D in object mode and try on the new mesh. It'll work. It's a bug.
+
+# physics
+- <img src="physics-property.jpg" alt="physics-property" />
+- Physics tools
+- its gets applied as a modifier (so need to apply the physics)
+
+- <img src="animation-panel.jpg" alt="animation-panel" />
+- Animation have to be run to see the physics getting applied
+
+## cloths
+- <img src="physics-cloths-property.jpg" alt="physics-cloths-property" />
+- Pressure property is very important and controls the wrinkles
+- Turn off gravity
+- bending controls the size of the wrinkles
