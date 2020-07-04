@@ -283,11 +283,20 @@ To show the edge its moving along press <kbd>E</kbd>
 - Select a circle
 - Press <kbd>I</kbd> and Drag
 
+# World environment
+- [Download Environment](http://www.hdrlabs.com/sibl/archive.html)
+- nodes for the world
+- <img src="add-env-to-world.jpg" alt="add-env-to-world" />
+
+<b>Note: </b> 
+- The environment file is .exr extention
+- to see the new environment , switch to Render mode
+
 # Adding Material
 - <img src="add-surface-material.jpg" alt="add-surface-material" width="600" />
 - <img src="add-color-to-surface.jpg" alt="add-color-to-surface" width="600" />
 
-### Material Properties
+## Material Properties
 - Color
 - Roughness (glossy to rough)
 - Subsurface
@@ -299,15 +308,15 @@ To show the edge its moving along press <kbd>E</kbd>
 - Transmission - make it 1 for glass
   - to remove the tint the base color should vue should be 1
 
-### Copying material
+## Copying material
 - Select the object which you want to apply material to
 - Select the object which you want to apply material from
 - <kbd>CTRL</kbd> + <kbd>P</kbd> and select Materials
 
-### water like depth and color
+## water like depth and color
 - <img src="water-depth-material.jpg" alt="water-depth-material" width="600" />
 
-### Adding another material
+## Adding another material
 - select the parts or faces of the object
 - <img src="assign-second-material-to-same-object.jpg" alt="assign-second-material-to-same-object" width="600" />
 
@@ -465,6 +474,20 @@ Change its texture pattern
 - change the color ramp slider (observe the bumpiness in the preview)
 
 # Shading
+- <img src="select-the-shader-editor.jpg" alt="select-the-shader-editor" />
+
+## node wrangler 
+node wrangler add on lets you see the rendering of the node
+- in the preferences enable add on node wrangler 
+- <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>Left Click</kbd> on the node
+
+### Shortcuts
+
+#### Mapping
+- select the image texture 
+- <kbd>CTRL</kbd> + <kbd>T</kbd>
+
+## add material
 - Select new object
 - Add material
 - <img src="shading-new-material.jpg" alt="shading-new-material" width="900" />
@@ -477,12 +500,12 @@ Change its texture pattern
 - converter -> color ramp
 - texture -> image texture
 
+## Combine lines
+- <kbd>SHIFT</kbd> and <kbd>Left click</kbd> and drag the mouse over the lines to combine
+- <img src="node-combine-lines.jpg" alt="node-combine-lines" />
+
 ## Procedural Texturing
 - Texture -> Noise texture
-- <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>Left Click</kbd> on the noise menu panel
-
-<b>Note:</b> Also in the preferences enable add on - noise wrangler
-
 - add vecter -> displacement
 - <img src="procedural-texturing-layer-1.jpg" alt="procedural-texturing-layer-1" width="900" />
 - <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>Left Click</kbd> on the panel `principled BSDF` (main layer)
@@ -500,6 +523,13 @@ Change its texture pattern
 - save the new texture on the hard drive or <kbd>ALT</kbd> + <kbd>S</kbd> for quick save
 - Go to shading and add `texture -> image texture`
 - select the neew texture in the node
+
+## issue of brush not working
+- after creating the texture
+- add a texture node and select the texture
+- switch to edit mode and select all the vertices (press <kbd>A</kbd>)
+- now the created UV map should be displayed over the newly created texture in the `UV editor`
+- now the brush should work while painting on the mesh
 
 ## Choose Color
 - Press <kbd>N</kbd>
@@ -553,9 +583,6 @@ This gives us the UV Map - only after the uv are baked and saved in image file w
 
 ## Create normal map
 
-### Open `shader editor`
-- <img src="select-the-shader-editor.jpg" alt="select-the-shader-editor" />
-
 ### Baking nodes
 - select the node where the blender should save the bake to
 - do not join the node to diffuse BSDF or the output node
@@ -567,6 +594,10 @@ settings for the creating the normal map from high poly mesh to low poly mesh
 - select the destination mesh
 - <img src="baking-normal-map-ray-distance.jpg" alt="baking-normal-map-ray-distance" width="400" />
 - keep the `ray distance` as low but slightyly higher than 0
+
+#### Bug of normal maps with low resolution details
+- keep the ray distance to 0.1m when placing the objects exactly overlapping on each others
+- reduce the ray distance to 0.05 if the normal map doesnt give enough details
 
 ## Error while UV unwrap
 
