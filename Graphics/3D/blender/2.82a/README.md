@@ -40,6 +40,10 @@
 - <kbd>Right Click</kbd> on the red marking
 - <img src="right-click-and-spilt-the-view.jpg" alt="right-click-and-spilt-the-view" width="700" />
 
+### Quad view
+- divide the view port in top, front, side and movable viewports
+- <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Q</kbd>
+
 ### Rendered 
 To see the light on the object
 - <img src="view-rendered-object.jpg" alt="view-rendered-object" width="800" />
@@ -127,6 +131,13 @@ See which face is viewable
 ### Increase the smoothness
 - <img src="subdivide-smoothness.jpg" alt="subdivide-smoothness" width="600" />
 
+## movement
+Switch between transformation orientations of the mesh
+- suppose we have a mesh rotated, so while moving the vertices we can avoid global axis and use local
+- <img src="move-along-the-local-mesh-axis.jpg" alt="move-along-the-local-mesh-axis" />
+
+<b>Note:</b> while transforming press the axis being locked, press the `axis key` again to switch between global and local.
+
 ## Edges
 - <img src="select-edge-of-the-object.jpg" alt="select-edge-of-the-object" width="300" />
 - To open up the Edge menu
@@ -157,7 +168,7 @@ See which face is viewable
 - select the entire mesh or press <kbd>A</kbd> in edit mode
 - <kbd>Right Click</kbd> and `merge vertices -> by distance`
 
-### Moving the vertices
+### snapping the vertices
 To stick the dragging object on the surface, instead of going inside the surface of other selections
 - <img src="snap-to-face-of-the-object.jpg" alt="snap-to-face-of-the-object" width="600" />
 
@@ -165,11 +176,34 @@ To stick the dragging object on the surface, instead of going inside the surface
 - <img src="snap-to-closest-vertex.jpg" alt="snap-to-face-of-the-object" />
 - and then press <kbd>CTRL</kbd> while moving them to snap to closest vertex
 
+#### to face of other object
+- settings below
+- <img src="snap-to-face-of-the-object-with-rotation.jpg" alt="snap-to-face-of-the-object-with-rotation" />
+- press <kbd>CTRL</kbd> move the object to have the closest rotation of the target mesh face
+- <img src="snap-to-face-of-the-object-with-rotation-movement.jpg" alt="snap-to-face-of-the-object-with-rotation-movement" />
+
 ### move vertex along the edge (also edges)
 - Select the vertex and double press <kbd>G</kbd>
-- <img src="move-vertex-along-the-edge.jpg" alt="move-vertex-along-the-edge" width="600" />
+- <img src="move-vertex-along-the-edge.jpg" alt="move-vertex-along-the-edge" />
 
-### align along the z axis (flatten the vertices)
+#### move beyound the original limit
+- after double taping <kbd>G</kbd>, hold <kbd>ALT</kbd> or press <kbd>C</kbd> to clamp
+- <img src="move-the-vertices-beyond-limits.jpg" alt="move-the-vertices-beyond-limits" />
+
+##### move vertex along the rotated angle
+- after clamping (refer above point), move `mouse` left to right
+- <img src="shear-operation-move-along.jpg" alt="shear-operation-move-along" />
+
+### align the misaligned vertices
+- double tap <kbd>G</kbd> and then press <kbd>E</kbd>
+- <img src="edge-slide-align.jpg" alt="edge-slide-align" />
+
+### moving the vertex in a straight line (along its normal)
+- select the vertex
+- <kbd>ALT</kbd> + <kbd>S</kbd>
+- <img src="move-vertex-along-its-normal.jpg" alt="move-vertex-along-its-normal" width="600" />
+
+### align along the (X, Y, Z) axis (flatten the vertices)
 - <img src="snap-vertices-to-0.jpg" alt="snap-vertices-to-0" width="600" />
 - select the vertices
 - press <kbd>S</kbd> + (<kbd>Z</kbd>, <kbd>Y</kbd>, <kbd>X</kbd>) + 0
@@ -311,6 +345,12 @@ To show the edge its moving along press <kbd>E</kbd>
 - <kbd>CTRL</kbd> + <kbd>B</kbd>
 
 <b>Note: </b> Make sure the scale applied and its value is 1
+
+## Shear
+when rotating the vertices the height can be affected, use shear instead
+- select vertices
+- open up search (<kbd>Space</kbd>) and search shear and then select the option
+- <img src="shear-operation.jpg" alt="shear-operation" />
 
 # World environment
 - [Download Environment](http://www.hdrlabs.com/sibl/archive.html)
@@ -467,6 +507,11 @@ Preserves the corners
 - <img src="how-to-get-rid-of-buildup.jpg" alt="how-to-get-rid-of-buildup" width="300" />
 - <img src="subdivision-surface-enable-realtime.jpg" alt="subdivision-surface-enable-realtime" width="400" />
 - <img src="after-enable-subdivision-surface-realtime.jpg" alt="after-enable-subdivision-surface-realtime" width="300" />
+
+### make flat edges
+To create a flat end with subsurface modifier
+- press <kbd>SHIFT</kbd> + <kbd>E</kbd>
+- <img src="flatten-the-faces-like-no-face.jpg" alt="flatten-the-faces-like-no-face" />
 
 ## Mirror
 - mirror the mesh arround the origin (of its own or global)
