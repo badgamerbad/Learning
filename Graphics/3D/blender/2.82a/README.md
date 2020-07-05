@@ -107,6 +107,11 @@ See which face is viewable
 - select the object by clicking on the object
 - <img src="smooth-or-flat-the-object.jpg" alt="smooth-or-flat-the-object" width="600" />
 
+### Flatten the edges
+- select auto smooth
+- smooth everthing above the angle
+- <img src="smooth-the-mesh-flat-property.jpg" alt="smooth-the-mesh-flat-property" />
+
 ## Snap or reset the objects at the center
 - press <kbd>ALT</kbd> + <kbd>G</kbd>
 
@@ -143,7 +148,10 @@ See which face is viewable
 
 ### Merge
 - to get the merge menu
-- <kbd>ALT</kbd> + <kbd>M</kbd>
+- <kbd>ALT</kbd> + <kbd>M</kbd> or just <kbd>M</kbd>
+
+#### auto merge vertices
+- <img src="auto-merge-vertices.jpg" alt="auto-merge-vertices" />
 
 ### Merge overlapping vertices
 - select the entire mesh or press <kbd>A</kbd> in edit mode
@@ -153,9 +161,18 @@ See which face is viewable
 To stick the dragging object on the surface, instead of going inside the surface of other selections
 - <img src="snap-to-face-of-the-object.jpg" alt="snap-to-face-of-the-object" width="600" />
 
+#### to closest vertex
+- <img src="snap-to-closest-vertex.jpg" alt="snap-to-face-of-the-object" />
+- and then press <kbd>CTRL</kbd> while moving them to snap to closest vertex
+
 ### move vertex along the edge (also edges)
 - Select the vertex and double press <kbd>G</kbd>
 - <img src="move-vertex-along-the-edge.jpg" alt="move-vertex-along-the-edge" width="600" />
+
+### align along the z axis (flatten the vertices)
+- <img src="snap-vertices-to-0.jpg" alt="snap-vertices-to-0" width="600" />
+- select the vertices
+- press <kbd>S</kbd> + (<kbd>Z</kbd>, <kbd>Y</kbd>, <kbd>X</kbd>) + 0
 
 ## faces
 
@@ -176,6 +193,11 @@ To stick the dragging object on the surface, instead of going inside the surface
 ## Extrude
 - select vertices
 - Press <kbd>E</kbd>
+
+### extrude to cursor
+- select the vertex
+- move the cursor to a place where you want the extrued to extend to
+- press <kbd>CTRL</kbd> + <kbd>Right Click</kbd
 
 ## Inset
 - select vertices and press <kbd>I</kbd>
@@ -282,6 +304,13 @@ To show the edge its moving along press <kbd>E</kbd>
 ### Create loop inside a circle
 - Select a circle
 - Press <kbd>I</kbd> and Drag
+
+## Bevel
+- <img src="bevel-operation.jpg" alt="bevel-operation" />
+- to create a loop cut only with marked vertices
+- <kbd>CTRL</kbd> + <kbd>B</kbd>
+
+<b>Note: </b> Make sure the scale applied and its value is 1
 
 # World environment
 - [Download Environment](http://www.hdrlabs.com/sibl/archive.html)
@@ -419,7 +448,10 @@ The origin is the point which will be attached to the surface of the object on w
 # Modifiers
 
 ## Solidyfy
-- <img src="modifier-solidify.jpg" alt="modifier-solidify" width="600" />
+- <img src="modifier-solidify-description.jpg" alt="modifier-solidify-description" />
+- adds thickness to the mesh
+- <img src="modifier-solidify.jpg" alt="modifier-solidify" />
+- change the `thickness` and the `offset`
 
 ## Subdivision Surface
 We can smooth the surfaces with these
@@ -436,6 +468,15 @@ Preserves the corners
 - <img src="subdivision-surface-enable-realtime.jpg" alt="subdivision-surface-enable-realtime" width="400" />
 - <img src="after-enable-subdivision-surface-realtime.jpg" alt="after-enable-subdivision-surface-realtime" width="300" />
 
+## Mirror
+- mirror the mesh arround the origin (of its own or global)
+- <img src="modifier-mirror-with-diff-origin.jpg" alt="modifier-mirror-with-diff-origin" />
+
+### Mirror object
+- or simply we can use nothing i.e. meshes own origin
+- we can select some other mesh whose origin point acts like a mirror
+- or we can use `empty object`
+
 ## Shrink wrap
 - add the target object, select project mode if required
 - <img src="shrink-wrap-modifier.jpg" alt="shrink-wrap-modifier" width="500" />
@@ -447,6 +488,19 @@ Create uneven paterns on the mesh
 - add the texture and go into texture tools
 - <img src="in-texture-select-clouds.jpg" alt="in-texture-select-clouds" />
 - select the clouds
+
+## bevel
+- to add smooth edges to the mesh
+- <img src="modifier-bevel.jpg" alt="modifier-bevel" />
+- control the thickness
+- modify the segments to control the sharpness or smoothness of the edge
+
+### for flat lines
+- <img src="modifier-bevel-sideeffects.jpg" alt="modifier-bevel-sideeffects" />
+- when bevel is applied the lines edge loops are flattened out
+- <img src="modifier-bevel-limit-method.jpg" alt="modifier-bevel-limit-method" />
+- apply the above settings
+- anything above 60<sup>o</sup> to be beveled (flattened)
 
 # Sculpting
 
