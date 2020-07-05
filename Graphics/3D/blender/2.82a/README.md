@@ -450,6 +450,10 @@ Create uneven paterns on the mesh
 
 # Sculpting
 
+## assign keyboard keys shortcuts
+- right click on the brush tools
+- <img src="assign-keyboard-keys.jpg" alt="assign-keyboard-keys" />
+
 ## Brush
 - To adjust the brush press <kbd>F</kbd>
 - To adjust the brush strenth press <kbd>F</kbd> + <kbd>F</kbd>
@@ -467,6 +471,32 @@ Create uneven paterns on the mesh
 
 ## Dynamic topology
 - <img src="dynamic-topology-for-sculpting.jpg" alt="dynamic-topology-for-sculpting" />
+
+## cloth brush
+- <img src="cloth-brush-tools.jpg" alt="cloth-brush-tools" />
+- in the tools, select the type of brush function
+
+### stroke airbrush
+- <img src="cloth-brush-stroke.jpg" alt="cloth-brush-stroke" />
+
+## draw straight line
+- <img src="draw-line-in-sculting.jpg" alt="draw-line-in-sculting" />
+
+## Masks (Layers)
+- <img src="sculting-layers-masks.jpg" alt="sculting-layers-masks" />
+
+<b>Note: </b> if u cant see the masks (face sets), disable the subsurface modifier
+
+### masks by uv seems
+- <img src="masks-by-uv-seems.jpg" alt="masks-by-uv-seems" />
+- now we need to use the face masks, we need to enable advanced setting (refer below options)
+
+#### boundary
+- preserving the boundary 
+- <img src="faces-sets-boundary.jpg" alt="faces-sets-boundary" />
+
+#### only one face
+- <img src="faces-sets-auto-masking.jpg" alt="faces-sets-auto-masking" />
 
 # Texturing
 
@@ -636,3 +666,8 @@ If the addon doesn't work when you load it and select "to grid by shape", duplic
 - Pressure property is very important and controls the wrinkles
 - Turn off gravity
 - bending controls the size of the wrinkles
+
+### simulation area
+- we have to the middle circles as drag point and outer circles which define the simulation area
+- <img src="simulation-circle.jpg" alt="simulation-circle" />
+- <img src="simulation-circle-setting.jpg" alt="simulation-circle-setting" />
