@@ -23,9 +23,13 @@
 
 ## viewport
 
+### panel
+- <img src="flip-the-panel-to-bottom-or-top.jpg" alt="flip-the-panel-to-bottom-or-top" />
+- <kbd>Right Click</kbd> on the `Object Mode` and `flip to bottom`
+
 ### Toggle visibility
 - if while importing some mesh from old version are looking as if they are disabled
-- <img src="toggle-viewport-visibility.jpg" alt="toggle-viewport-visibility.jpg" width="600" />
+- <img src="toggle-viewport-visibility.jpg" alt="toggle-viewport-visibility" width="600" />
 - also enable the selection and viewport option in filter menu
 
 ### Menu
@@ -119,6 +123,12 @@ See which face is viewable
 ## Snap or reset the objects at the center
 - press <kbd>ALT</kbd> + <kbd>G</kbd>
 
+## Merge or join object
+- select the 2 objects
+- <kbd>CTRL</kbd> + <kbd>J</kbd>
+
+<b>Note: </b> The last mesh origin will be applied to both
+
 # Edit Mode
 - make sure the shape keys basis is selected and the 'Apply Shape keys in edit mode' is off
 - <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
@@ -150,9 +160,18 @@ Switch between transformation orientations of the mesh
 ### Expand edge
 - <kbd>CTRL</kbd> + <kbd>B</kbd>
 
+### draw edge
+- <img src="create-a-line-between.jpg" alt="create-a-line-between" />
+- press <kbd>J</kbd> to create a staright line between them
+
 #### Delete edge loops (without deleting faces)
 - <img src="delete-edge-loops-not-edges.jpg" alt="delete-edge-loops-not-edges" />
 - Press <kbd>X</kbd> and select `Edges Loops`
+
+### subdivide the edge 
+to make a perpedicular out of them
+- select the 2 vertices
+- <kbd>Right click</kbd> and subdivide
 
 ## Vertices
 - select 2 points and press <kbd>F</kbd> to make vertex
@@ -279,9 +298,6 @@ For editing the vertices near by
 - After Joining
 - <img src="after-joining-the-objects.jpg" alt="after-joining-the-objects" width="600" />
 
-### Merge or join object
-- <kbd>CTRL</kbd> + <kbd>J</kbd>
-
 ## Selection
 <b>Note:</b> Edit mode should be on
 
@@ -343,8 +359,14 @@ To show the edge its moving along press <kbd>E</kbd>
 - <img src="bevel-operation.jpg" alt="bevel-operation" />
 - to create a loop cut only with marked vertices
 - <kbd>CTRL</kbd> + <kbd>B</kbd>
+- scroll up or down to increase or decrese the loops
 
 <b>Note: </b> Make sure the scale applied and its value is 1
+
+### Vertex
+- select the vertex
+- <kbd>SHIFT</kbd> + <kbd>CTRL</kbd> + <kbd>B</kbd>
+- scroll up or down to increase or decrese the loops
 
 ## Shear
 when rotating the vertices the height can be affected, use shear instead
@@ -434,6 +456,11 @@ when rotating the vertices the height can be affected, use shear instead
 ### selecting the vertex group (weight painter group)
 - Particle property -> Vertex Group
 - <img src="select-vertex-group-of-weight-paint.jpg" alt="select-vertex-group-of-weight-paint" width="500" />
+
+### deleting all the vertex group
+- clicking on the button opens the menu
+- <img src="open-more-menu-for-vertex-group.jpg" alt="open-more-menu-for-vertex-group" />
+- in the menu select delete all groups
 
 ### set origin
 The origin is the point which will be attached to the surface of the object on which the particles are added
