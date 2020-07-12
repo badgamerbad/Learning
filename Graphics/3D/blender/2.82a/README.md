@@ -27,6 +27,9 @@
 - <img src="flip-the-panel-to-bottom-or-top.jpg" alt="flip-the-panel-to-bottom-or-top" />
 - <kbd>Right Click</kbd> on the `Object Mode` and `flip to bottom`
 
+### zoom swiftly
+- <kbd>CTRL</kbd> + <kbd>Middle</kbd>
+
 ### Toggle visibility
 - if while importing some mesh from old version are looking as if they are disabled
 - <img src="toggle-viewport-visibility.jpg" alt="toggle-viewport-visibility" width="600" />
@@ -242,6 +245,11 @@ To stick the dragging object on the surface, instead of going inside the surface
 ### Select faces
 - <img src="select-faces-of-object.jpg" alt="select-faces-of-object" width="600" />
 - then click on the middle of the faces
+
+## Triangles to polygons conversion
+- select the faces and go to face
+- <img src="faces-tris-to-quads.jpg" alt="faces-tris-to-quads" />
+- select the tris to quads
 
 ## Extrude
 - select vertices
@@ -552,6 +560,9 @@ To create a flat end with subsurface modifier
 ## Shrink wrap
 - add the target object, select project mode if required
 - <img src="shrink-wrap-modifier.jpg" alt="shrink-wrap-modifier" width="500" />
+
+## simple deform
+bend any surface around the pivot point
 
 ## displace
 Create uneven paterns on the mesh
