@@ -424,6 +424,9 @@ when rotating the vertices the height can be affected, use shear instead
 - reduce weight to have blue
 - more weight gives red
 
+## x ray for bright mode
+- select the mesh and press <kbd>ALT</kbd> + <kbd>Z</kbd>
+
 ## More weight paint layers on object
 - <img src="add-vertex-group-for-weight-paint.jpg" alt="add-vertex-group-for-weight-paint" width="500" />
 
