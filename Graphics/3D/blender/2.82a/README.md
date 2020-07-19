@@ -457,6 +457,11 @@ when rotating the vertices the height can be affected, use shear instead
 - <img src="add-particles.jpg" alt="add-particles" width="600" />
 - Option Emmission -> seed - emits a different pattern in the way partcles are added
 
+## copy weightor invert weights
+- use mirror to copy weight to other vertex
+- <img src="mirror-weights.jpg" alt="mirror-weights" />
+- rename the vertext group to bone weight
+
 ### Select the object to duplicate on top of previously selected object
 - <img src="pick-the-object-for-duplicating.jpg" alt="pick-the-object-for-duplicating" width="500" />
 - Select the object
