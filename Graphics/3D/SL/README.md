@@ -20,3 +20,6 @@ normalize the rotations
 - Rotate the avatar to positive X Axis
 - <kbd>CTRL</kbd> + <kbd>A</kbd> and apply all transformation
 - select rest all mesh and <kbd>CTRL</kbd> + <kbd>A</kbd> and apply all transformation
+
+## show interactive areas
+<kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>T</kbd>
