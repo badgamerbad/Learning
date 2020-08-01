@@ -530,6 +530,13 @@ The origin is the point which will be attached to the surface of the object on w
 
 # Modifiers
 
+## vertex group
+- select the `mesh` on whose the modifiers will be added
+- create a vertex group and assign to the mesh
+- <img src="modifier-vertex-group.jpg" alt="modifier-vertex-group" />
+- select the vertex group in the modifier
+- draw the paint on the `mesh`
+
 ## Solidyfy
 - <img src="modifier-solidify-description.jpg" alt="modifier-solidify-description" />
 - adds thickness to the mesh
