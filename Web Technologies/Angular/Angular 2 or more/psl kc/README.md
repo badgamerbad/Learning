@@ -163,8 +163,8 @@ $ ng g c login
   declarations: [
     AppComponent,
   ],
-  imports: [
-    BrowserModule,
+  imports: [    // array of other modules used by this module
+    BrowserModule,  // internally loads core module
     AppRoutingModule
   ],
   providers: [],
@@ -177,3 +177,104 @@ export class AppModule { }
 can be multiple components forming their tree of components
 
 <b>Note:</b> Having multiple bootstrap component, creates multiple trees of components and while injecting dependencies (ex. services), we will have to inject it to multiple trees
+
+# Binding
+
+## Interpolation
+```html
+<p>{{title}}</p>
+```
+## property Bindings
+``` html
+/* square bracket */
+<img [src]="product.imgPath" alt="image">
+```
+
+## Event Binding
+``` html
+/* round bracket */
+<button *ngIf="isLoggedIn" (click)="addToCart($event, product)">Add to Cart</button>
+```
+
+## Two way data binding
+``` html
+<input type="password" name="password" [(ngModel)]="password" />
+```
+
+<b>Note:</b> Requires Forms module
+
+# directive
+
+## core module
+- *ngFor, *ngIf, * ngSwitch, ngStyle
+
+# Services
+for common data, utility, functions, objects
+
+# Dependency Injection
+
+## Need
+- consider example of a car class
+```ts
+class Car {
+    constructor() {
+        this.engine = new Engine();
+        this.tires = new Tires();
+        this.doors = new TypeADoors();
+    }
+}
+```
+
+### Problems
+- car class is creating instance of engine and tires
+- difficult to unit test the classes
+- difficult to have different tires, engines to test he car class
+- what if any contructor changes
+- difficult to change the `TypeA`
+- tightly coupled
+- objects are not sharable
+
+### Solution
+<img src="di.jpg" alt="di">
+- we say give me only car instance
+    - which internally creates Engine, Tires and required type of doors
+
+``` ts
+let injector = ReflectiveInjector.resolveAndCreate([
+    { provide: Car, useClass: Car },
+    { provide: Engine, useClass: Engine },
+    { provide: Tires, useClass: Tires },
+    { provide: Doors, useClass: TypeBDoors },
+]);
+let carObj = injector.get(Car);
+```
+
+## Providers
+- when a dependency is injected the compiler will look 
+    - first in component level
+        - then the module level
+
+## Implementation
+
+### Component level
+```ts
+@Component({
+    ...
+    providers: [{provide: ProductsDataService, useClass: ProductsDataService}]
+})
+// OR
+@Component({
+    ...
+    providers: [ProductsDataService]
+})
+```
+
+### Module level
+- all components will get the same instance of the service
+``` ts
+@NgModule({
+    ...
+    providers: [ProductsDataService], 
+    ...
+})
+```
