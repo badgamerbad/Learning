@@ -86,7 +86,7 @@ $ ng serve --host 0.0.0.0 --port 4201
 <app-root></app-root>
 ```
 
-## Structure
+### angular overview
 <img src="angular-structure.jpg" alt="angular-structure" />
 
 # Typescript
@@ -147,6 +147,81 @@ export class AppComponent {
 ## generate
 ```
 $ ng g c login
+```
+
+## component communication
+
+### Parent to Child
+- with @input() annotation
+- mark the variable/object expected from parent
+- child component
+```ts
+export class PriceUpdaterComponent {
+    // data receiving by the component
+    @Input()
+    priceValue: number;
+    constructor() {}
+}
+```
+- parent component
+```html
+<td><app-price-updater [priceValue]="product.price"></app-price-updater></td>
+```
+<b>Note: </b> Not just primitive values, but also we can pass objects
+
+### Child to Parent
+```ts
+// create an event to be emitted to the Parent component
+@Output()
+priceUpdaterEvent = new EventEmitter<Number>();
+
+// emit the event with the value we need
+updatePrice() {
+    this.priceUpdaterEvent.emit(this.priceValue);
+}
+```
+- parent
+```html
+/* Receive the data emitted in the child component in the
+ * $event argument
+ */
+<td><app-price-updater (priceUpdaterEvent)="setNewPrice($event)"></app-price-updater></td>
+```
+### Child to Child
+- if there is one time data exchange - common service will work
+- for continous data exchange use `Observables`
+    - handle multiple values over time
+
+#### Observables
+- The combination of a stream with a set of functional operators to transform streams leads us to the concept of `Observables`
+- Functional Reactive Programming
+    - as the observer and subject react and notify
+- <img src="observables-flow.jpg" alt="observables-flow" />
+    - subject is data
+    - observer subscribe to subject - `subscribe()`
+    - whenever subject changes, observers are notified - `notify()`
+    - after we can use `unsubscribe()`
+- used when we are working with streams, such as
+    - create streams, subscribe, read data, combine, transform
+
+##### Example
+```ts
+// create new subject
+subject = new Subject<string>();
+
+// create an observer
+this.subject.asObservable().subscribe(
+    newValue => {
+        this.userName = newValue;
+    },
+    err => {
+        console.log(err);
+    }
+);
+
+// subcribe callback will be called when we set the data in
+// subject
+this.subject.next(userName);
 ```
 
 # Modules
@@ -277,4 +352,12 @@ let carObj = injector.get(Car);
     providers: [ProductsDataService], 
     ...
 })
+```
+
+# Pipes
+
+## in built
+- currency
+```html
+<td>{{product.price | curency: "INR"}}</td>
 ```
