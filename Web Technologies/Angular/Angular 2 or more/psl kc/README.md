@@ -232,7 +232,13 @@ this.subject.next(userName);
     - login
     - header, footer
 
+## command
+```
+$ ng g m customers
+```
+
 ## implementation
+new modules created needs to be added to `imports`
 ```ts
 @NgModule({
   declarations: [
@@ -303,6 +309,7 @@ class Car {
 ### Problems
 - car class is creating instance of engine and tires
 - difficult to unit test the classes
+    - will have to test from the UI
 - difficult to have different tires, engines to test he car class
 - what if any contructor changes
 - difficult to change the `TypeA`
@@ -360,4 +367,258 @@ let carObj = injector.get(Car);
 - currency
 ```html
 <td>{{product.price | curency: "INR"}}</td>
+```
+
+# HTTP Module
+```ts
+// app.module.ts
+import { HttpClientModule } from "@angular/common/http";
+
+@NgModule({
+    imports: [
+        ...
+        HttpClientModule,
+    ]
+})
+
+// services
+import { HttpClient } from '@angular/common/http';
+
+export class UserService {
+  constructor(private http: HttpClient) { }
+  getUsers(): Observable<any> {
+    return this.http.get("https://jsonplaceholder.typicode.com/users");
+  }
+}
+```
+
+<b>Note: </b> Return the `Observable`
+
+# Forms
+
+## Template driven forms
+- all validations code is in the `HTML` templates
+- uses directives like ngModel to work with validators
+- need to import module `FormsModules`
+- <img src="template-driven-forms.jpg" alt="template-driven-forms" />
+
+### cons
+- no flexibility to unit test, as everthing is in HTML
+- less control in class
+- handling is done with events
+
+## Reactive Forms 
+- also known as `Model driven approach`
+- import ReactiveFormsModule from @angular/forms
+- we create with FormControl instances
+
+``` ts
+import { FormsControl } from "@angular/forms"
+export class SignUpFormComponent {
+    name = new FormControl();
+    phone = new FormControl();
+}
+```
+    - set the initial values
+    - set the validators
+
+```ts
+import { Validators } from "@angular/forms"
+...
+    name = new FormControl("Tina", Validators.required);
+    phone = new FormControl("", Validators.minLength(8));
+```
+
+### form grouping
+Helps in getting a consolidated (combined of all fields) status on entire form
+    - i.e. whether the form is valid or NOT
+```ts
+this.signUpForm = new FormGroup({
+    email: new FormControl(),
+    password: new FormControl(),
+    gender: new FormControl(),
+    country: new FormControl(),
+})
+```
+
+### field status
+- $pristine - The field has not been modified yet
+    - not touched and no value is modified
+- $dirty - The field has been modified
+    - if value is entered
+    - fired on change event
+- $valid - The filed content is valid
+    - passes all `Validators`
+- $invalid - The field content is not valid
+    - fails the `Validators`
+- $touched - The field has been touched
+    - selecting the field
+    - fired when user moves to another field
+- $untouched - The field has not been touched
+    - not selected the field
+
+### show error based on condition
+- template
+```html
+/* To convert this */
+<div *ngIf="signUpForm.controls.email.invalid && signUpForm.controls.email.touched">Email is required</div>
+
+/* to this */
+<div *ngIf="email.invalid && email.touched">Email is required</div>
+```
+- component
+```ts
+get email() {
+    return this.signUpForm.get("email");
+}
+```
+
+#### Read error object
+- required
+- minlength
+- maxlength
+- email
+- min
+- max
+
+```html
+<div *ngIf="email.errors.required">Email is required</div>
+<div *ngIf="email.errors.invalid">Email is invalid</div>
+```
+
+<b>Note: </b> use `ng-messages` instead of above approach
+
+### Reactive feature
+check on change
+```ts
+this.signUpForm.get("country").valueChanges
+    .subscribe(
+        keyword => {
+        // HTTP call to fetch with keywords
+        }
+    )
+```
+
+# Routing
+- menu component
+```html
+<li role="presentation"><a routerLink="login" >Login</a></li>  
+<li role="presentation"><a routerLink="products" >Products</a></li> 
+```
+- app-router.module.ts
+```ts
+// app router module
+const routes: Routes = [
+  {
+    path: "login",
+    component: LoginComponent,
+  },
+  {
+    path: "products",
+    component: ProductListComponent,
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)], // for root / paths
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+- app.component.html
+```html
+<router-outlet>
+```
+
+## default
+in app-router.module.ts
+```ts
+// 1.
+const routes: Routes = [
+  {
+    path: "", // specify blank to make it default
+    component: LoginComponent,
+  },
+]
+// 2.
+const routes: Routes = [
+  {
+    path: "", // specify blank to make it default
+    redirectTo: "/login",
+    pathMatch: "full", // regex expression can be used
+  },
+]
+```
+
+## handling invalid routes
+```ts
+const routes: Routes = [
+  ...
+  // this wild card for handling the invalid routes 
+  // should be placed at the end of all routes
+  {
+    path: "**", // two stars
+    component: pageNotFoundComponent,
+  },
+]
+```
+
+## Programatic routing
+```ts
+// import the service
+import { Router } from '@angular/router';
+
+export class LoginComponent implements OnInit {
+    constructor(private loginService: LoginService, private router: Router) {}
+
+    login(event: Event) {
+        ...
+        this.router.navigateByUrl("/products");
+    }
+}
+```
+
+## pass parameter to the child route
+- menu compone
+```html
+<li *ngFor="let user of userList"><a [routerLink]="['userDetails', user.id]">{{user.name}}</a></li>
+
+/** pass multiple parameters */
+<li *ngFor="let user of userList"><a [routerLink]="['userDetails', user.id, user.name]">{{user.name}}</a></li>
+
+/** finally use a router outlet to load the child component */
+<router-outlet></router-outlet>
+```
+
+- child component
+```ts
+import { ActivatedRoute } from '@angular/router';
+
+export class userDetailsComponent implements OnInit {
+  constructor(private activeroute:ActivatedRoute) {
+    // read the route parameters --- Observables
+    this.activeroute.params.subscribe(
+      routeParams => {
+        this.userid = parseInt(routeParams['id']);
+      })
+  }
+}
+```
+
+## Route guard
+- To be self learned
+
+# Deploy
+```
+$ ng build
+```
+- creates `dist` folder and optimized built
+
+## integrating the Node server
+in the node we can use res.send `index.html` from the dist folder
+
+# test
+runs all the spec files
+```
+$ ng test
 ```
