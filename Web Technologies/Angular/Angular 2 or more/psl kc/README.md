@@ -15,6 +15,8 @@
 ## Traditional vs SPA
 <img src="spa-vs-traditional.jpg" alt="spa-vs-traditional">
 
+<b>Note: </b> Traditionally the HTML was sent to the front end, with SPA only `JSON` is sent to the front and angular takes care of generating the HTML
+
 ## features
 - Smaller builds
     - small bundled build size is smaller
@@ -290,7 +292,8 @@ can be multiple components forming their tree of components
 - *ngFor, *ngIf, * ngSwitch, ngStyle
 
 # Services
-for common data, utility, functions, objects
+- for common data, utility, functions, objects
+- since the data should be loosely coupled to an component, data fetching should be done in a service
 
 # Dependency Injection
 
