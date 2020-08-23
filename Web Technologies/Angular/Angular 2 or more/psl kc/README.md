@@ -3,11 +3,24 @@
     - good for mobile app
     - less memory
 - Targets all platform 
-    - any OS
+    - any OS - cross platform
     - build and can be run any OS
     - could be used as normal HTML application
 - Speed & performance
     - uses IV compiler
+- languages
+    - ES6, 7 and newer, Typescript
+    - Dart
+- server side rendering (SSR) for the `mobile` devices
+    - as angular is developed for `mobile first approach`
+
+## Angular JS vs Angular
+- no controllers, uses components
+
+## versions
+
+### Angular 2
+- uses ES2015 by default
 
 ## Shell page
 - The placedholder to put dynamic content inside
@@ -32,6 +45,9 @@
     - directives, services, pipes 
     - to share data between the components
 - Unit testable
+
+## logging
+- for logging diary.js is used
 
 ## Concepts
 - Modules
@@ -225,6 +241,9 @@ this.subject.asObservable().subscribe(
 // subject
 this.subject.next(userName);
 ```
+
+## dynamic component
+- use `DynamicComponentLoader`
 
 # Modules
 - organize the application, also conponents, directive, services, pipes can be under modules
@@ -503,6 +522,12 @@ this.signUpForm.get("country").valueChanges
 ```
 
 # Routing
+The router in Angular 2.0 has been reworked to be simple, yet extensible
+- Simple JSON-based Route Config
+- Optional Convention over Configuration
+- Static, Parameterized and Splat Route Patterns
+
+## example
 - menu component
 ```html
 <li role="presentation"><a routerLink="login" >Login</a></li>  
