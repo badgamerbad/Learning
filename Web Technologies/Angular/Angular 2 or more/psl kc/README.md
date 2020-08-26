@@ -1,5 +1,5 @@
 # What is Angular
-- Framework to build SPA 
+- Framework (NOT a `LIBRARY`)to build SPA 
     - good for mobile app
     - less memory
 - Targets all platform 
@@ -17,7 +17,7 @@
 ## Angular JS vs Angular
 - no controllers, uses components
 
-## versions
+## versions release notes
 
 ### Angular 2
 - uses ES2015 by default
@@ -45,9 +45,14 @@
     - directives, services, pipes 
     - to share data between the components
 - Unit testable
+- Integrates easily with `NativeScript`
+    - allowing you to code your native app in a `declarative` style that can run on any mobile device platform. 
 
 ## logging
 - for logging diary.js is used
+
+## detect changes
+- angular uses zone.js to detect changes
 
 ## Concepts
 - Modules
@@ -77,6 +82,9 @@
 - improved build errors
 - improved build times, anabling AOT on by default
 
+### AOT (Ahead of time) compilation
+- Detects error at build time
+
 ## cmds
 
 ### new
@@ -104,8 +112,25 @@ $ ng serve --host 0.0.0.0 --port 4201
 <app-root></app-root>
 ```
 
+### tsconfig.json
+This file is used to give the options about TypeScript used for the Angular JS project.
+
+### angular-cli.json now as angular.json
+Used to configure your angular 2 project
+
+### main.ts
+- startup for the angular project
+
 ### angular overview
 <img src="angular-structure.jpg" alt="angular-structure" />
+
+## Metadata
+Metadata can be used to add more data to an Angular class
+
+# hooks
+- ngOnChanges
+- ngOnInit
+- ngAfterViewInit
 
 # Typescript
 - helps finding errors at build time
@@ -121,7 +146,7 @@ $ ng serve --host 0.0.0.0 --port 4201
 ## Transpilers
 - convert the TS to equivalent JS
 
-# Components
+# Component
 - are basic building blocks of angular application
 - a component defines a patch of the screen
 - example
@@ -158,16 +183,16 @@ export class AppComponent {
 }
 ```
 
-## Tree
+## Components Tree
 - <img src="component-tree.jpg" alt="component-tree" />
 - AppComponent is root - which is placed in `bootstrap` property of its module
 
-## generate
+## Generate or Create a component using CLI
 ```
 $ ng g c login
 ```
 
-## component communication
+## Component communication
 
 ### Parent to Child
 - with @input() annotation
@@ -210,7 +235,10 @@ updatePrice() {
 - for continous data exchange use `Observables`
     - handle multiple values over time
 
-#### Observables
+## dynamic component
+- use `DynamicComponentLoader`
+
+# Observables
 - The combination of a stream with a set of functional operators to transform streams leads us to the concept of `Observables`
 - Functional Reactive Programming
     - as the observer and subject react and notify
@@ -222,7 +250,7 @@ updatePrice() {
 - used when we are working with streams, such as
     - create streams, subscribe, read data, combine, transform
 
-##### Example
+## Example
 ```ts
 // create new subject
 subject = new Subject<string>();
@@ -241,9 +269,6 @@ this.subject.asObservable().subscribe(
 // subject
 this.subject.next(userName);
 ```
-
-## dynamic component
-- use `DynamicComponentLoader`
 
 # Modules
 - organize the application, also conponents, directive, services, pipes can be under modules
@@ -298,14 +323,22 @@ can be multiple components forming their tree of components
 <button *ngIf="isLoggedIn" (click)="addToCart($event, product)">Add to Cart</button>
 ```
 
-## Two way data binding
+## Two way data binding (property + class)
 ``` html
 <input type="password" name="password" [(ngModel)]="password" />
 ```
 
 <b>Note:</b> Requires Forms module
 
-# directive
+# Directive
+Adds a behavior to the DOM by introducing syntax or markup
+
+## difference between Directive and component
+Component | Directive
+-|-
+To register, use `@Component` meta-data annotation | To register, use `@Directive` meta-data annotation
+Only one component allowed per DOM element | Many directives are allowed per DOM element
+@View decorator is mandatory | no `View`
 
 ## core module
 - *ngFor, *ngIf, * ngSwitch, ngStyle
@@ -389,6 +422,7 @@ let carObj = injector.get(Car);
 - currency
 ```html
 <td>{{product.price | curency: "INR"}}</td>
+<td>{{product.name | uppercase}}</td>
 ```
 
 # HTTP Module
