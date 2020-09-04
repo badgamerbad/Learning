@@ -238,7 +238,10 @@ updatePrice() {
 ## dynamic component
 - use `DynamicComponentLoader`
 
-# Observables
+# RxJS
+is a reactive stream library that allows you to work with asynchronous data streams
+
+## Observables
 - The combination of a stream with a set of functional operators to transform streams leads us to the concept of `Observables`
 - Functional Reactive Programming
     - as the observer and subject react and notify
@@ -250,7 +253,7 @@ updatePrice() {
 - used when we are working with streams, such as
     - create streams, subscribe, read data, combine, transform
 
-## Example
+### Example
 ```ts
 // create new subject
 subject = new Subject<string>();
@@ -331,6 +334,7 @@ can be multiple components forming their tree of components
 <b>Note:</b> Requires Forms module
 
 # Directive
+Extended HTML attributes
 Adds a behavior to the DOM by introducing syntax or markup
 
 ## difference between Directive and component
@@ -348,6 +352,13 @@ Only one component allowed per DOM element | Many directives are allowed per DOM
 - since the data should be loosely coupled to an component, data fetching should be done in a service
 
 # Dependency Injection
+Service can be injected in the components
+```ts
+import { Injectable } from '@angular/core';
+
+@Injectable({ providedIn: 'root', })
+export class SampleService { constructor() { } }
+```
 
 ## Need
 - consider example of a car class
@@ -365,9 +376,9 @@ class Car {
 - car class is creating instance of engine and tires
 - difficult to unit test the classes
     - will have to test from the UI
-- difficult to have different tires, engines to test he car class
+- difficult to have different tires, engines to test the car class
 - what if any contructor changes
-- difficult to change the `TypeA`
+- difficult to change the `TypeADoors`
 - tightly coupled
 - objects are not sharable
 
@@ -417,6 +428,8 @@ let carObj = injector.get(Car);
 ```
 
 # Pipes
+- Pipes are used to write `display-value` transformations that developers can declare in their HTML
+- A pipe inputs data and transforms it into the required output.
 
 ## in built
 - currency
@@ -550,7 +563,7 @@ check on change
 this.signUpForm.get("country").valueChanges
     .subscribe(
         keyword => {
-        // HTTP call to fetch with keywords
+            // HTTP call to fetch with keywords
         }
     )
 ```
