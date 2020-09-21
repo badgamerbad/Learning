@@ -351,7 +351,7 @@ Only one component allowed per DOM element | Many directives are allowed per DOM
 - for common data, utility, functions, objects
 - since the data should be loosely coupled to an component, data fetching should be done in a service
 
-# Dependency Injection
+# Dependency Injection (DI)
 Service can be injected in the components
 ```ts
 import { Injectable } from '@angular/core';
@@ -428,7 +428,7 @@ let carObj = injector.get(Car);
 ```
 
 # Pipes
-- Pipes are used to write `display-value` transformations that developers can declare in their HTML
+- Pipes are used to write `display-value transformations` that developers can declare in their HTML
 - A pipe inputs data and transforms it into the required output.
 
 ## in built
