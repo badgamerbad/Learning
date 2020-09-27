@@ -24,6 +24,7 @@
 
 ## Shell page
 - The placedholder to put dynamic content inside
+<img src="shell-content.jpg" alt="shell-content">
 
 ## Traditional vs SPA
 <img src="spa-vs-traditional.jpg" alt="spa-vs-traditional">
@@ -98,7 +99,7 @@ $ ng new <project-name>
 $ ng serve
 ```
 - Runs a dev server (Node.js) on localhost:4200 and host the app
-- rusn the tranpiler in a watch mode
+- runs the transpiler in a watch mode
 
 #### with different port
 ```
@@ -246,6 +247,7 @@ is a reactive stream library that allows you to work with asynchronous data stre
 - Functional Reactive Programming
     - as the observer and subject react and notify
 - <img src="observables-flow.jpg" alt="observables-flow" />
+    
     - subject is data
     - observer subscribe to subject - `subscribe()`
     - whenever subject changes, observers are notified - `notify()`
@@ -277,7 +279,7 @@ this.subject.next(userName);
 - organize the application, also conponents, directive, services, pipes can be under modules
 - has a suffix `.module`
 - <img src="module-example.jpg" alt="module-example" />
-- root is geneneric
+- root is generic
     - login
     - header, footer
 
@@ -308,13 +310,13 @@ can be multiple components forming their tree of components
 
 <b>Note:</b> Having multiple bootstrap component, creates multiple trees of components and while injecting dependencies (ex. services), we will have to inject it to multiple trees
 
-# Binding
+# Data Binding
 
-## Interpolation
+## String Interpolation
 ```html
 <p>{{title}}</p>
 ```
-## property Bindings
+## Property Bindings
 ``` html
 /* square bracket */
 <img [src]="product.imgPath" alt="image">
@@ -342,7 +344,7 @@ Component | Directive
 -|-
 To register, use `@Component` meta-data annotation | To register, use `@Directive` meta-data annotation
 Only one component allowed per DOM element | Many directives are allowed per DOM element
-@View decorator is mandatory | no `View`
+`@View` decorator is mandatory | no `View`
 
 ## core module
 - *ngFor, *ngIf, * ngSwitch, ngStyle
