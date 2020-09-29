@@ -463,7 +463,7 @@ export class UserService {
 }
 ```
 
-<b>Note: </b> Return the `Observable`
+<b>Note: </b> Returns an `Observable`
 
 # Forms
 
@@ -480,8 +480,8 @@ export class UserService {
 
 ## Reactive Forms 
 - also known as `Model driven approach`
-- import ReactiveFormsModule from @angular/forms
-- we create with FormControl instances
+- import ReactiveFormsModule from `@angular/forms`
+- we create with `FormControl` instances
 
 ``` ts
 import { FormsControl } from "@angular/forms"
