@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" parallel="none">
+  <test name="test ng parameters(failed)" parallel="none">
+    <classes>
+      <class name="parameters.ParametersTestNg">
+        <methods>
+          <include name="testName"/>
+          <include name="testFullName"/>
+          <include name="testNameWithBrackets"/>
+        </methods>
+      </class> <!-- parameters.ParametersTestNg -->
+    </classes>
+  </test> <!-- test ng parameters(failed) -->
+</suite> <!-- Failed suite [Suite] -->

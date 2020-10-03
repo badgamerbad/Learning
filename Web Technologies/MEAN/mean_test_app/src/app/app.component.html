@@ -1,8 +1,0 @@
-<h1>Our Mongo DB is working</h1>
-<div class="addItem">
-    <input [(ngModel)]="name" placeholder="Add Item to DB" class="addText">
-    <button (click) = "postUsers()">Add</button>
-</div>
-<ul>  
-  <li *ngFor="let user of users; let ind = index">{{ user._id }} {{ind}} {{ user.name }} <span (click)="deleteUsers(user._id)">x</span></li>
-</ul>

@@ -1,0 +1,11 @@
+[DEBUG] 2020-05-02 20:52:20.202 [main] Log4JDemo - lets find some bugs.... ...
+[INFO ] 2020-05-02 20:52:20.205 [main] Log4JDemo - this is demo!!!
+[ERROR] 2020-05-02 20:52:20.205 [main] Log4JDemo - omg error
+[WARN ] 2020-05-02 20:52:20.205 [main] Log4JDemo - phew a warning
+[FATAL] 2020-05-02 20:52:20.205 [main] Log4JDemo - omg omg fatal error
+[DEBUG] 2020-05-02 20:53:43.394 [main] Log4JDemo - lets find some bugs.... ...
+[INFO ] 2020-05-02 20:53:43.397 [main] Log4JDemo - this is demo!!!
+[ERROR] 2020-05-02 20:53:43.397 [main] Log4JDemo - omg error
+[WARN ] 2020-05-02 20:53:43.397 [main] Log4JDemo - phew a warning
+[FATAL] 2020-05-02 20:53:43.397 [main] Log4JDemo - omg omg fatal error
+[TRACE] 2020-05-02 20:53:43.397 [main] Log4JDemo - tracing...

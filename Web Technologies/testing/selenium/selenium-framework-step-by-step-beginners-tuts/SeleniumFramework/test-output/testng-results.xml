@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="23" started-at="2020-05-03T11:37:18Z" finished-at="2020-05-03T11:37:18Z">
+    <groups>
+    </groups>
+    <test name="test ng parameters" duration-ms="23" started-at="2020-05-03T11:37:18Z" finished-at="2020-05-03T11:37:18Z">
+      <class name="parameters.ParametersTestNg">
+        <test-method status="PASS" signature="testFullName(java.lang.String, java.lang.String)[pri:0, instance:parameters.ParametersTestNg@1e7c7811]" name="testFullName" duration-ms="7" started-at="2020-05-03T17:07:18Z" finished-at="2020-05-03T17:07:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[foo]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[bar]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFullName -->
+        <test-method status="PASS" signature="testName(java.lang.String)[pri:0, instance:parameters.ParametersTestNg@1e7c7811]" name="testName" duration-ms="1" started-at="2020-05-03T17:07:18Z" finished-at="2020-05-03T17:07:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[foo]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testName -->
+        <test-method status="PASS" signature="testNameWithBrackets(java.lang.String)[pri:0, instance:parameters.ParametersTestNg@1e7c7811]" name="testNameWithBrackets" duration-ms="0" started-at="2020-05-03T17:07:18Z" finished-at="2020-05-03T17:07:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[foo]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNameWithBrackets -->
+      </class> <!-- parameters.ParametersTestNg -->
+    </test> <!-- test ng parameters -->
+  </suite> <!-- Suite -->
+</testng-results>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="25" started-at="2020-05-03T11:46:05Z" finished-at="2020-05-03T11:46:05Z">
+    <groups>
+      <group name="linux.regression">
+        <method signature="GroupingTests.testThree()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testThree" class="grouping.GroupingTests"/>
+      </group> <!-- linux.regression -->
+      <group name="windows.regression">
+        <method signature="GroupingTests.testTwo()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testTwo" class="grouping.GroupingTests"/>
+      </group> <!-- windows.regression -->
+      <group name="classes.all.methods">
+        <method signature="GroupingTests.testFour()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testFour" class="grouping.GroupingTests"/>
+        <method signature="GroupingTests.testOne()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testOne" class="grouping.GroupingTests"/>
+        <method signature="GroupingTests.testThree()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testThree" class="grouping.GroupingTests"/>
+        <method signature="GroupingTests.testTwo()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testTwo" class="grouping.GroupingTests"/>
+      </group> <!-- classes.all.methods -->
+      <group name="smoke">
+        <method signature="GroupingTests.testTwo()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testTwo" class="grouping.GroupingTests"/>
+      </group> <!-- smoke -->
+      <group name="sanity">
+        <method signature="GroupingTests.testOne()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testOne" class="grouping.GroupingTests"/>
+        <method signature="GroupingTests.testThree()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testThree" class="grouping.GroupingTests"/>
+        <method signature="GroupingTests.testTwo()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testTwo" class="grouping.GroupingTests"/>
+      </group> <!-- sanity -->
+    </groups>
+    <test name="Surefire test" duration-ms="25" started-at="2020-05-03T11:46:05Z" finished-at="2020-05-03T11:46:05Z">
+      <class name="grouping.GroupingTests">
+        <test-method status="PASS" signature="testFour()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testFour" duration-ms="4" started-at="2020-05-03T17:16:05Z" finished-at="2020-05-03T17:16:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFour -->
+        <test-method status="PASS" signature="testOne()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testOne" duration-ms="0" started-at="2020-05-03T17:16:05Z" finished-at="2020-05-03T17:16:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOne -->
+        <test-method status="PASS" signature="testThree()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testThree" duration-ms="0" started-at="2020-05-03T17:16:05Z" finished-at="2020-05-03T17:16:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testThree -->
+        <test-method status="PASS" signature="testTwo()[pri:0, instance:grouping.GroupingTests@90f6bfd]" name="testTwo" duration-ms="0" started-at="2020-05-03T17:16:05Z" finished-at="2020-05-03T17:16:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTwo -->
+      </class> <!-- grouping.GroupingTests -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
