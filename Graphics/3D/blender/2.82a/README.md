@@ -799,7 +799,8 @@ We get the error because the scales are different </br>
 
 - Select the Object
 - Go to object mode
-- <kbd>CTRL</kbd> + <kbd>A</kbd>
+- Apply transformation
+  - <kbd>CTRL</kbd> + <kbd>A</kbd>
 - Scale
 
 ### if UV Square doesnt work
