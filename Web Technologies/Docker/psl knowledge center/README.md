@@ -337,6 +337,11 @@ docker run -it -h my-centos -e JAVA_HOME=/opt/java -w /opt --name my-centos cent
 ```
 <b>Note:</b> on windows /opt wont be present
 
+### Ubuntu APT Installs
+to install any application such as node js/ npm
+- first run `apt update`
+- then run `apt nodejs`
+- then run `apt npm` 
 
 ## Custom Images
 <img src="custom-images-setup.PNG" alt="why containers" width="400px;">
