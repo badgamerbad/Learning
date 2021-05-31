@@ -306,6 +306,11 @@ For editing the vertices near by
 - After Joining
 - <img src="after-joining-the-objects.jpg" alt="after-joining-the-objects" width="600" />
 
+## Hide
+
+### hide rest
+- <kbd>SHIFT</kbd> + <kbd>H</kbd>
+
 ## Selection
 <b>Note:</b> Edit mode should be on
 
@@ -363,6 +368,12 @@ To show the edge its moving along press <kbd>E</kbd>
 - Select a circle
 - Press <kbd>I</kbd> and Drag
 
+### Select only next loop (isolate)
+- <img src="select-loops-hide-rest.jpg" alt="select-loops-hide-rest" />
+- select a point
+- <kbd>CTRL</kbd> + <kbd>NUM +</kbd>
+- <kbd>SHIFT</kbd> + <kbd>H</kbd>
+
 ## Bevel
 - <img src="bevel-operation.jpg" alt="bevel-operation" />
 - to create a loop cut only with marked vertices
@@ -386,6 +397,7 @@ when rotating the vertices the height can be affected, use shear instead
 - [Download Environment](http://www.hdrlabs.com/sibl/archive.html)
 - nodes for the world
 - <img src="add-env-to-world.jpg" alt="add-env-to-world" />
+- add the Texture -> Enviornment Texture
 
 <b>Note: </b> 
 - The environment file is .exr extention
@@ -429,6 +441,14 @@ when rotating the vertices the height can be affected, use shear instead
 
 ## More weight paint layers on object
 - <img src="add-vertex-group-for-weight-paint.jpg" alt="add-vertex-group-for-weight-paint" width="500" />
+
+## Show hide the bones above mesh or object
+- select armature
+- go to `Object Data Properties`
+  - the dancing stick man
+- Viewport Display
+- Select `In Front`
+
 
 ## Select bones while painting
 - Go to `object mode`
@@ -824,3 +844,25 @@ If the addon doesn't work when you load it and select "to grid by shape", duplic
 - we have to the middle circles as drag point and outer circles which define the simulation area
 - <img src="simulation-circle.jpg" alt="simulation-circle" />
 - <img src="simulation-circle-setting.jpg" alt="simulation-circle-setting" />
+
+# Rigify
+- Enable it in blender add-on settings
+
+## Enable bone axis
+- select metarig
+- go to viewport display
+- <img src="show-bone-rotation-axis.jpg" alt="show-bone-rotation-axis" />
+
+## Bend Bone Direction
+- in the pose mode 
+- select the bone
+- set the Bend rotaion axis to x manual
+- <img src="rigify-bend-rotation-axis.jpg" alt="rigify-bend-rotation-axis" />
+
+## apply to all the selected bones
+- select the bones
+- change the `bone rotataion axis` as per the above step
+- right click as shown in below images (the red marked)
+- <img src="bend-bone-rotation-copy-selected.jpg" alt="bend-bone-rotation-copy-selected" />
+- select `Copy to selected`
+- repeat the same on the other side (like the left or the right side)
