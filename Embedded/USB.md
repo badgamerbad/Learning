@@ -1,0 +1,2 @@
+- USB 2.0 - 100mA (max 500mA)
+- USB 3.0 - 150mA (max 900mA)

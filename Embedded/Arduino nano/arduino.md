@@ -1,0 +1,2 @@
+# IDE
+Tools -> Serial Monitor
