@@ -548,6 +548,12 @@ The origin is the point which will be attached to the surface of the object on w
 - select the armature and go to pose mode
 - <img src="pose-apply-new-rest-pose.jpg" alt="pose-apply-new-rest-pose" width="700" />
 
+## move bones to layers
+- <img src="move-bones-to-layers.jpg" alt="move-bones-to-layers" width="700" />
+- select bones
+- press <kbd>M</kbd>
+- select the layer
+
 # Modifiers
 
 ## vertex group
