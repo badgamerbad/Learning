@@ -762,6 +762,31 @@ node wrangler add on lets you see the rendering of the node
 ### Brush Overlay (darken with same color)
 - <img src="texture-overlay-bake.jpg" alt="texture-overlay-bake" width="500" />
 
+## add drawing image overlay on 3d mesh
+- After the texture is selected in texture for the mesh
+  - open mesh texture
+  - select `open`
+  - select the `unwrapped face texture`
+- <img src="in-mesh-texture-select-image.jpg" alt="in-mesh-texture-select-image" />
+- <img src="image-stencil-overlay.jpg" alt="image-stencil-overlay" />
+- select `stencil`
+
+## controls for stencil
+- <kbd>RIGHT CLICK</kbd> - to move
+- <kbd>SHIFT</kbd> + <kbd>RIGHT CLICK</kbd> - zoom in or out
+- <kbd>SHIFT</kbd> + <kbd>X</kbd> + <kbd>RIGHT CLICK</kbd> + <kbd>MOVE MOUSE</kbd> - to adjust aspect ratio in a weird way 
+- <kbd>CTRL</kbd> to rotate
+- <kbd>Left CLICK</kbd> - to paint
+
+# Image editor
+
+## enable UVs
+- go to `UV Editor`
+- Enable `UV sync selection`
+- go back to the image editor
+- - <img src="image-editor-enable-uv.jpg" alt="image-editor-enable-uv.jpg" />
+- make sure the `paint` is also selected - refer above image
+
 # UV Editing
 <img src="select-uv-editor.jpg" alt="select-uv-editor" width="900" />
 
