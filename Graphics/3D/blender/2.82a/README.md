@@ -97,7 +97,8 @@ See which face is viewable
 ### Toggle X Ray
 - <img src="toggle-x-ray.jpg" alt="toggle-x-ray" width="800" />
 
-### object view
+### object view (on individual mesh item)
+- set a wire view on individual object
 - <img src="objects-view-settings.jpg" alt="objects-view-settings" />
 
 ### draw marking (annotations)
@@ -393,6 +394,12 @@ when rotating the vertices the height can be affected, use shear instead
 - open up search (<kbd>Space</kbd>) and search shear and then select the option
 - <img src="shear-operation.jpg" alt="shear-operation" />
 
+## Knife tool
+- Press <kbd>K</kbd>
+- select any vertex
+- Press <kbd>C</kbd> to snap the axis along 45<sup>o</sup>
+- <img src="knife-tool-snapping-demonstrations.jpg" alt="knife-tool-snapping-demonstrations" />
+
 # World environment
 - [Download Environment](http://www.hdrlabs.com/sibl/archive.html)
 - nodes for the world
@@ -625,6 +632,12 @@ Create uneven paterns on the mesh
 - <img src="modifier-bevel-limit-method.jpg" alt="modifier-bevel-limit-method" />
 - apply the above settings
 - anything above 60<sup>o</sup> to be beveled (flattened)
+
+## Boolean - for slicing mesh on mesh
+- set to `Union`
+- <img src="boolean-modifier-settings.jpg" alt="boolean-modifier-settings" />
+- set wire view on the slicing reference object
+- <img src="boolean-slice-object-property-to-wire.jpg" alt="boolean-slice-object-property-to-wire" />
 
 # Sculpting
 
