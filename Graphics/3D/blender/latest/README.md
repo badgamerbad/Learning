@@ -807,7 +807,7 @@ node wrangler add on lets you see the rendering of the node
 - <img src="uv-editing-viewport-menu.jpg" alt="uv-editing-viewport-menu" width="500" />
 
 ### Enable Heat maps (show stretching)
-- <img src="enable-uv-editing-stretch-heat-maps.jpg" alt="enable-uv-editing-stretch-heat-maps" width="500" />
+- <img src="enable-stretching-uv-map.jpg" alt="enable-stretching-uv-map" width="500" />
 
 ## Perform UV editing
 - select the lines on the object and <kbd>Right Click</kbd> and Mark Seam
@@ -829,6 +829,11 @@ Enable Uv Sync selection
 - <img src="uv-keep-selection-without-select-all-on-mesh.jpg" alt="uv-keep-selection-without-select-all-on-mesh" width="400" />
 
 <b>Note:</b> when the sync selection is ON, pressing <kbd>L</kbd> wont work to select connected `UVs`
+
+## exporting uv map
+- select the map by pressing the <kbd>A</kdb>
+- to go menu option `UV` and select
+- <img src="uv-map-select-and-export.png" alt="uv-map-select-and-export" />
 
 ## Create an image (Baking)
 This gives us the UV Map - only after the uv are baked and saved in image file we can edit the UV mesh  
