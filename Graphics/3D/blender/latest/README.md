@@ -639,7 +639,12 @@ Create uneven paterns on the mesh
 - set wire view on the slicing reference object
 - <img src="boolean-slice-object-property-to-wire.jpg" alt="boolean-slice-object-property-to-wire" />
 
+## Multiresolution
+- add this for better sculpting
+- <img src="multiresolution-modifier-settings.jpg" alt="multiresolution-modifier-settings" />
+
 # Sculpting
+<b>Note: </b> add Multiresolution modifier for better sculpting
 
 ## assign keyboard keys shortcuts
 - right click on the brush tools
@@ -659,6 +664,17 @@ Create uneven paterns on the mesh
 - <img src="add-texture-to-sculpt-brush.jpg" alt="add-texture-to-sculpt-brush" />
 - add the new texture
 - select mapping as `Random`
+
+### new brush
+- download from - - [link](https://pixologic.com/zbrush/downloadcenter/alpha/)
+- add new brush from texture
+- <img src="add-new-brush-texture.jpg" alt="add-new-brush-texture" />
+- select image
+- <img src="new-brush-settings-sculpting.jpg" alt="new-brush-settings-sculpting" />
+- add above highlighted settings 
+
+## for better sculpting - add multiresolution modifier
+multiresolution-modifier-settings
 
 ## Dynamic topology
 - <img src="dynamic-topology-for-sculpting.jpg" alt="dynamic-topology-for-sculpting" />
@@ -701,54 +717,6 @@ Change its texture pattern
 ## brush texture
 - <img src="texture-brush-texture.jpg" alt="texture-brush-texture" />
 
-# Shading
-- <img src="select-the-shader-editor.jpg" alt="select-the-shader-editor" />
-
-## minimize/expand node
-- <kbd>CTRL</kbd> + <kbd>H</kbd>
-
-## node wrangler 
-node wrangler add on lets you see the rendering of the node
-- in the preferences enable add on node wrangler 
-- <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>Left Click</kbd> on the node
-
-### Shortcuts
-
-#### Mapping
-- select the image texture 
-- <kbd>CTRL</kbd> + <kbd>T</kbd>
-
-## add material
-- Select new object
-- Add material
-- <img src="shading-new-material.jpg" alt="shading-new-material" width="900" />
-
-## Add new node
-- <kbd>SHIFT</kbd> + <kbd>A</kbd>
-
-## Common nodes
-- input -> object info
-- converter -> color ramp
-- texture -> image texture
-
-## Combine lines
-- <kbd>SHIFT</kbd> and <kbd>Left click</kbd> and drag the mouse over the lines to combine
-- <img src="node-combine-lines.jpg" alt="node-combine-lines" />
-
-## Procedural Texturing
-- Texture -> Noise texture
-- add vecter -> displacement
-- <img src="procedural-texturing-layer-1.jpg" alt="procedural-texturing-layer-1" width="900" />
-- <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>Left Click</kbd> on the panel `principled BSDF` (main layer)
-- View in the render mode
-
-### 2 layers of Procedural Texturing
-- add 2 noise texture
-- pass one through colorRamp - to darken the 2<sup>nd</sup> noise
-- Add them
-- Overlay the texture with noise and set the displacement scale very low
-- <img src="procedural-texturing-layer-2.jpg" alt="procedural-texturing-layer-2" width="900" />
-
 # Texture Paint
 - Add new texture
 - save the new texture on the hard drive or <kbd>ALT</kbd> + <kbd>S</kbd> for quick save
@@ -787,7 +755,7 @@ node wrangler add on lets you see the rendering of the node
 ## controls for stencil
 - <kbd>RIGHT CLICK</kbd> - to move
 - <kbd>SHIFT</kbd> + <kbd>RIGHT CLICK</kbd> - zoom in or out
-- <kbd>SHIFT</kbd> + <kbd>X</kbd> + <kbd>RIGHT CLICK</kbd> + <kbd>MOVE MOUSE</kbd> - to adjust aspect ratio in a weird way 
+  - plus Press <kbd>X</kbd> or <kbd>Y</kbd> - to adjust the size in that coordinate
 - <kbd>CTRL</kbd> to rotate
 - <kbd>Left CLICK</kbd> - to paint
 
@@ -871,9 +839,6 @@ We get the error because the scales are different </br>
 - Apply transformation
   - <kbd>CTRL</kbd> + <kbd>A</kbd>
 - Scale
-
-### if UV Square doesnt work
-If the addon doesn't work when you load it and select "to grid by shape", duplicate the mesh with Shift+D in object mode and try on the new mesh. It'll work. It's a bug.
 
 # physics
 - <img src="physics-property.jpg" alt="physics-property" />
