@@ -400,6 +400,22 @@ when rotating the vertices the height can be affected, use shear instead
 - Press <kbd>C</kbd> to snap the axis along 45<sup>o</sup>
 - <img src="knife-tool-snapping-demonstrations.jpg" alt="knife-tool-snapping-demonstrations" />
 
+## vertex groups
+
+### Assign
+- in edit mode, select vertices
+- assign
+- <img src="assign-vertex-group.jpg" alt="assign-vertex-group" />
+
+### create group from subtraction
+- select the group which contain all vertices
+- create a new group and assign all vertices from the selected group
+- select the group which you want to subtract from the selection
+- <img src="select-subtraction-group.jpg" alt="select-subtraction-group" />
+- select the new group
+- click on `REMOVE`
+- deselect everthing and select the new group only
+
 # World environment
 - [Download Environment](http://www.hdrlabs.com/sibl/archive.html)
 - nodes for the world

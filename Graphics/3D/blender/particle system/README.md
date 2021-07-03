@@ -46,3 +46,16 @@
 - extend the hair
 - avoid clipping root
 - <img src="preserve-hair-root-editing.jpg" alt="preserve-hair-root-editing" />
+
+### Add
+- <img src="add-hair.jpg" alt="add-hair" />
+
+### select roots
+- press <kbd>SPACE</kbd> for search in blender
+- type select roots
+
+### select next set of vertices
+<kbd>CTRL</kbd> + <kbd>NUM +</kbd>
+
+### subdivide vertices
+- <img src="subdivide-hair-vertices.jpg" alt="subdivide-hair-vertices" />
