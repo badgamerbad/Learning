@@ -37,6 +37,14 @@
 - select the number of segments and number of hairs
 - seed - random distribution and positioning of the strands
 
+### move, rotate, scale
+- <kbd>G</kbd> - Move
+- <kbd>R</kbd> - Rotate
+- <kbd>S</kbd> - Scale
+
+### Increase hair length
+- <img src="extend-hair-length.jpg" alt="extend-hair-length" />
+
 ### Selection mode
 - tip selection or mid point selection
 - <img src="number-hair-strands-bend-points.jpg" alt="number-hair-strands-bend-points" />
@@ -46,6 +54,13 @@
 - extend the hair
 - avoid clipping root
 - <img src="preserve-hair-root-editing.jpg" alt="preserve-hair-root-editing" />
+
+### have fine hair curves
+- set Tool -> Options -> Viewport Display -> Path Steps -> 6
+- <img src="move-vertices-with-hair-curve.jpg" alt="move-vertices-with-hair-curve" />
+
+### show children hair in particle edit mode
+- <img src="show-children-hair-in-edit-particle-mode.jpg" alt="show-children-hair-in-edit-particle-mode" />
 
 ### Add
 - <img src="add-hair.jpg" alt="add-hair" />
