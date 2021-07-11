@@ -120,6 +120,7 @@ See which face is viewable
 - <img src="smooth-or-flat-the-object.jpg" alt="smooth-or-flat-the-object" width="600" />
 
 ### Flatten the edges
+To smooth everything based on a certain angle
 - select auto smooth
 - smooth everthing above the angle
 - <img src="smooth-the-mesh-flat-property.jpg" alt="smooth-the-mesh-flat-property" />
@@ -136,6 +137,12 @@ See which face is viewable
 # Edit Mode
 - make sure the shape keys basis is selected and the 'Apply Shape keys in edit mode' is off
 - <img src="edit-mode-shape-keys.jpg" alt="edit-mode-shape-keys">
+
+## zoom
+
+### zoom to a selection
+- select any point(s)
+- press <kbd>Num Pad . (dot or delete key)</kbd>
 
 ## Subdivide
 <b>Note:</b> Edit mode should be on
@@ -247,6 +254,9 @@ To stick the dragging object on the surface, instead of going inside the surface
 - <img src="select-faces-of-object.jpg" alt="select-faces-of-object" width="600" />
 - then click on the middle of the faces
 
+<b>Note: </b> with face selection pressing <kbd>L</kbd> select one side of mesh easily
+<img src="face-select-easliy-with-L.jpg" alt="face-select-easliy-with-L" width="600" />
+
 ## Triangles to polygons conversion
 - select the faces and go to face
 - <img src="faces-tris-to-quads.jpg" alt="faces-tris-to-quads" />
@@ -306,6 +316,11 @@ For editing the vertices near by
 - <kbd>CTRL</kbd> + <kbd>P</kbd> and select the `Object (Keep Transform)`
 - After Joining
 - <img src="after-joining-the-objects.jpg" alt="after-joining-the-objects" width="600" />
+
+## scaling
+
+### from the center of 3d cursor
+- <img src="scale-from-center.jpg" alt="scale-from-center.jpg" width="600" />
 
 ## Hide
 
@@ -658,6 +673,13 @@ Create uneven paterns on the mesh
 ## Multiresolution
 - add this for better sculpting
 - <img src="multiresolution-modifier-settings.jpg" alt="multiresolution-modifier-settings" />
+
+## curve
+- have a path whose origin and mesh origin at the same point
+- add curve modifier
+- <img src="curve-modifier-settings.jpg" alt="curve-modifier-settings" />
+- both path and mesh should have origin at same location (ideally at the world origin)
+- <img src="curve-modifier-2-obj-origin.jpg" alt="curve-modifier-2-obj-origin" />
 
 # Sculpting
 <b>Note: </b> add Multiresolution modifier for better sculpting

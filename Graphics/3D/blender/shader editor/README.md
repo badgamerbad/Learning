@@ -15,6 +15,10 @@ node wrangler add on lets you see the rendering of the node
 - select the image texture 
 - <kbd>CTRL</kbd> + <kbd>T</kbd>
 
+## enable lighting
+- lighting helps in seeing the depth effect like the bump
+- <img src="enable-render-lights-shader-editor.jpg" alt="enable-render-lights-shader-editor" />
+
 ## add material
 - Select new object
 - Add material
@@ -23,10 +27,25 @@ node wrangler add on lets you see the rendering of the node
 ## Add new node
 - <kbd>SHIFT</kbd> + <kbd>A</kbd>
 
-## Common nodes
-- input -> object info
-- converter -> color ramp
-- texture -> image texture
+## group the nodes
+- select the nodes
+- press <kbd>CTRL</kbd> + <kbd>J</kbd>
+- rename in the tool bar
+- <img src="group-nodes.jpg" alt="group-nodes" />
+
+## nodes
+
+### input -> object info
+
+### converter -> color ramp
+- move the middle slider to the left side to shift the other(left most) color in the middle
+- <img src="color-ramp-trick.jpg" alt="color-ramp-trick" />
+
+### texture -> image texture
+
+### Anisotrapic BSDF
+Need Cycles
+- Shader -> Anisotrapic BSDF
 
 ## Combine lines
 - <kbd>SHIFT</kbd> and <kbd>Left click</kbd> and drag the mouse over the lines to combine
@@ -45,3 +64,9 @@ node wrangler add on lets you see the rendering of the node
 - Add them
 - Overlay the texture with noise and set the displacement scale very low
 - <img src="procedural-texturing-layer-2.jpg" alt="procedural-texturing-layer-2" width="900" />
+
+## Effects
+
+### Gradient
+- <img src="gradient-color-mix.jpg" alt="gradient-color-mix" />
+- <img src="gradient-effect-nodes-settings.jpg" alt="gradient-effect-nodes-settings" />
